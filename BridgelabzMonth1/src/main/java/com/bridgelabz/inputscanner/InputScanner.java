@@ -1,5 +1,6 @@
 package com.bridgelabz.inputscanner;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputScanner 
@@ -9,19 +10,36 @@ public class InputScanner
 	//Returns Integer
 	public static int inputInteger()
 	{
-			return sc.nextInt();		
+		try
+		{
+			return sc.nextInt();	
+		}
+		catch (InputMismatchException e) 
+		{
+			System.out.println("Input Mismatch...\nEnter the proper input");
+			return 0;
+		}
 	}
 	
 	//Returns Double
 	public static double inputDouble()
 	{
-		return sc.nextDouble();
+		try
+		{
+			return sc.nextDouble();	
+		}
+		catch (InputMismatchException e) 
+		{
+			System.out.println("Input Mismatch...\nEnter the proper input");
+			return 0.0;
+		}
+		
 	}
 	
 	//Returns String
 	public static String inputWord()
 	{
-			return sc.next();
+		return sc.next();
 	}
 	
 	//Returns Character

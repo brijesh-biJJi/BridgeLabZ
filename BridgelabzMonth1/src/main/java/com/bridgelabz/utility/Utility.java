@@ -6,6 +6,29 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class Utility 
 {	
+ 
+	
+	public static BufferedReader getBufferReaderObject()
+	{
+		BufferedReader br = null;
+		try 
+		{
+			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data.txt"));
+		} catch (FileNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			System.out.println("File Not Found");
+		}
+		/*finally{
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}*/
+		return br;
+	}
 	
 	static int dd,mm,yy;
 	static int[] month={0,31,28,31,30,31,30,31,31,30,31,30,31};
@@ -101,6 +124,28 @@ public class Utility
 		pw.flush();
 		pw.close();
 	}
+	
+	
+	//Returns String Array
+	public static String[] getStringArray(int n)
+	{
+		String[] strArray = new String[n];
+		System.out.println("Enter the elements for array...");
+		for(int i=0;i<n;i++)
+		{
+			strArray[i]=InputScanner.inputWord();
+		}
+		return strArray;
+	}
+	
+	//Display String Array
+	public static void displayStringArray(String[] strArray) 
+	{
+		for(int i=0;i<strArray.length;i++)
+		{
+			System.out.print(strArray[i]+" ");
+		}
+	}
 
 	//Temperature from Fahrenheit To Celsius
 	public static double fahrenToCelsius(double tf) 
@@ -173,6 +218,177 @@ public class Utility
 		}
 
 		
+		
+		//ALGORITHMS PROGRAMS
+		
+		//INSERTION SORT
+		//Sort the String Array using Insertion Sort
+		public static void insertionSortString(String[] strArray) 
+		{
+			for(int i=1;i<strArray.length;i++)
+			{
+				String ele=strArray[i];
+				int j=i-1;
+				while(j>=0 && (ele.compareTo(strArray[j])<0))
+				{
+					strArray[j+1]=strArray[j];
+					j--;
+				}
+				strArray[j+1]=ele;
+			}
+		}
+		
+		//Merge Sort Algorithm
+		//Sort The Integer Array using Merge Sort
+		
+		//Merge Sort Function for Integer Array
+		public static void mergeSort(int[] arr, int l, int h) 
+		{
+			if(l<h)
+			{
+				int m=(l+h)/2;
+				mergeSort(arr,l,m);
+				mergeSort(arr, m+1, h);
+				merge(arr,l,m,h);
+			}
+		}
+
+		//Merge Function For Integer Array
+		public static void merge(int[] arr, int l, int m, int h) 
+		{
+			int[] temp=new int[h-l+1];
+			int i=l,j=m+1,k=0;
+				while(i<=m && j<=h)
+				{
+					if(arr[i]<arr[j])
+						temp[k++]=arr[i++];
+					else
+						temp[k++]=arr[j++];
+				}
+				while(i<=m)
+				{
+					temp[k++]=arr[i++];
+				}
+				while(j<=h)
+				{
+					temp[k++]=arr[j++];
+				}
+				
+			for(int a=0;a<temp.length;a++)
+			{
+				arr[l+a]=temp[a];
+			}
+			
+		}
+
+		//Merge Sort Function For String Array
+		public static void mergeSortString(String[] arr, int l, int h) 
+		{
+			if(l<h)
+			{
+				int m=(l+h)/2;
+				mergeSortString(arr,l,m);
+				mergeSortString(arr, m+1, h);
+				mergeString(arr,l,m,h);
+			}
+		}
+
+		//Merge Function For String Array
+		public static void mergeString(String[] arr, int l, int m, int h) 
+		{
+			String[] temp=new String[h-l+1];
+			int i=l,j=m+1,k=0;
+			while(i<=m && j<=h)
+			{
+				if(arr[i].compareTo(arr[j])<0)
+					temp[k++]=arr[i++];
+				else
+					temp[k++]=arr[j++];
+			}
+			while(i<=m)
+				temp[k++]=arr[i++];
+						
+			while(j<=h)
+				temp[k++]=arr[j++];
+						
+			for(int a=0;a<temp.length;a++)
+				arr[l+a]=temp[a];		
+		}
+		
+		
+		//Bubble Sort 
+		//Sort Array using Bubble Sort
+		public static void bubbleSort(int[] arr) 
+		{
+			for(int i=0;i<arr.length-1;i++)
+				for (int j = 0; j <arr.length-i-1; j++) 
+					if(arr[j]>arr[j+1])
+					{
+						int temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;
+					}
+		}
+		
+		//Sort an Array using Selection sort
+		public static void selectionSort(int[] arr) 
+		{
+			for(int i=0;i<arr.length;i++)
+			{
+				int ele=i;
+				for (int j = i+1; j < arr.length; j++) 
+				{
+					if(arr[ele]>arr[j])
+					{
+						ele=j;
+					}
+				}
+				int temp=arr[ele];
+				arr[ele]=arr[i];
+				arr[i]=temp;
+			}
+				
+		}
+
+
+		
+		//Method to check Two Strings are Anagram or not...
+		public static boolean isAnagram(String str1, String str2) 
+		{
+			char[] c1,c2;
+			int[] count=new int[27];
+			if(str1.length()!=str2.length())
+				System.out.println("Not Anagram");
+			
+			c1=str1.toCharArray();
+			c2=str2.toCharArray();
+			
+			for(int i=0;i<c1.length;i++)
+			{
+				if(c1[i]>='A' && c1[i]<='Z')
+					count[c1[i]-65]++;
+				
+				if(c1[i]>='a' && c1[i]<='z')
+					count[c1[i]-97]++;
+			}
+			
+			for(int i=0;i<c2.length;i++)
+			{
+				if(c2[i]>='A' && c2[i]<='Z')
+					count[c2[i]-65]--;
+				
+				if(c2[i]>='a' && c2[i]<='z')
+					count[c2[i]-97]--;
+			}
+			
+			for(int i=0;i<count.length;i++)
+			{
+				if(count[i]!=0)
+					return false;
+			}
+		return true;
+		}
+	
 	/*public int[] getRandomIntArray(int num)
 	{
 		
