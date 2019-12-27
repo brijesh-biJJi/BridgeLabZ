@@ -428,11 +428,14 @@ public class Utility
 		}
 
 
+		static ArrayList<String> al=new ArrayList<>();
 		//Method to find the Permutation of a given String
-		public static void permutation(String f, String uf) 
+		public static ArrayList<String> permutation(String f, String uf) 
 		{
-			if(uf.length()==0)
+			if(uf.length()==0){
 				System.out.println(f);
+				al.add(f);
+			}
 			
 			for(int i=0;i<uf.length();i++)
 			{
@@ -440,6 +443,7 @@ public class Utility
 				String unFixed=uf.substring(0,i) + uf.substring(i+1);
 				permutation(fixed, unFixed);
 			}
+			return al;
 		}
 		
 		

@@ -1,10 +1,12 @@
 package com.bridgelabz.algorithms;
 
+import java.util.ArrayList;
+
 import com.bridgelabz.inputscanner.InputScanner;
 import com.bridgelabz.utility.Utility;
 
 public class PrimeAnagramPalindrome {
-
+static ArrayList<Integer> al=new ArrayList<>();
 	public static void main(String[] args) 
 	{
 		System.out.println("Enter the Range..");
@@ -17,9 +19,13 @@ public class PrimeAnagramPalindrome {
 			if(pr)
 			{
 				boolean pal=Utility.isPalindrome(i);
-				if(pal)
+				if(pal){
 					System.out.println(i);
+					al.add(i);
+				}
 			}
 		}	
+		System.out.println();
+		System.out.print(al+" ");
 	}
 }
