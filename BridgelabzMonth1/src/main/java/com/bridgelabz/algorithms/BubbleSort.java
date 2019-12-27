@@ -19,10 +19,10 @@ public class BubbleSort {
 		System.out.println();
 		
 		//Calling Bubble Sort function
-		Utility.bubbleSort(arr);
+		int[] aa=Utility.bubbleSort(arr);
 		
 		//Display The Array After Sorting
 		System.out.println("After Sorting");
-		Utility.displayIntegerArray(arr);
+		Utility.displayIntegerArray(aa);
 	}
 }

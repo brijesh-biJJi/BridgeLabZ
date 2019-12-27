@@ -42,6 +42,12 @@ public class InputScanner
 		return sc.next();
 	}
 	
+	//Returns Sentence
+	public static String inputSentence()
+	{
+		return sc.nextLine();
+	}
+	
 	//Returns Character
 	public static Character inputCharacter()
 	{

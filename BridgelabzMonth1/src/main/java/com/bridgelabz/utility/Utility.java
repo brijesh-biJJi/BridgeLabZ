@@ -19,14 +19,6 @@ public class Utility
 			// TODO Auto-generated catch block
 			System.out.println("File Not Found");
 		}
-		/*finally{
-			try {
-				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}*/
 		return br;
 	}
 	
@@ -145,6 +137,7 @@ public class Utility
 		{
 			System.out.print(strArray[i]+" ");
 		}
+		System.out.println();
 	}
 
 	//Temperature from Fahrenheit To Celsius
@@ -223,7 +216,7 @@ public class Utility
 		
 		//INSERTION SORT
 		//Sort the String Array using Insertion Sort
-		public static void insertionSortString(String[] strArray) 
+		public static String[] insertionSortString(String[] strArray) 
 		{
 			for(int i=1;i<strArray.length;i++)
 			{
@@ -236,13 +229,14 @@ public class Utility
 				}
 				strArray[j+1]=ele;
 			}
+			return strArray;
 		}
 		
 		//Merge Sort Algorithm
 		//Sort The Integer Array using Merge Sort
 		
 		//Merge Sort Function for Integer Array
-		public static void mergeSort(int[] arr, int l, int h) 
+		public static int[] mergeSort(int[] arr, int l, int h) 
 		{
 			if(l<h)
 			{
@@ -251,6 +245,7 @@ public class Utility
 				mergeSort(arr, m+1, h);
 				merge(arr,l,m,h);
 			}
+			return arr;
 		}
 
 		//Merge Function For Integer Array
@@ -282,7 +277,7 @@ public class Utility
 		}
 
 		//Merge Sort Function For String Array
-		public static void mergeSortString(String[] arr, int l, int h) 
+		public static String[] mergeSortString(String[] arr, int l, int h) 
 		{
 			if(l<h)
 			{
@@ -291,6 +286,7 @@ public class Utility
 				mergeSortString(arr, m+1, h);
 				mergeString(arr,l,m,h);
 			}
+			return arr;
 		}
 
 		//Merge Function For String Array
@@ -318,7 +314,7 @@ public class Utility
 		
 		//Bubble Sort 
 		//Sort Array using Bubble Sort
-		public static void bubbleSort(int[] arr) 
+		public static int[] bubbleSort(int[] arr) 
 		{
 			for(int i=0;i<arr.length-1;i++)
 				for (int j = 0; j <arr.length-i-1; j++) 
@@ -328,6 +324,7 @@ public class Utility
 						arr[j]=arr[j+1];
 						arr[j+1]=temp;
 					}
+			return arr;
 		}
 		
 		//Sort an Array using Selection sort
@@ -388,7 +385,103 @@ public class Utility
 			}
 		return true;
 		}
+		
+		
+
+		//Method to check Prime Number
+		public static boolean isPrime(int n,int i) 
+		{
+			if(n%i==0)
+				return false;
+			if(i>n/2)
+				return true;
+			return isPrime(n,++i);
+		}
+
 	
+		
+		//Method to check Number is Palindrome or Not
+		public static boolean isPalindrome(int n)
+		{
+			int rs=0,t=n;
+			while(t!=0)
+			{
+				int r=t%10;
+				rs=rs*10+r;
+				t/=10;
+			}
+			return rs==n;
+		}
+		
+		//Method to find guess number using Binary Search
+		public static int binarySearch(int l, int h) 
+		{
+			if(h-l==1)
+				return l;
+				int m=(l+h)/2;
+				System.out.println("Is a number less than : "+m+"\nEnter Yes or No");
+				String s=InputScanner.inputWord();
+				if(s.equals("yes"))
+					return binarySearch(l, m);
+				else 
+					return binarySearch(m, h);
+		}
+
+
+		//Method to find the Permutation of a given String
+		public static void permutation(String f, String uf) 
+		{
+			if(uf.length()==0)
+				System.out.println(f);
+			
+			for(int i=0;i<uf.length();i++)
+			{
+				String fixed=f + uf.charAt(i);
+				String unFixed=uf.substring(0,i) + uf.substring(i+1);
+				permutation(fixed, unFixed);
+			}
+		}
+		
+		
+		
+		
+		//Binary Search Function
+		public static int binaryWordSearch(String[] stringArray, String word) 
+		{
+			int low=0,hi=stringArray.length-1;
+			while(low<=hi)
+			{
+				int mid=(low+hi)/2;
+				int res=word.compareTo(stringArray[mid]);
+				if(res==0)
+					return mid;
+				else if(res>0)
+					low=mid+1;
+				else
+					hi=mid-1;
+			}
+			return -1;
+		}
+
+		//Sorting the String Array without using Inbuilt Function
+		public static void sortInOrder(String[] stringArray) 
+		{
+			for(int i=0;i<=stringArray.length-1;i++)
+			{
+				for (int j = i+1; j <stringArray.length; j++) 
+				{
+					if(stringArray[i].compareTo(stringArray[j])>0)
+					{
+						String temp=stringArray[i];
+						stringArray[i]=stringArray[j];
+						stringArray[j]=temp;
+					}
+				}
+			}
+		}
+		
+		
+		
 	/*public int[] getRandomIntArray(int num)
 	{
 		

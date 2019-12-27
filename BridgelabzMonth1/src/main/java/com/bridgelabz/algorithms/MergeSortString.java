@@ -12,6 +12,8 @@ public class MergeSortString {
 		
 		String[] arr=Utility.getStringArray(n);
 		
+		
+		
 		//Before Sorting
 		System.out.println("Before Sorting");
 		Utility.displayStringArray(arr);
@@ -20,6 +22,7 @@ public class MergeSortString {
 			 
 		//Calling Merge Sort Function
 		Utility.mergeSortString(arr,0,n-1);
+		
 		
 		//Display Array After Sorting
 		System.out.println("After Sorting");
