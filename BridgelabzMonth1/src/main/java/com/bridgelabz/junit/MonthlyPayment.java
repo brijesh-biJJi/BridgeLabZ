@@ -12,8 +12,6 @@ static double P,Y,R,n,r,payment;
 		P=InputScanner.inputDouble();
 		Y=InputScanner.inputDouble();
 		R=InputScanner.inputDouble();
-		n=12*Y;
-		r=R/(12*100);
 		
 		payment=calculateMonthlyPay(P,Y,R);
 		System.out.println(payment);
