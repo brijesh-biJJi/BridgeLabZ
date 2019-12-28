@@ -451,10 +451,14 @@ public class Utility
 		//Method to check Prime Number
 		public static boolean isPrime(int n,int i) 
 		{
-			if(n%i==0)
+			if(n==0 || n==1)
 				return false;
 			if(i>n/2)
 				return true;
+			
+			if(n%i==0 )
+				return false;
+
 			return isPrime(n,++i);
 		}
 

@@ -11,9 +11,9 @@ public class DayOfWeekTest {
 	@Test
 	public void test() 
 	{
-		Utility.setDayMonthYear(27,12,2019);
+		Utility.setDayMonthYear(28,12,2019);
 		String actual=Utility.getDayName();
-		String expected="Fri";
+		String expected="Sat";
 		assertEquals(expected, actual);
 	}
 	
