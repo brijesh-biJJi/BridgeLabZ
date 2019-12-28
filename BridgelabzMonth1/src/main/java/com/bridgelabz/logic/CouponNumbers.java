@@ -35,7 +35,7 @@ public class CouponNumbers
 	}
 	private static int generateRandomNumber() 
 	{
-		int rn=rd.nextInt(5)+1;
+		int rn=rd.nextInt(10)+1;
 		return rn;
 	}
 

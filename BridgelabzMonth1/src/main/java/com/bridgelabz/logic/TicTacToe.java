@@ -3,25 +3,12 @@ package com.bridgelabz.logic;
 import java.util.ArrayList;
 
 import com.bridgelabz.inputscanner.InputScanner;
+import com.bridgelabz.utility.Utility;
 
 public class TicTacToe 
 {
 	static char[][] board =new char[3][3];
 	
-	//Display the Board
-	public static void display(char[][] board)
-	{
-		for(int i=0;i<3;i++)
-		{
-			for (int j = 0; j < 3; j++) 
-			{
-				System.out.print(board[i][j]+" ");
-			}
-			System.out.println();
-		}
-		System.out.println();
-		
-	}
 	
 	//Replace choice with marker
 	private static void replace(char[][] board, int find, char mark) 
@@ -101,7 +88,7 @@ public class TicTacToe
 		}
 		
 		//Display Board
-		display(board);
+		Utility.display(board);
 		
 		//Enter Player 1 Name
 		System.out.println("Enter player1 name");
@@ -148,7 +135,7 @@ public class TicTacToe
 			
 			//replace function to set the mark
 			replace(board,choice,player1mark);
-			display(board);
+			Utility.display(board);
 			if(i>=2)
 			{
 				if(checkForWin())
@@ -173,7 +160,7 @@ public class TicTacToe
 			
 			//replace function to set the mark
 			replace(board,choice,player2mark);
-			display(board);
+			Utility.display(board);
 			if(i>=2)
 			{
 				if(checkForWin())
@@ -199,7 +186,7 @@ public class TicTacToe
 		
 		
 		replace(board,choice,player1mark);
-		display(board);
+		Utility.display(board);
 		
 		if(checkForWin())
 			System.out.println(player1+" Won the Game....!");

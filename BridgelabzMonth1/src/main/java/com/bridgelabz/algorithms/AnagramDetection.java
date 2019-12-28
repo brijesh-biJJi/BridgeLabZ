@@ -14,6 +14,21 @@ public class AnagramDetection
 		System.out.println("Enter the String2..");
 		str2=InputScanner.inputWord();
 		
+		//Anagram for Integer
+		/*int a,b;
+		System.out.println("Enter the num");
+		a=InputScanner.inputInteger();
+		b=InputScanner.inputInteger();
+		boolean rsi=Utility.isAnagramBuiltIn(String.valueOf(a),String.valueOf(b));
+		if(rsi)
+			System.out.println("Anagram...");
+		else
+			System.out.println("Not Anagram..");	*/
+		
+		
+		//Using Built-In Function
+		//boolean rs=Utility.isAnagramBuiltIn(str1,str2);
+		
 		boolean rs=Utility.isAnagram(str1,str2);
 		if(rs)
 			System.out.println("Anagram...");

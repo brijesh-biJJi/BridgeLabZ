@@ -139,6 +139,24 @@ public class Utility
 		}
 		System.out.println();
 	}
+	
+	
+	
+	//Display CHaracter Array
+	//Display the Board
+		public static void display(char[][] board)
+		{
+			for(int i=0;i<3;i++)
+			{
+				for (int j = 0; j < 3; j++) 
+				{
+					System.out.print(board[i][j]+" ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+			
+		}
 
 	//Temperature from Fahrenheit To Celsius
 	public static double fahrenToCelsius(double tf) 
@@ -215,6 +233,25 @@ public class Utility
 		//ALGORITHMS PROGRAMS
 		
 		//INSERTION SORT
+		
+		//Sort the Integer Array using Insertion Sort
+		public static int[] insertionSortInteger(int[] intArray)
+		{
+			for(int i=1;i<intArray.length;i++)
+			{
+				int ele=intArray[i];
+				int j=i-1;
+				while(j>=0 && ele<intArray[j])
+				{
+					intArray[j+1]=intArray[j];
+					j--;
+				}
+				intArray[j+1]=ele;
+			}
+			return intArray;
+			
+		}
+		
 		//Sort the String Array using Insertion Sort
 		public static String[] insertionSortString(String[] strArray) 
 		{
@@ -386,8 +423,31 @@ public class Utility
 		return true;
 		}
 		
+		//Method to check Two Strings are Anagram using BuiltIn Function
+		public static boolean isAnagramBuiltIn(String str1, String str2) 
+		{
+			char[] c1,c2;
+			if(str1.length()!=str2.length())
+				return false;
+			
+			c1=str1.toCharArray();
+			c2=str2.toCharArray();
+			
+			Arrays.sort(c1);
+			Arrays.sort(c2);
+			
+			for (int i = 0; i < c2.length; i++) 
+			{
+				if(c1[i]!=c2[i])
+					return false;
+			}
+				
+		return true;
+		}
 		
-
+		
+		
+		
 		//Method to check Prime Number
 		public static boolean isPrime(int n,int i) 
 		{
@@ -483,6 +543,8 @@ public class Utility
 				}
 			}
 		}
+
+		
 		
 		
 		

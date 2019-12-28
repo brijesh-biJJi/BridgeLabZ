@@ -10,7 +10,7 @@ import com.bridgelabz.inputscanner.InputScanner;
 public class VendingMachine 
 {
 	
-	private static int calculateChange(int amt) 
+	public static int calculateChange(int amt) 
 	{
 		int notes=0,totalNotes=0,div=1000;
 		while(amt>0)

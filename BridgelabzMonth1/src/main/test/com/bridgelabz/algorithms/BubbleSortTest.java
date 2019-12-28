@@ -13,7 +13,8 @@ public class BubbleSortTest {
 	{
 		int[] a={5,4,3,2,1};
 		int[] expectedArray={1,2,3,4,5};
-		assertArrayEquals(expectedArray,  Utility.bubbleSort(a));
+		int[] actual=Utility.bubbleSort(a);
+		assertArrayEquals(expectedArray,  actual);
 		
 	}
 	
@@ -23,6 +24,7 @@ public class BubbleSortTest {
 	{
 		int[] a={-4,-2,-3,-1,-5};
 		int[] expectedArray={-5,-4,-3,-2,-1};
-		assertArrayEquals(expectedArray,  Utility.bubbleSort(a));
+		int[] actual=Utility.bubbleSort(a);
+		assertArrayEquals(expectedArray,  actual);
 	}
 }

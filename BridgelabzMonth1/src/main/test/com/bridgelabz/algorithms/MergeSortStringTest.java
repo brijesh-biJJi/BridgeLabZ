@@ -13,7 +13,9 @@ public class MergeSortStringTest {
 	{
 		String[] expectedArray={"a","b","c","d","e"};
 		String[] actualArray={"e","d","c","b","a"};
-		assertArrayEquals(expectedArray, Utility.mergeSortString(actualArray,0,actualArray.length-1));
+		
+		String[] actual=Utility.mergeSortString(actualArray,0,actualArray.length-1);
+		assertArrayEquals(expectedArray, actual);
 	}
 
 	
@@ -22,7 +24,8 @@ public class MergeSortStringTest {
 	{
 		String[] expectedArray={"abc","acb","b","bca","c","cd"};
 		String[] actualArray={"cd","abc","c","acb","b","bca"};
-		assertArrayEquals(expectedArray, Utility.mergeSortString(actualArray,0,actualArray.length-1));
+		String[] actual=Utility.mergeSortString(actualArray,0,actualArray.length-1);
+		assertArrayEquals(expectedArray, actual);
 	}
 	
 	@Test
