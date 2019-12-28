@@ -1,10 +1,12 @@
 package com.bridgelabz.algorithms;
 
-public class StringPermutationItirative {
+import com.bridgelabz.utility.Utility;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-System.out.println("hello");
+public class StringPermutationItirative 
+{
+	public static void main(String[] args) 
+	{
+		String s="abc";
+		Utility.permutationIterative(s.toCharArray(), 0);
 	}
-
 }

@@ -493,7 +493,7 @@ public class Utility
 
 
 		static ArrayList<String> al=new ArrayList<>();
-		//Method to find the Permutation of a given String
+		//Method to find the Permutation of a given String Recursive
 		public static ArrayList<String> permutation(String f, String uf) 
 		{
 			if(uf.length()==0){
@@ -508,6 +508,27 @@ public class Utility
 				permutation(fixed, unFixed);
 			}
 			return al;
+		}
+		
+		//Method to find the Permutation of a given String using Itertive 
+		public static void swap(char[] ch,int i,int j)
+		{
+			char temp=ch[i];
+			ch[i]=ch[j];
+			ch[j]=temp;
+		}
+		
+		public static void permutationIterative(char[] ch,int currrentIndex)
+		{
+			if(currrentIndex==ch.length-1)
+				System.out.println(String.valueOf(ch));
+			
+			for(int i=currrentIndex;i<ch.length;i++)
+			{
+				swap(ch,currrentIndex,i);
+				permutationIterative(ch, currrentIndex+1);
+				swap(ch,currrentIndex,i);
+			}
 		}
 		
 		
