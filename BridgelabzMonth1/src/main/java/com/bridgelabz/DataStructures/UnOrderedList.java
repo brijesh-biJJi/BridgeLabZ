@@ -126,27 +126,46 @@ BufferedReader br;
 		String word;
 		System.out.println("Enter the word to search..");
 		word=InputScanner.inputWord();
-		boolean rs=findWord(word);
-		if(rs)
+		int rs=findWord(word);
+		if(rs==-1)
 		{
-			System.out.println("yes");
-			
+			System.out.println("No......");			
 		}
 		else
-			System.out.println("No");
+		{
+			System.out.println("Word "+word+" is present in the List...Removed that word from the list");
+			removeWordFromList(rs);
+		}
+	}
+
+
+	//Remove Word From the List
+	public static void removeWordFromList(int pos) 
+	{
+		Node<String> t=head;
+		Node<String> t1=head;
+		while(pos>1)
+		{
+			t1=t;
+			t=t.next;
+		}
+		t1.next=t.next;
+		
 	}
 
 
 
-	public static boolean findWord(String word)
+	public static int findWord(String word)
 	{
+		int c=0;
 		Node<String> temp=head;
 		while(temp!=null)
 		{
+			c++;
 			if(temp.data.equals(word))
-				return true;
+				return c;
 			temp=temp.next;
 		}
-		return false;
+		return -1;
 	}	
 }
