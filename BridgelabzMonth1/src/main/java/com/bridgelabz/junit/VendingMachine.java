@@ -7,9 +7,10 @@ package com.bridgelabz.junit;
 import com.bridgelabz.inputscanner.InputScanner;
 //import com.bridgelabz.utility.Utility;
 
+//Class to Count the notes in Vending Machine
 public class VendingMachine 
 {
-	
+	//Method to calculate change
 	public static int calculateChange(int amt) 
 	{
 		int notes=0,totalNotes=0,div=1000;

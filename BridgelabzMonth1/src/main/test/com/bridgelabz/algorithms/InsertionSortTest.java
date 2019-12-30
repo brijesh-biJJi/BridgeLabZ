@@ -3,12 +3,14 @@ package com.bridgelabz.algorithms;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import com.bridgelabz.utility.Utility;
 
 public class InsertionSortTest {
 
 	@Test
+	@DisplayName("When Sorting String..")
 	public void test() 
 	{
 		String[] expectedArray={"a","b","c","d","e"};
@@ -19,6 +21,7 @@ public class InsertionSortTest {
 
 	
 	@Test
+	@DisplayName("When Sorting String..")
 	public void test1() 
 	{
 		String[] expectedArray={"abc","acb","b","bca","c","cd"};
@@ -28,6 +31,7 @@ public class InsertionSortTest {
 	}
 
 	@Test
+	@DisplayName("When Sorting Positive Integer..")
 	public void testPosNumber() 
 	{
 		int[] a={5,4,3,2,1};
@@ -39,6 +43,7 @@ public class InsertionSortTest {
 	
 
 	@Test
+	@DisplayName("When Sorting Negative Integer..")
 	public void testNegNumber() 
 	{
 		int[] a={-4,-2,-3,-1,-5};

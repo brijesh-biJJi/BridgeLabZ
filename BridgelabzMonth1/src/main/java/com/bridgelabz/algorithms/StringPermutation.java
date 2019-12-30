@@ -3,7 +3,9 @@ package com.bridgelabz.algorithms;
 import com.bridgelabz.inputscanner.InputScanner;
 import com.bridgelabz.utility.Utility;
 
-public class StringPermutation {
+//Class to find Permutation of a given String
+public class StringPermutation 
+{
 
 	public static void main(String[] args) 
 	{

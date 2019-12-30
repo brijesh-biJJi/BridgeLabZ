@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class InputScanner 
 {
+	//Creating Scanner class Object
 	static final Scanner sc=new Scanner(System.in);
 	
-	//Returns Integer
+	//Returns Integer value
 	public static int inputInteger()
 	{
 		try
@@ -21,7 +22,7 @@ public class InputScanner
 		}
 	}
 	
-	//Returns Double
+	//Returns Double value
 	public static double inputDouble()
 	{
 		try
@@ -36,7 +37,7 @@ public class InputScanner
 		
 	}
 	
-	//Returns String
+	//Returns String value
 	public static String inputWord()
 	{
 		return sc.next();
@@ -48,7 +49,7 @@ public class InputScanner
 		return sc.nextLine();
 	}
 	
-	//Returns Character
+	//Returns Character value
 	public static Character inputCharacter()
 	{
 		return sc.next().charAt(0);

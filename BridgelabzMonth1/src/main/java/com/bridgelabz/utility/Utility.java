@@ -4,16 +4,17 @@ import java.util.*;
 
 import com.bridgelabz.inputscanner.InputScanner;
 
+//Utility class Whcich contains Utility methods to perform several task
 public class Utility 
 {	
- 
-	
+	static BufferedReader br = null;
+	//Method that returns BufferedReader object
 	public static BufferedReader getBufferReaderObject()
 	{
-		BufferedReader br = null;
+		
 		try 
 		{
-			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data.txt"));
+			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data1.txt"));
 		} catch (FileNotFoundException e) 
 		{
 			// TODO Auto-generated catch block
@@ -510,7 +511,7 @@ public class Utility
 			return al;
 		}
 		
-		//Method to find the Permutation of a given String using Itertive 
+		//Method to swap
 		public static void swap(char[] ch,int i,int j)
 		{
 			char temp=ch[i];
@@ -518,6 +519,7 @@ public class Utility
 			ch[j]=temp;
 		}
 		
+		//Method to find the Permutation of a given String using Itertive 
 		public static void permutationIterative(char[] ch,int currrentIndex)
 		{
 			if(currrentIndex==ch.length-1)
@@ -567,6 +569,41 @@ public class Utility
 					}
 				}
 			}
+		}
+
+		
+		//Method to read data's from file
+		public static String getFileData(String filename)
+		{
+			StringBuilder sb=new StringBuilder();
+			try 
+			{
+				System.out.println("inside getfile try");
+				br=new BufferedReader(new FileReader(filename));
+				System.out.println("got the file");
+				String line=br.readLine();
+				while(line!=null)
+				{
+					sb.append(line);
+					sb.append(System.lineSeparator());
+					line=br.readLine();
+				}
+				return sb.toString();
+			} 
+			catch (Exception e)
+			{
+				return null;
+			}
+			/*finally
+			{
+				try {
+					br.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}*/
+			
 		}
 
 		

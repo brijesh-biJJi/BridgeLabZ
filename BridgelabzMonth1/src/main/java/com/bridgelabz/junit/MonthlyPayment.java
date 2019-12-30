@@ -17,7 +17,7 @@ static double P,Y,R,n,r,payment;
 		System.out.println(payment);
 	}
 	
-	public static double calculateMonthlyPay(double p,double y,double r)
+	public static double calculateMonthlyPay(double P,double Y,double R)
 	{
 		n=12*Y;
 		r=R/(12*100);

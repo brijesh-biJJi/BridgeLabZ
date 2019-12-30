@@ -12,7 +12,7 @@ public class TemperatureConversionTest {
 	public void test() {
 		double actual=Utility.fahrenToCelsius(130);
 		double expected=54.44444444444444;
-		assertEquals(expected,actual);
+		assertEquals(expected,actual,0);
 	}
 
 }
