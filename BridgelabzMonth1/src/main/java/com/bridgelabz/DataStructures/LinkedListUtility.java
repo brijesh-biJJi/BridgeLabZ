@@ -1,10 +1,17 @@
 package com.bridgelabz.DataStructures;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 import com.bridgelabz.DataStructures.LinkedListUtility.Node;
 
 public class LinkedListUtility 
 {
 	
+	//Class Node is used to create a Node
 	class Node<String>
 	{
 		
@@ -15,9 +22,9 @@ public class LinkedListUtility
 			this.data=data;
 		}
 	}
-	static Node<String> head;
+	Node<String> head;
 	
-	
+	//addWordsInLinkedList method is used to add Nodes into the Linked List
 	public void addWordsInLinkedList(String data)
 	{
 			Node<String> n=new Node<String>(data);
@@ -37,43 +44,77 @@ public class LinkedListUtility
 	}
 	
 	
-	//Remove Word From the List
-		public void removeWordFromList(int in) 
+	//removeWordFromList method is used to Remove Word From the Linked List
+	public void removeWordFromList(int in) 
+	{
+		Node<String> t=head;
+		while(in>1)
 		{
-			Node<String> t=LinkedListUtility.head;
-			while(in>1)
-			{
-				t=t.next;
-				in--;
-			}
-			t.next=t.next.next;
+			t=t.next;
+			in--;
 		}
+		t.next=t.next.next;
+	}
 
 
-
-		public int findWord(String word)
+	//findWord method is used to find te word present in the List
+	public int findWord(String word)
+	{
+		int c=0;
+		Node<String> temp=head;
+		while(temp!=null)
 		{
-			int c=0;
-			Node<String> temp=LinkedListUtility.head;
-			while(temp!=null)
-			{
-				c++;
-				if(temp.data.equals(word))
-					return c;
-				temp=temp.next;
-			}
-			return -1;
-		}	
+			c++;
+			if(temp.data.equals(word))
+				return c;
+			temp=temp.next;
+		}
+		return -1;
+	}	
 	
+		
+	//displayLinkedList is used to Display the Element present in the List	
 	public void displayLinkedList()
 	{
 		Node temp;
 		temp=head;
 		while(temp!=null)
 		{
-			System.out.print(temp.data+" ");
+			System.out.print(temp.data);
+			if(temp.next!=null)
+				System.out.print("->");
 			temp=temp.next;
 		}
 		System.out.println();
+	}
+	
+	public void saveToFile()
+	{
+		String data=getData();
+		//File file=new File("wordList.txt");
+		try 
+		{
+			FileOutputStream fs=new FileOutputStream("wordList.txt");
+			ObjectOutputStream oos=new ObjectOutputStream(fs);
+			oos.writeObject(data);
+			
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		
+	}
+
+
+	public String getData() 
+	{
+		String str="";
+		Node temp;
+		temp=head;
+		while(temp!=null)
+		{
+			str=str+temp.data+" ";
+			temp=temp.next;
+		}
+		return str;
 	}
 }
