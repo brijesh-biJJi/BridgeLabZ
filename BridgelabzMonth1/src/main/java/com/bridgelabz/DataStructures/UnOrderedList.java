@@ -3,6 +3,7 @@ package com.bridgelabz.DataStructures;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import com.bridgelabz.DataStructures.LinkedListUtility.Node;
 import com.bridgelabz.inputscanner.InputScanner;
 import com.bridgelabz.utility.Utility;
 
@@ -10,17 +11,7 @@ public class UnOrderedList
 {
 static String fileData,wordList[];
 BufferedReader br;
-	class Node<String>
-	{
-		
-		Object data;
-		Node<String> next;
-		public Node(Object data)
-		{
-			this.data=data;
-		}
-	}
-	static Node<String> head;
+	
 	
 	public UnOrderedList()
 	{
@@ -61,111 +52,47 @@ BufferedReader br;
 	}
 	
 	
-
-	public Object del() 
-	{
-		Object data;
-		if(head==null)
-		{
-			System.out.println("List is Empty..");
-			return "";
-		}
-		Node t=head;
-		Node t1=head;
-		while(t.next!=null)
-		{
-			t1=t;
-			t=t.next;
-		}
-		data=t.data;
-		t1.next=null;
-		return data;
-	}
-	
-	public String toString()
-	{
-		String str="";
-		Node temp;
-		temp=head;
-		while(temp!=null)
-		{
-			str=str+temp.data+" ";
-			temp=temp.next;
-		}
-		return str;	
-	}
-	
-	
-	public void addWordsInLinkedList(String data)
-	{
-			Node<String> n=new Node<String>(data);
-			if(head==null)
-			{
-				head=n;
-				return;
-			}
-			Node<String> temp;
-			temp=head;
-			while(temp.next!=null)
-			{
-				temp=temp.next;
-			}
-			temp.next=n;
-			return;
-	}
-	
+	//Main method of UnOrderedList
 	public static void main(String[] args) 
 	{
+		//Creating Object of Linked List Utility Class
+		LinkedListUtility lu=new LinkedListUtility();
+		
+		//Creating Object of UnOrdered List Class
 		UnOrderedList ul=new UnOrderedList();
 		for (int i = 0; i < wordList.length; i++) 
 		{
-			ul.addWordsInLinkedList(wordList[i]);
+			lu.addWordsInLinkedList(wordList[i]);
 		}
-		System.out.println(ul);
+		
+		//Printing the Elements of Linked List
+		lu.displayLinkedList();
 		
 		String word;
 		System.out.println("Enter the word to search..");
 		word=InputScanner.inputWord();
-		int rs=findWord(word);
+		
+		//Calling findWord Method to find the word in the List
+		int rs=lu.findWord(word);
 		if(rs==-1)
 		{
-			System.out.println("No......");			
+			System.out.println("Word "+word+" is not present in the List...Added that word to the list");
+			
+			//Adding the Word into the Linked List
+			lu.addWordsInLinkedList(word);
+			
+			//Printing the Elements of Linked List
+			lu.displayLinkedList();
 		}
 		else
 		{
 			System.out.println("Word "+word+" is present in the List...Removed that word from the list");
-			removeWordFromList(rs);
+			
+			//Deleting the word from the Linked List
+			lu.removeWordFromList(rs-1);
+			
+			//Printing the Elements of Linked List
+			lu.displayLinkedList();
 		}
 	}
-
-
-	//Remove Word From the List
-	public static void removeWordFromList(int pos) 
-	{
-		Node<String> t=head;
-		Node<String> t1=head;
-		while(pos>1)
-		{
-			t1=t;
-			t=t.next;
-		}
-		t1.next=t.next;
-		
-	}
-
-
-
-	public static int findWord(String word)
-	{
-		int c=0;
-		Node<String> temp=head;
-		while(temp!=null)
-		{
-			c++;
-			if(temp.data.equals(word))
-				return c;
-			temp=temp.next;
-		}
-		return -1;
-	}	
 }
