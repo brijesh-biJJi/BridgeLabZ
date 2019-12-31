@@ -12,13 +12,13 @@ public class Harmonic
 		System.out.println("Nth Term "+h);
 	}
 
-	private static double harmonic(int n)
+	public static double harmonic(int n)
 	{
 		double h=0.0;
 		for(int i=1;i<=n;i++)
 		{
 			h=1.0/i;
-			System.out.println(h);
+			//System.out.println(h);
 		}
 		return h;
 	}

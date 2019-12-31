@@ -57,6 +57,56 @@ public class Utility
 	}
 	
 	
+	//Basic Programs
+	//Flip Coin
+	
+	//percentage method is used to check the percentage value od Head and Tail
+		public static double[] percentage(int n) 
+		{
+			int headc=0,tailc=0;
+			double r,tailper=0.0,headper=0.0;
+			for(int i=0;i<n;i++)
+			{
+				r=Math.random();
+				if(r<0.5)
+				{
+					tailc++;
+					System.out.println("Tail");
+				}
+				else
+				{
+					headc++;
+					System.out.println("Head");
+				}
+			}
+			tailper=(tailc*100)/n;
+			headper=(headc*100)/n;
+			double[] per={tailper,headper};
+			return per;
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//Return ArrayList Object
 	public static  ArrayList<Integer> getArrayListObject()

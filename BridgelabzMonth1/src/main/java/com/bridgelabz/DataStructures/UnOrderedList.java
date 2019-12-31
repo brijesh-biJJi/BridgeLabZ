@@ -74,7 +74,7 @@ public class UnOrderedList
 		{
 			System.out.println("\nEnter Your Choice...");
 			System.out.println("1. Enter the Word from the List to Search...");
-			System.out.println("2. Save the list into the File..");
+			System.out.println("2. Write the list into the File..");
 			int choice=InputScanner.inputInteger();
 			ul.menu(choice);
 			System.out.println("Press e to exit..");
