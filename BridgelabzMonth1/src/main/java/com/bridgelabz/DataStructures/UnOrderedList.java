@@ -15,7 +15,7 @@ public class UnOrderedList
 	static String fileData,wordList[];
 	BufferedReader br;
 	
-	
+	//Collecting the data from the file data1.txt
 	public UnOrderedList()
 	{
 		BufferedReader br=Utility.getBufferReaderObject();
@@ -116,6 +116,7 @@ public class UnOrderedList
 					
 					break;
 		 	case 2 :
+		 			//calling saveToFile method to save the data into the file
 		 			lu.saveToFile();
 		 			System.out.println("Data's are saved to WordList file..");
 		 			break;

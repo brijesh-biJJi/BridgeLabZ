@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 
 import com.bridgelabz.DataStructures.LinkedListUtility.Node;
 
+//LinkedList Utility class contains the Utility methods which can be made use in UnOrderedList class
 public class LinkedListUtility 
 {
 	
@@ -88,6 +89,7 @@ public class LinkedListUtility
 		System.out.println();
 	}
 	
+	////saveToFile is used to save the data into the file
 	public void saveToFile()
 	{
 		String data=getData();
@@ -104,7 +106,7 @@ public class LinkedListUtility
 		
 	}
 
-
+    //getData method is used to get the data from the List
 	public String getData() 
 	{
 		String str="";

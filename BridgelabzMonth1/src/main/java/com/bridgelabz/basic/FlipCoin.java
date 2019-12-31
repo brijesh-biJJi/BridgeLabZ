@@ -2,10 +2,13 @@ package com.bridgelabz.basic;
 
 import com.bridgelabz.inputscanner.InputScanner;
 
+//Class FlipCoin is to check the Percentage of Head and Tail..
 public class FlipCoin
 {
 	static int headc=0,tailc=0;
 	static double r,tailper=0.0,headper=0.0;
+	
+	//Main method
 	public static void main(String[] args) 
 	{
 		
@@ -15,7 +18,9 @@ public class FlipCoin
 		System.out.println("Percentage of Tail "+per[0]);
 		System.out.println("Percentage of Head "+per[1]);
 	}
-	private static double[] percentage(int n) 
+	
+	//percentage method is used to check the percentage value od Head and Tail
+	public static double[] percentage(int n) 
 	{
 		
 		for(int i=0;i<n;i++)
