@@ -27,25 +27,20 @@ public class StackUsingLinkedList
 				top=n;
 				return;
 			}
-			Node<String> temp=top;
-			while(temp.next!=null)
-			{
-				temp=temp.next;
-			}
-			temp.next=n;
+			n.next=top;
+			top=n;
 		}
 		
 		//deleteLast method is used to delete the element from the last
 		public Object pop()
 		{
-			Node<String> t=top,t1=top;
-			while(t.next!=null)
+			if(top==null)
 			{
-				t1=t;
-				t=t.next;
+				System.out.println("Stack Overflow..");
+				return null;
 			}
-			Object data=t.data;
-			t1.next=null;
+			Object data=top.data;
+			top=top.next;
 			return data;
 		}
 		
@@ -81,5 +76,16 @@ public class StackUsingLinkedList
 				cur=next;
 			}
 			top=prev;
+		}
+		
+		//peek() method is used to return the top most element from the list
+		public Object peek()
+		{
+			if(top==null)
+			{
+				System.out.println("Stack Overflow..");
+				return null;
+			}
+			return top.data;
 		}
 }

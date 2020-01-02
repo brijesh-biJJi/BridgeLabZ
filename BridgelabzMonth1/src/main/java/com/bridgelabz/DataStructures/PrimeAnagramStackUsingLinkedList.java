@@ -35,6 +35,7 @@ public class PrimeAnagramStackUsingLinkedList extends PrimeAnagramTwoDimensional
 		System.out.println(sl);
 		sl.reverseList();
 		System.out.println(sl);
+		System.out.println(sl.peek());
 	}
 
 }

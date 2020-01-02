@@ -37,6 +37,6 @@ public class QueueUsingLinkedList
 	public Object deQueue()
 	{
 		
-		return data;
+		return null;
 	}
 }
