@@ -58,7 +58,6 @@ public class PrimeAnagramTwoDimensionalArray
 		ArrayList<Integer> alAna=new ArrayList<>();
 		System.out.println("Enter the range..");
 		int n=InputScanner.inputInteger();
-		PrimeTwoDimensionalArray pArray=new PrimeTwoDimensionalArray();
 		for (int i = 0; i <= n; i++) 
 		{
 			boolean rs=Utility.isPrime(i,2);
