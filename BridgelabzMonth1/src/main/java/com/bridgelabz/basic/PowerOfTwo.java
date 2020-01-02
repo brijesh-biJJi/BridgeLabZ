@@ -27,7 +27,9 @@ public class PowerOfTwo
 			
 		}
 	}
-	private static int powerOfTwo(int n, int p) 
+	
+	//powerOfTwo method is used to find the Power of number 2
+	public static int powerOfTwo(int n, int p) 
 	{
 		int res=1;
 		while(p>0)
