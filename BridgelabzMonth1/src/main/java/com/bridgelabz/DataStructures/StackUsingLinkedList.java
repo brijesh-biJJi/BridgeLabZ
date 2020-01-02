@@ -16,18 +16,18 @@ public class StackUsingLinkedList
 				this.data=data;
 			}
 		}
-		Node<String> head;
+		Node<String> top;
 	
 		//Addlast method to add element in the last
 		public void push(Object data)
 		{
 			Node<String> n= new Node<String>(data);
-			if(head==null)
+			if(top==null)
 			{
-				head=n;
+				top=n;
 				return;
 			}
-			Node<String> temp=head;
+			Node<String> temp=top;
 			while(temp.next!=null)
 			{
 				temp=temp.next;
@@ -38,7 +38,7 @@ public class StackUsingLinkedList
 		//deleteLast method is used to delete the element from the last
 		public Object pop()
 		{
-			Node<String> t=head,t1=head;
+			Node<String> t=top,t1=top;
 			while(t.next!=null)
 			{
 				t1=t;
@@ -54,7 +54,7 @@ public class StackUsingLinkedList
 		{
 			String str="";
 			Node temp;
-			temp=head;
+			temp=top;
 			while(temp!=null)
 			{
 				str=str+temp.data;
@@ -72,7 +72,7 @@ public class StackUsingLinkedList
 			Node next,prev,cur;
 			next=null;
 			prev=null;
-			cur=head;
+			cur=top;
 			while(cur!=null)
 			{
 				next=cur.next;
@@ -80,6 +80,6 @@ public class StackUsingLinkedList
 				prev=cur;
 				cur=next;
 			}
-			head=prev;
+			top=prev;
 		}
 }
