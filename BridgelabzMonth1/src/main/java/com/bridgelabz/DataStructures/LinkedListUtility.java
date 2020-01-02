@@ -119,4 +119,50 @@ public class LinkedListUtility
 		}
 		return str;
 	}
+	
+	
+	
+	//Stack Using Linked List
+	//Addlast method to add element in the last
+	public void addLast(Object data)
+	{
+		Node<String> n= new Node<String>(data);
+		if(head==null)
+		{
+			head=n;
+			return;
+		}
+		Node<String> temp=head;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=n;
+	}
+	
+	public Object deleteLast()
+	{
+		Node<String> t=head,t1=head;
+		while(t.next!=null)
+		{
+			t1=t;
+			t=t.next;
+		}
+		Object data=t.data;
+		t1.next=null;
+		return data;
+	}
+	
+	public String toString()
+	{
+		String str="";
+		Node temp;
+		temp=head;
+		while(temp!=null)
+		{
+			str=str+temp.data+" ";
+			temp=temp.next;
+		}
+		return str;
+	}
 }
