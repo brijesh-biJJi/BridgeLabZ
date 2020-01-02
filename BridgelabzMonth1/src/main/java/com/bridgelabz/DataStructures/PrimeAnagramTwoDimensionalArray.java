@@ -7,7 +7,8 @@ import com.bridgelabz.utility.Utility;
 
 public class PrimeAnagramTwoDimensionalArray 
 {
-	public static void storePrime(ArrayList<Integer> al) 
+	//Method used to store Prime Number that are Anagram
+	public static void storePrimeAnagram(ArrayList<Integer> al)         
 	{
 	int len=al.size();
 		int[][] primeArray=new int[10][len];
@@ -48,6 +49,7 @@ public class PrimeAnagramTwoDimensionalArray
 		}
 		
 		
+		//Display the Prime number that are Anagram
 		for (int i = 0; i < primeArray.length; i++)
 		{
 			for (int j = 0; j < primeArray[i].length; j++) 
@@ -74,13 +76,12 @@ public class PrimeAnagramTwoDimensionalArray
 				alPrime.add(i);
 		}
 		
-		alAna=isAna(alPrime);
-		System.out.println(alAna);
-		storePrime(alAna);
+		alAna=isAnagram(alPrime);
+		storePrimeAnagram(alAna);
 	}
 	
-	//To check Anagram
-		public static ArrayList<Integer> isAna(ArrayList<Integer> alPrime) 
+	//To check the prime number Anagram or not
+		public static ArrayList<Integer> isAnagram(ArrayList<Integer> alPrime) 
 		{
 			ArrayList<Integer> alAna=new ArrayList<>();
 			for (int i = 0; i < alPrime.size(); i++) 
@@ -90,7 +91,10 @@ public class PrimeAnagramTwoDimensionalArray
 					if(i!=j)
 					{
 						if(Utility.isAnagramBuiltIn(String.valueOf(alPrime.get(i)), String.valueOf(alPrime.get(j))))
-							alAna.add(alPrime.get(i));
+						{
+							if(!alAna.contains(alPrime.get(i)))
+								alAna.add(alPrime.get(i));
+						}
 					}
 				}
 			}
