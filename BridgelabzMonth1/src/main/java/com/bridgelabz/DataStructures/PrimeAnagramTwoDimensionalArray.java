@@ -7,12 +7,13 @@ import com.bridgelabz.utility.Utility;
 
 public class PrimeAnagramTwoDimensionalArray 
 {
-	/*public static void storePrime(ArrayList<Integer> al, int len) 
+	public static void storePrime(ArrayList<Integer> al) 
 	{
-		int[][] primeArray=new int[10][168];
+	int len=al.size();
+		int[][] primeArray=new int[10][len];
 		for (int i = 0; i < primeArray.length; i++) 
 		{
-			for (int j = 0; j < 168; j++) 
+			for (int j = 0; j < len; j++) 
 			{
 				if(i==0 && (al.get(j)>0 && al.get(j)<=100))
 					primeArray[i][j]=al.get(j);
@@ -56,7 +57,7 @@ public class PrimeAnagramTwoDimensionalArray
 			}
 			System.out.println();
 		}
-	}*/
+	}
 	
 	//Main method to perform the task
 	public static void main(String[] args) 
@@ -72,11 +73,10 @@ public class PrimeAnagramTwoDimensionalArray
 			if(rs)
 				alPrime.add(i);
 		}
-		int len=alPrime.size();
-		//System.out.println(al);
-		//storePrime(al,len);
+		
 		alAna=isAna(alPrime);
 		System.out.println(alAna);
+		storePrime(alAna);
 	}
 	
 	//To check Anagram

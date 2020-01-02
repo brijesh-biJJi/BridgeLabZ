@@ -8,7 +8,7 @@ public class HarmonicTest
 {
 
 	@Test
-	public void given10asInput() 
+	public void given10_whenHarmonic_thenShouldBeZeroPointOne() 
 	{
 		double expected=0.1,actual;
 		actual=Harmonic.harmonic(10);
@@ -16,7 +16,7 @@ public class HarmonicTest
 	}
 	
 	@Test
-	public void given5asInput() 
+	public void given5_whenHarmonic_thenShouldBeZeroPointTwo() 
 	{
 		double expected=0.2,actual;
 		actual=Harmonic.harmonic(5);
