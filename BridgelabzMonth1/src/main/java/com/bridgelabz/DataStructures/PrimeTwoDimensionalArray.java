@@ -8,12 +8,13 @@ import com.bridgelabz.utility.Utility;
 //PrimeTwoDimensionalArray Class is used find the prime number and store it in 2D array
 public class PrimeTwoDimensionalArray 
 {
-	public static void storePrime(ArrayList<Integer> al, int len) 
+	public static void storePrime(ArrayList<Integer> al) 
 	{
-		int[][] primeArray=new int[10][168];
-		for (int i = 0; i < primeArray.length; i++) 
+		int len=al.size();
+		int[][] primeArray=new int[10][len];
+		for (int i = 0; i <= primeArray.length; i++) 
 		{
-			for (int j = 0; j < 168; j++) 
+			for (int j = 0; j <len; j++) 
 			{
 				if(i==0 && (al.get(j)>0 && al.get(j)<=100))
 					primeArray[i][j]=al.get(j);
@@ -74,7 +75,7 @@ public class PrimeTwoDimensionalArray
 		}
 		int len=al.size();
 		//System.out.println(al);
-		storePrime(al,len);
+		storePrime(al);
 		
 	}
 

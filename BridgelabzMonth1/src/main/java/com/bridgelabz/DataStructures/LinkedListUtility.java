@@ -140,6 +140,7 @@ public class LinkedListUtility
 		temp.next=n;
 	}
 	
+	//deleteLast method is used to delete the element from the last
 	public Object deleteLast()
 	{
 		Node<String> t=head,t1=head;
@@ -153,6 +154,7 @@ public class LinkedListUtility
 		return data;
 	}
 	
+	//toString method is used to return the element present in the list
 	public String toString()
 	{
 		String str="";
@@ -165,4 +167,27 @@ public class LinkedListUtility
 		}
 		return str;
 	}
+	
+	
+	//reverse method is used to reverse the Linked List
+	public void reverseList()
+	{
+		Node next,prev,cur;
+		next=null;
+		prev=null;
+		cur=head;
+		while(cur!=null)
+		{
+			next=cur.next;
+			cur.next=prev;
+			prev=cur;
+			cur=next;
+		}
+		head=prev;
+	}
+	
+	
+	
+	
+	
 }
