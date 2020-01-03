@@ -6,7 +6,7 @@ public class StackBalancedParenthese <T>
 	public StackBalancedParenthese(int len)
 	{
 		this.siz=len;
-	}
+	}                                          
 	
 	class Node<T>
 	{
@@ -58,6 +58,11 @@ public class StackBalancedParenthese <T>
 		return top==null;
 	}
 	
+	//returns the size of the list
+	public int size()
+	{
+		return siz;
+	}
 	
 	/*//toString method is used to return the element present inside the List
 	public String toString()

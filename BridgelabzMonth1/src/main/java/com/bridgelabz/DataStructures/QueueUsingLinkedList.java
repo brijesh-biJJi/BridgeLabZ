@@ -3,14 +3,14 @@ package com.bridgelabz.DataStructures;
 import com.bridgelabz.DataStructures.StackUsingLinkedList.Node;
 
 //Implementing Queue Using Linked List
-public class QueueUsingLinkedList 
+public class QueueUsingLinkedList <T>
 {
 	//Node class is Used to create a Node
-	class Node
+	class Node<T>
 	{
-		Object data;
+		T data;
 		Node next;
-		Node(Object data)
+		Node(T data)
 		{
 			this.data=data;
 		}
@@ -19,9 +19,9 @@ public class QueueUsingLinkedList
 	
 	
 	//enQueue method is used to add Node to list 
-	public void enQueue(Object data)
+	public void enQueue(T data)
 	{
-		Node n=new Node(data);
+		Node<T> n=new Node<>(data);
 		if(rear==null)
 		{
 			rear=n;
@@ -37,7 +37,7 @@ public class QueueUsingLinkedList
 	}
 	
 	//deQueue method is used to delete Node from the list
-	public Object deQueue()
+	public T deQueue()
 	{
 		if(front==null)
 		{
@@ -45,11 +45,17 @@ public class QueueUsingLinkedList
 			return null;
 		}
 	
-		Object data=front.data;
+		T data=(T) front.data;
 		front=front.next;
 		if(front==null)
 			rear=null;
 		return data;
+	}
+	
+	//To check whether list is Empty or not
+	public boolean isEmpty()
+	{
+		return front==null || rear==null;
 	}
 	
 	//toString method is used to return the element present in the list
