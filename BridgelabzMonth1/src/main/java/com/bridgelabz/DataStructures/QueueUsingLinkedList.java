@@ -47,6 +47,8 @@ public class QueueUsingLinkedList
 	
 		Object data=front.data;
 		front=front.next;
+		if(front==null)
+			rear=null;
 		return data;
 	}
 	
