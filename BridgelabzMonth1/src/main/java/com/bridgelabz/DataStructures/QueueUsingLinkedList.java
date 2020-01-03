@@ -1,5 +1,7 @@
 package com.bridgelabz.DataStructures;
 
+import com.bridgelabz.DataStructures.StackUsingLinkedList.Node;
+
 //Implementing Queue Using Linked List
 public class QueueUsingLinkedList 
 {
@@ -35,7 +37,7 @@ public class QueueUsingLinkedList
 	}
 	
 	//deQueue method is used to delete Node from the list
-	/*public Object deQueue()
+	public Object deQueue()
 	{
 		if(front==null)
 		{
@@ -43,7 +45,24 @@ public class QueueUsingLinkedList
 			return null;
 		}
 	
-		Object data=t.data;
-		return null;
-	}*/
+		Object data=front.data;
+		front=front.next;
+		return data;
+	}
+	
+	//toString method is used to return the element present in the list
+			public String toString()
+			{
+				String str="";
+				Node temp;
+				temp=front;
+				while(temp!=null)
+				{
+					str=str+temp.data;
+					if(temp.next!=null)
+						str=str+"->";
+					temp=temp.next;
+				}
+				return str;
+			}
 }
