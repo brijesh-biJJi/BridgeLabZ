@@ -13,30 +13,37 @@ public class QueueUsingLinkedList
 			this.data=data;
 		}
 	}
-	Node head;
+	Node rear,front;
 	
 	
 	//enQueue method is used to add Node to list 
 	public void enQueue(Object data)
 	{
 		Node n=new Node(data);
-		if(head==null)
+		if(rear==null)
 		{
-			head=n;
+			rear=n;
+			front=n;
 			return;
 		}
-		Node temp=head;
-		while(temp.next!=null)
+		while(rear.next!=null)
 		{
-			temp=temp.next;
+			rear=rear.next;
 		}
-		temp.next=n;
+		rear.next=n;
+		rear=rear.next;
 	}
 	
 	//deQueue method is used to delete Node from the list
-	public Object deQueue()
+	/*public Object deQueue()
 	{
-		
+		if(front==null)
+		{
+			System.out.println("List is empty..");
+			return null;
+		}
+	
+		Object data=t.data;
 		return null;
-	}
+	}*/
 }
