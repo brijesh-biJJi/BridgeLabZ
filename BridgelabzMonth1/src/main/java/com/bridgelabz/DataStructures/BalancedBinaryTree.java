@@ -2,7 +2,7 @@ package com.bridgelabz.DataStructures;
 
 import com.bridgelabz.DataStructures.QueueUsingLinkedList.Node;
 
-public class BinarySearchTree 
+public class BalancedBinaryTree 
 {
 		//Node class is Used to create a Node
 		class Node
@@ -130,7 +130,7 @@ public class BinarySearchTree
 		//main method to run the program
 		public static void main(String[] args) 
 		{
-			BinarySearchTree bst=new BinarySearchTree();
+			BalancedBinaryTree bst=new BalancedBinaryTree();
 			bst.add(23);
 			bst.add(35);
 			bst.add(15);
