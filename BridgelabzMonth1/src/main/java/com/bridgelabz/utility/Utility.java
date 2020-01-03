@@ -37,23 +37,26 @@ public class Utility
 	}
 	
 	//Count Total no of Days
-	private static int noOfDay()
+	public static int[] noOfDay()
 	{
+		int[] dayAndMonth={0,0};
 		int y=yy-1;
 		int day=y*365;
 		day +=y/400+y/4-y/100;
 		for(int i=1;i<mm;i++)
 			day +=month[i];
 		day +=dd;
-		return day;
+		dayAndMonth[0]=day;
+		dayAndMonth[1]=month[mm];
+		return dayAndMonth;
 	}
 
 	//Get Day Name
 	public static  String getDayName() 
 	{
 		String[] dayName={"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
-		int totalDays=noOfDay();
-		return dayName[totalDays%7];
+		int[] totalDays=noOfDay();
+		return dayName[totalDays[0]%7];
 	}
 	
 	
