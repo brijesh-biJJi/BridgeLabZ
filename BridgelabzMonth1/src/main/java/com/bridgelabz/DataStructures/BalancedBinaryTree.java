@@ -119,7 +119,7 @@ public class BalancedBinaryTree
 		public Object searchNode(Node root,Object data)
 		{
 			Comparable c=(Comparable)data;
-			if(root==null || (root.data==data))
+			if(root==null || (root.data==c))
 				return root;
 			if(c.compareTo(root.data)<0)
 				return searchNode(root.left,data);

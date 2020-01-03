@@ -3,8 +3,10 @@ package com.bridgelabz.DataStructures;
 import com.bridgelabz.inputscanner.InputScanner;
 import com.bridgelabz.utility.Utility;
 
+//class is used to Count the possibility of Binary Tree of N nodes given  
 public class BinarySearchTree
 {
+	//countTree method is used to count the tree
 	public static long countTree(int n) 
 	{
 		if(n==0 || n==1)
