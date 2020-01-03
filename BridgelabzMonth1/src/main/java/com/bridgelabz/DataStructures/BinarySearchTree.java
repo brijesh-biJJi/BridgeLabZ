@@ -14,7 +14,7 @@ public class BinarySearchTree
 				this.data=data;
 			}
 		}
-		Node root;
+		static Node root;
 		
 		//Add method is used to add the Node to the Tree
 		public boolean add(Object data)
@@ -69,13 +69,30 @@ public class BinarySearchTree
 					return str;
 				}*/
 		
-		
+		//search() method is used to search the element is present or not
+		public Object searchNode(Node root,Object data)
+		{
+			Comparable c=(Comparable)data;
+			if(root==null || (root.data==data))
+				return root;
+			if(c.compareTo(root.data)<0)
+				return searchNode(root.left,data);
+			
+			return searchNode(root.right,data);
+		}
+ 		
 		//main method to run the program
 		public static void main(String[] args) 
 		{
 			BinarySearchTree bst=new BinarySearchTree();
-			bst.add("abc");
-			bst.add("efg");
-			System.out.println(bst);
+			bst.add(23);
+			bst.add(35);
+			bst.add(15);
+			bst.add(43);
+			bst.add(28);
+			bst.add(18);
+			bst.add(43);
+			Object rs=bst.searchNode(root,28);
+				System.out.println(rs);
 		}
 }
