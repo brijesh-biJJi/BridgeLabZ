@@ -69,6 +69,52 @@ public class BinarySearchTree
 					return str;
 				}*/
 		
+		
+		//A utility function to do PreOrder traversal of BST
+		void preOrder(Node root)
+		{
+			if(root!=null)
+			{
+				System.out.println(root.data);
+				preOrder(root.left);
+				preOrder(root.right);
+			}
+		}
+		
+		
+		
+		
+		
+		// This method mainly calls InorderRec() 
+		void inOrder()  
+		{ 
+	       inorderRec(root); 
+		} 
+		  
+		// A utility function to do inorder traversal of BST 
+		void inorderRec(Node root) 
+		{ 
+	        if (root != null) 
+	        { 
+	        	inorderRec(root.left); 
+	        	System.out.println(root.data); 
+	        	inorderRec(root.right); 
+		    } 
+	    } 
+		
+		
+		//A utility function to do PostOrder traversal of BST
+		void postOrder(Node root)
+		{
+			if(root!=null)
+			{
+				preOrder(root.left);
+				preOrder(root.right);
+				System.out.println(root.data);
+			}
+		}
+				
+		
 		//search() method is used to search the element is present or not
 		public Object searchNode(Node root,Object data)
 		{
@@ -92,7 +138,14 @@ public class BinarySearchTree
 			bst.add(28);
 			bst.add(18);
 			bst.add(43);
+			System.out.println("PreOrder Traversal..");
+			bst.preOrder(root);
+			System.out.println("InOrder Traversal..");
+			bst.inOrder();
+			System.out.println("PostOrder Traversal..");
+			bst.postOrder(root);
+			
 			Object rs=bst.searchNode(root,28);
-				System.out.println(rs);
+				System.out.println("Yess "+rs);
 		}
 }
