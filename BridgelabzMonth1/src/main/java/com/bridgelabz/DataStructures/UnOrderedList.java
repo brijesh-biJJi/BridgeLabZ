@@ -66,18 +66,21 @@ public class UnOrderedList
 			lu.addWordsInLinkedList(wordList[i]);
 		}
 		
-		//Printing the Elements of Linked List
-		lu.displayLinkedList();
 		
 		String e=new String();
 		do
 		{
+			//Printing the Elements of Linked List
+			lu.displayLinkedList();
+			System.out.println();
 			System.out.println("\nEnter Your Choice...");
-			System.out.println("1. Enter the Word from the List to Search...");
+			System.out.println("1. Enter the Value from the List to Search...");
 			System.out.println("2. Write the list into the File..");
 			int choice=InputScanner.inputInteger();
 			ul.menu(choice);
-			System.out.println("Press e to exit..");
+			
+			System.out.println("\nPress e to Exit..Or Press ant key to continue...");
+			
 			e=InputScanner.inputWord();
 		}while(!e.equals("e"));
 		System.out.println("Thank You...");
@@ -88,14 +91,15 @@ public class UnOrderedList
 		switch(choice)
 		{
 		 	case 1: String word;
-					System.out.println("Enter the word to search..");
+					System.out.println("Enter the Value to search..");
 					word=InputScanner.inputWord();
 					
 					//Calling findWord Method to find the word in the List
 					int rs=lu.findWord(word);
 					if(rs==-1)
 					{
-						System.out.println("Word "+word+" is not present in the List...Added that word to the list");
+						System.out.println("Value "+word+" is not present in the List...Added that Value to the end of the List");
+						System.out.println();
 						
 						//Adding the Word into the Linked List
 						lu.addWordsInLinkedList(word);
@@ -105,7 +109,8 @@ public class UnOrderedList
 					}
 					else
 					{
-						System.out.println("Word "+word+" is present in the List...Removed that word from the list");
+						System.out.println("Value "+word+" is present in the List...Removed that Value from the list");
+						System.out.println();
 						
 						//Deleting the word from the Linked List
 						lu.removeWordFromList(rs-1);

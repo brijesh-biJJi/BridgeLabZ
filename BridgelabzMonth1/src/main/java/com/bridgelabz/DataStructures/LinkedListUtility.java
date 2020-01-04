@@ -9,32 +9,32 @@ import java.io.ObjectOutputStream;
 import com.bridgelabz.DataStructures.LinkedListUtility.Node;
 
 //LinkedList Utility class contains the Utility methods which can be made use in UnOrderedList class
-public class LinkedListUtility 
+public class LinkedListUtility <T>
 {
 	
 	//Class Node is used to create a Node
-	class Node<String>
+	class Node<T>
 	{
 		
-		Object data;
-		Node<String> next;
-		public Node(Object data)
+		T data;
+		Node<T> next;
+		public Node(T data)
 		{
 			this.data=data;
 		}
 	}
-	Node<String> head;
+	Node<T> head;
 	
 	//addWordsInLinkedList method is used to add Nodes into the Linked List
-	public void addWordsInLinkedList(String data)
+	public void addWordsInLinkedList(T data)
 	{
-			Node<String> n=new Node<String>(data);
+			Node<T> n=new Node<>(data);
 			if(head==null)
 			{
 				head=n;
 				return;
 			}
-			Node<String> temp;
+			Node<T> temp;
 			temp=head;
 			while(temp.next!=null)
 			{
@@ -48,7 +48,11 @@ public class LinkedListUtility
 	//removeWordFromList method is used to Remove Word From the Linked List
 	public void removeWordFromList(int in) 
 	{
-		Node<String> t=head;
+		Node<T> t=head;
+		if(in==0)
+		{
+			head=head.next;
+		}
 		while(in>1)
 		{
 			t=t.next;
@@ -58,11 +62,11 @@ public class LinkedListUtility
 	}
 
 
-	//findWord method is used to find te word present in the List
-	public int findWord(String word)
+	//findWord method is used to find the word present in the List
+	public int findWord(T word)
 	{
 		int c=0;
-		Node<String> temp=head;
+		Node<T> temp=head;
 		while(temp!=null)
 		{
 			c++;
@@ -77,7 +81,7 @@ public class LinkedListUtility
 	//displayLinkedList is used to Display the Element present in the List	
 	public void displayLinkedList()
 	{
-		Node temp;
+		Node<T> temp;
 		temp=head;
 		while(temp!=null)
 		{
@@ -110,7 +114,7 @@ public class LinkedListUtility
 	public String getData() 
 	{
 		String str="";
-		Node temp;
+		Node<T> temp;
 		temp=head;
 		while(temp!=null)
 		{

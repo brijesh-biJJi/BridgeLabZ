@@ -14,7 +14,7 @@ public class Utility
 		
 		try 
 		{
-			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data1.txt"));
+			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data2.txt"));
 		} catch (FileNotFoundException e) 
 		{
 			// TODO Auto-generated catch block
