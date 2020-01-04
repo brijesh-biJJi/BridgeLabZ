@@ -1,27 +1,17 @@
 package com.bridgelabz.DataStructures;
 
-import com.bridgelabz.DataStructures.LinkedListUtility.Node;
+import com.bridgelabz.DataStructures.Node;
 
 //Stack Using Linked List
-public class StackUsingLinkedList
+public class StackUsingLinkedList<T>
 {
-	//Class Node is used to create a Node
-		class Node<String>
-		{
-			
-			Object data;
-			Node<String> next;
-			public Node(Object data)
-			{
-				this.data=data;
-			}
-		}
-		Node<String> top;
+	
+		Node<T> top;
 	
 		//Addlast method to add element in the last
-		public void push(Object data)
+		public void push(T data)
 		{
-			Node<String> n= new Node<String>(data);
+			Node<T> n= new Node(data);
 			if(top==null)
 			{
 				top=n;
@@ -32,14 +22,14 @@ public class StackUsingLinkedList
 		}
 		
 		//deleteLast method is used to delete the element from the last
-		public Object pop()
+		public T pop()
 		{
 			if(top==null)
 			{
 				System.out.println("Stack Overflow..");
 				return null;
 			}
-			Object data=top.data;
+			T data=top.data;
 			top=top.next;
 			return data;
 		}
@@ -48,7 +38,7 @@ public class StackUsingLinkedList
 		public String toString()
 		{
 			String str="";
-			Node temp;
+			Node<T> temp;
 			temp=top;
 			while(temp!=null)
 			{
@@ -64,7 +54,7 @@ public class StackUsingLinkedList
 		//reverse method is used to reverse the Linked List
 		public void reverseList()
 		{
-			Node next,prev,cur;
+			Node<T> next,prev,cur;
 			next=null;
 			prev=null;
 			cur=top;
@@ -79,7 +69,7 @@ public class StackUsingLinkedList
 		}
 		
 		//peek() method is used to return the top most element from the list
-		public Object peek()
+		public T peek()
 		{
 			if(top==null)
 			{

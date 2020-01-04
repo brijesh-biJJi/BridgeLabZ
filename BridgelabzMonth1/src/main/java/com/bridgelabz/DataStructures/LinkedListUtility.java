@@ -6,23 +6,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-import com.bridgelabz.DataStructures.LinkedListUtility.Node;
+import com.bridgelabz.DataStructures.Node;
 
 //LinkedList Utility class contains the Utility methods which can be made use in UnOrderedList class
 public class LinkedListUtility <T>
 {
-	
-	//Class Node is used to create a Node
-	class Node<T>
-	{
-		
-		T data;
-		Node<T> next;
-		public Node(T data)
-		{
-			this.data=data;
-		}
-	}
 	Node<T> head;
 	
 	//addWordsInLinkedList method is used to add Nodes into the Linked List

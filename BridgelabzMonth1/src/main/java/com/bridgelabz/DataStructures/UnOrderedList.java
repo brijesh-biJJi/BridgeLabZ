@@ -3,7 +3,6 @@ package com.bridgelabz.DataStructures;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import com.bridgelabz.DataStructures.LinkedListUtility.Node;
 import com.bridgelabz.inputscanner.InputScanner;
 import com.bridgelabz.utility.Utility;
 
