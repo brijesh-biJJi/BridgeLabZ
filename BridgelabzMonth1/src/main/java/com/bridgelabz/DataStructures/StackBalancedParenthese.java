@@ -8,15 +8,6 @@ public class StackBalancedParenthese <T>
 		this.siz=len;
 	}                                          
 	
-	class Node<T>
-	{
-		T data;
-		Node<T> next;
-		public Node(T data)
-		{
-			this.data=data;
-		}
-	}
 	Node<T> top;
 	
 	//push method is used to Add the node into the List

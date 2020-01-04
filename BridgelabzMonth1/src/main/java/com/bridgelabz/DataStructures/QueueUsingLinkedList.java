@@ -1,21 +1,11 @@
 package com.bridgelabz.DataStructures;
 
-import com.bridgelabz.DataStructures.StackUsingLinkedList.Node;
+import com.bridgelabz.DataStructures.Node;
 
 //Implementing Queue Using Linked List
 public class QueueUsingLinkedList <T>
 {
-	//Node class is Used to create a Node
-	class Node<T>
-	{
-		T data;
-		Node next;
-		Node(T data)
-		{
-			this.data=data;
-		}
-	}
-	Node rear,front;
+	Node<T> rear,front;
 	
 	
 	//enQueue method is used to add Node to list 
