@@ -33,8 +33,10 @@ public class OrderedList
 				lu.addWordsIntoListInAscendingOrder(wordList[i]);
 			}
 			
+			lu.displayInorder();
+
 			
-			String e=new String();
+			/*String e=new String();
 			do
 			{
 				//Printing the Elements of Linked List
@@ -50,7 +52,7 @@ public class OrderedList
 				
 				e=InputScanner.inputWord();
 			}while(!e.equals("e"));
-			System.out.println("Thank You...");
+			System.out.println("Thank You...");*/
 			
 		}
 }

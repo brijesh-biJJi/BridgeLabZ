@@ -68,18 +68,54 @@ BufferedReader br;
 			return;
 	}
 	
-	
+	Node<T> root;
 	//addWordsIntoListInAscendingOrder method is used to Add Nodes in Ascending Order
 	public void addWordsIntoListInAscendingOrder(T data)
 	{
+		Comparable c=(Comparable)data;
 		Node<T> n=new Node<>(data);
-		if(head==null)
+		if(root==null)
 		{
-			head=n;
+			root=n;
 			return;
 		}
-		Node<T> temp;
+		Node<T> temp = root;
 		
+		while(true)
+		{
+			if(c.compareTo(temp.data)>0)
+			{
+				if(temp.right==null)
+				{
+					temp.right=n;
+					break;
+				}
+				temp=temp.right;
+			}
+			else if(c.compareTo(temp.data)<0)
+			{
+				if(temp.left==null)
+				{
+					temp.left=n;
+					break;
+				}
+				temp=temp.left;
+			}	
+		}
+	}
+	
+	void displayInorder()
+	{
+		inOrder(root);
+	}
+	public void inOrder(Node<T> root)
+	{
+		if(root!=null)
+		{
+			inOrder(root.left);
+			System.out.print(root.data+" ");
+			inOrder(root.right);
+		}
 	}
 	
 	
@@ -130,6 +166,7 @@ BufferedReader br;
 		}
 		System.out.println();
 	}
+	
 	
 	////saveToFile is used to save the data into the file
 	public void saveToFile()

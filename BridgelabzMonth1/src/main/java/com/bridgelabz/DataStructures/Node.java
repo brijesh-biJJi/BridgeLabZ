@@ -6,9 +6,8 @@ import com.bridgelabz.DataStructures.Node;
 public class Node<T>
 {
 	T data;
-	Node<T> next;
+	Node<T> next,prev;
 	Node<T> right,left;
-	
 	//Used to initialize the Data
 	public Node(T data)
 	{
