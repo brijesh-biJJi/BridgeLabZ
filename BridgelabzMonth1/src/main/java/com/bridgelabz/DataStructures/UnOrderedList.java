@@ -1,60 +1,27 @@
 package com.bridgelabz.DataStructures;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-
 import com.bridgelabz.inputscanner.InputScanner;
-import com.bridgelabz.utility.Utility;
 
 public class UnOrderedList 
 {
 	//Creating Object of Linked List Utility Class
 	static LinkedListUtility lu=new LinkedListUtility();
 	
-	static String fileData,wordList[];
-	BufferedReader br;
-	
-	//Collecting the data from the file data1.txt
-	public UnOrderedList()
-	{
-		BufferedReader br=Utility.getBufferReaderObject();
-		StringBuilder sb=new  StringBuilder();
-		try 
-		{
-			String str=br.readLine();
-			while(str!=null)
-			{
-				//Appending the data
-				sb.append(str);
-				str=br.readLine();
-			}
-		} 
-		catch (IOException e) 
-		{
-			System.out.println("Error in reading the file...");;
-		}
-		finally{
-			try {
-				br.close();
-			} catch (IOException e) 
-			{
-				System.out.println(e);;
-			}
-		}
-		fileData=sb.toString();
-		
-		if(fileData!=null)
-			wordList=fileData.split(" ");
-		else
-			System.out.println("Error while reading file...");
-	}
-	
-	
 	//Main method of UnOrderedList
 	public static void main(String[] args) 
 	{
 		
+		String fileData;
 		
+		fileData=lu.getWordFromTheList();
+		String wordList[] = null;
+				
+		if(fileData!=null)
+		{
+			wordList=fileData.split(" ");
+		}
+		else
+			System.out.println("Error while reading file...");
 		//Creating Object of UnOrdered List Class
 		UnOrderedList ul=new UnOrderedList();
 		

@@ -1,5 +1,6 @@
 package com.bridgelabz.DataStructures;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,10 +8,45 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import com.bridgelabz.DataStructures.Node;
+import com.bridgelabz.utility.Utility;
 
 //LinkedList Utility class contains the Utility methods which can be made use in UnOrderedList class
 public class LinkedListUtility <T>
 {
+BufferedReader br;
+	
+	//Collecting the data from the file data1.txt
+	public String getWordFromTheList()
+	{
+		BufferedReader br=Utility.getBufferReaderObject();
+		StringBuilder sb=new  StringBuilder();
+		try 
+		{
+			String str=br.readLine();
+			while(str!=null)
+			{
+				//Appending the data
+				sb.append(str);
+				str=br.readLine();
+			}
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("Error in reading the file...");;
+		}
+		finally{
+			try {
+				br.close();
+			} catch (IOException e) 
+			{
+				System.out.println(e);;
+			}
+		}
+		return sb.toString();
+	
+	}
+	
+	
 	Node<T> head;
 	
 	//addWordsInLinkedList method is used to add Nodes into the Linked List
