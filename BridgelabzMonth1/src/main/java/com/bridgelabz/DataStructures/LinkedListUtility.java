@@ -72,31 +72,38 @@ BufferedReader br;
 	{
 		Comparable c=(Comparable)data;
 		Node<T> n=new Node<>(data);
-		if(head==null)
-		{
-			System.out.println("null");
-			head=n;
-			return;
-		}
+		
 		Node<T> temp = head;
-		if(c.compareTo(temp.data)<0)
-		{
-			System.out.println("IF");
-			n.next=head;
-			head=n;
-			return;
-		}
-		else if(c.compareTo(temp.data)>0)
-		{
-			System.out.println("Else if");
-			Node<T> t1=head;
-			while(c.compareTo(temp.data)>0 && temp.next!=null)
-			{
-				temp=temp.next;
-			}
-			temp.next=n;
-			return;
-		}
+		if(head == null)
+        {
+            head = n;
+            return;
+        }
+        else
+        {
+       
+            if(c.compareTo(head.data)<0)
+            {
+                n.next = head;
+                head = n;
+            }
+            else
+            {
+                temp = head;
+                while(temp.next != null)
+                {
+                    if(c.compareTo(temp.next.data)<0)
+                    {
+                        n.next = temp.next;
+                        temp.next = n;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                temp.next = n;
+            }
+            
+       }
 	}
 	
 	

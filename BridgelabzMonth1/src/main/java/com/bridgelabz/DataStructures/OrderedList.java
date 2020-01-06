@@ -31,9 +31,30 @@ public class OrderedList
 			{
 				//Adding the all Words into the Linked List
 				lu.addWordsIntoListInAscendingOrder(wordList[i]);
+				lu.displayLinkedList();
 			}
 			
+			/*lu.addWordsIntoListInAscendingOrder(23);
 			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(45);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(2);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(89);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(1);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(3);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(90);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(32);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(77);
+			lu.displayLinkedList();
+			lu.addWordsIntoListInAscendingOrder(56);
+			lu.displayLinkedList();*/
+			
 
 			
 			/*String e=new String();

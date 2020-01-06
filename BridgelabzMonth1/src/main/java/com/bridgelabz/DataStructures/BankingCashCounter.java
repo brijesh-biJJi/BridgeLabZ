@@ -11,12 +11,14 @@ public class BankingCashCounter
 		int people = InputScanner.inputInteger();
 
 		System.out.println("Welcome to bank simulation: ");
-		for (int i = 0; i < people; i++) {
+		for (int i = 0; i < people; i++) 
+		{
 
 			queue.enQueue(i);
 			queue.service();
 			queue.deQueue();
 		}
+		
 		if (queue.isEmpty())
 		{
 			System.out.println("Queue is empty");
