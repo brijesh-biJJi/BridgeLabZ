@@ -68,55 +68,38 @@ BufferedReader br;
 			return;
 	}
 	
-	Node<T> root;
-	//addWordsIntoListInAscendingOrder method is used to Add Nodes in Ascending Order
 	public void addWordsIntoListInAscendingOrder(T data)
 	{
 		Comparable c=(Comparable)data;
 		Node<T> n=new Node<>(data);
-		if(root==null)
+		if(head==null)
 		{
-			root=n;
+			System.out.println("null");
+			head=n;
 			return;
 		}
-		Node<T> temp = root;
-		
-		while(true)
+		Node<T> temp = head;
+		if(c.compareTo(temp.data)<0)
 		{
-			if(c.compareTo(temp.data)>0)
+			System.out.println("IF");
+			n.next=head;
+			head=n;
+			return;
+		}
+		else if(c.compareTo(temp.data)>0)
+		{
+			System.out.println("Else if");
+			Node<T> t1=head;
+			while(c.compareTo(temp.data)>0 && temp.next!=null)
 			{
-				if(temp.right==null)
-				{
-					temp.right=n;
-					break;
-				}
-				temp=temp.right;
+				temp=temp.next;
 			}
-			else if(c.compareTo(temp.data)<0)
-			{
-				if(temp.left==null)
-				{
-					temp.left=n;
-					break;
-				}
-				temp=temp.left;
-			}	
+			temp.next=n;
+			return;
 		}
 	}
 	
-	void displayInorder()
-	{
-		inOrder(root);
-	}
-	public void inOrder(Node<T> root)
-	{
-		if(root!=null)
-		{
-			inOrder(root.left);
-			System.out.print(root.data+" ");
-			inOrder(root.right);
-		}
-	}
+	
 	
 	
 	//removeWordFromList method is used to Remove Word From the Linked List

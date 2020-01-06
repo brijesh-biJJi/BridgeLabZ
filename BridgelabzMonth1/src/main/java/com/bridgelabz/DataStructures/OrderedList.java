@@ -33,7 +33,7 @@ public class OrderedList
 				lu.addWordsIntoListInAscendingOrder(wordList[i]);
 			}
 			
-			lu.displayInorder();
+			lu.displayLinkedList();
 
 			
 			/*String e=new String();
