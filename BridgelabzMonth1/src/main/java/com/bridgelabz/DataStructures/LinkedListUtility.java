@@ -69,6 +69,20 @@ BufferedReader br;
 	}
 	
 	
+	//addWordsIntoListInAscendingOrder method is used to Add Nodes in Ascending Order
+	public void addWordsIntoListInAscendingOrder(T data)
+	{
+		Node<T> n=new Node<>(data);
+		if(head==null)
+		{
+			head=n;
+			return;
+		}
+		Node<T> temp;
+		
+	}
+	
+	
 	//removeWordFromList method is used to Remove Word From the Linked List
 	public void removeWordFromList(int in) 
 	{
