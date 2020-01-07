@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Map <K,V>
 {
-	ArrayList<HashNode<K, V>>bucket=new ArrayList<>();
-	int numBuckets=10;
+	ArrayList<HashNode<K, V>>arrList=new ArrayList<>();
+	int slot=11;
 	int size;
 	public Map()
 	{
-		for(int i=0;i<numBuckets;i++)
+		for(int i=0;i<slot;i++)
 		{
-			bucket.add(null);
+			arrList.add(null);
 		}
 	}
 	public int getSize()
@@ -22,15 +22,15 @@ public class Map <K,V>
 	{
 		return size==0;
 	}
-	private int getBucketIndex(K key)
+	private int getIndex(K key)
 	{
-		int hashCod=key.hashCode();
-		return hashCod%numBuckets;
+		int hashCode=key.hashCode();
+		return hashCode%slot;
 	}
-	public V get(K key)
+	/*public V get(K key)
 	{
-		int index=getBucketIndex(key);
-		HashNode<K, V> head=bucket.get(index);
+		int index=getIndex(key);
+		HashNode<K, V> head=arrList.get(index);
 		while(head!=null)
 		{
 			if(head.key.equals(key))
@@ -43,8 +43,8 @@ public class Map <K,V>
 	}
 	public V remove(K key)
 	{
-		int index=getBucketIndex(key);
-		HashNode<K, V>head=bucket.get(index);
+		int index=getIndex(key);
+		HashNode<K, V>head=arrList.get(index);
 		if(head==null)
 		{
 			return null;
@@ -53,7 +53,7 @@ public class Map <K,V>
 		{
 			V val=head.value;
 			head=head.next;
-			bucket.set(index, head);
+			arrList.set(index, head);
 			size--;
 			return val;
 		}
@@ -75,19 +75,19 @@ public class Map <K,V>
 			size--;
 			return null;
 		}
-	}
+	}*/
 	public void add(K key,V value)
 	{
 		
-		int index=getBucketIndex(key);
-		System.out.println(index);
-		HashNode<K, V>head=bucket.get(index);
+		int index=getIndex(key);
+		//System.out.println(index);
+		HashNode<K, V>head=arrList.get(index);
 		HashNode<K, V>toAdd=new HashNode<>();
 		toAdd.key=key;
 		toAdd.value=value;
 		if(head==null)
 		{
-			bucket.set(index, toAdd);
+			arrList.set(index, toAdd);
 			size++;
 			
 		}
@@ -105,21 +105,21 @@ public class Map <K,V>
 		}
 		if(head==null)
 		{
-		head=bucket.get(index);
+		head=arrList.get(index);
 		toAdd.next=head;
-		bucket.set(index, toAdd);
+		arrList.set(index, toAdd);
 		size++;
 		}
 		}
-		if((1.0*size)/numBuckets>0.7)
+		if((1.0*size)/slot>0.7)
 		{
 			//do something
-			ArrayList<HashNode<K, V>>tmp=bucket;
-			bucket=new ArrayList<>();
-			numBuckets=2*numBuckets;
-			for(int i=0;i<numBuckets;i++)
+			ArrayList<HashNode<K, V>>tmp=arrList;
+			arrList=new ArrayList<>();
+			slot=2*slot;
+			for(int i=0;i<slot;i++)
 			{
-				bucket.add(null);
+				arrList.add(null);
 			}
 			for(HashNode<K, V> headNode:tmp)
 			{
@@ -137,11 +137,15 @@ public class Map <K,V>
 	public static void main(String[] args)
 	{
 		Map<String,Integer>map=new Map<>();
-		map.add("this",1 );
-		map.add("this",2 );
-		map.add("A",3 );
-		System.out.println(map.remove("this"));
-		System.out.println(map.remove("this"));
+		map.add("A",1 );
+		map.add("B",2 );
+		map.add("C",3 );
+		System.out.println(map.getSize());
+		//System.out.println(map.remove("A"));
+		System.out.println(map.getSize());
+		//System.out.println(map.remove("C"));
+		System.out.println(map.getSize());
+		System.out.println(map.isEmpty());
 		
 	}
 }

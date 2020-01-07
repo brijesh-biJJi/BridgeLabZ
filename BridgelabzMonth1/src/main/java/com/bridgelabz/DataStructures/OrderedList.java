@@ -30,34 +30,12 @@ public class OrderedList
 			for (int i = 0; i < wordList.length; i++) 
 			{
 				//Adding the all Words into the Linked List
-				lu.addWordsIntoListInAscendingOrder(wordList[i]);
-				lu.displayLinkedList();
+				lu.addWordsIntoListInAscendingOrder(Integer.parseInt(wordList[i]));
+				
 			}
 			
-			/*lu.addWordsIntoListInAscendingOrder(23);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(45);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(2);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(89);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(1);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(3);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(90);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(32);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(77);
-			lu.displayLinkedList();
-			lu.addWordsIntoListInAscendingOrder(56);
-			lu.displayLinkedList();*/
-			
-
-			
-			/*String e=new String();
+				
+			String e=new String();
 			do
 			{
 				//Printing the Elements of Linked List
@@ -67,13 +45,55 @@ public class OrderedList
 				System.out.println("1. Enter the Value from the List to Search...");
 				System.out.println("2. Write the list into the File..");
 				int choice=InputScanner.inputInteger();
-				//ol.menu(choice);
-				
+				ol.menu(choice);
+					
 				System.out.println("\nPress e to Exit..Or Press ant key to continue...");
 				
 				e=InputScanner.inputWord();
 			}while(!e.equals("e"));
-			System.out.println("Thank You...");*/
+			System.out.println("Thank You...");
 			
+		}
+		
+		public void menu(int choice)
+		{
+			switch(choice)
+			{
+			 	case 1: int word;
+						System.out.println("Enter the Value to search..");
+						word=InputScanner.inputInteger();
+						
+						//Calling findWord Method to find the word in the List
+						int rs=lu.findWord(word);
+						if(rs==-1)
+						{
+							System.out.println("Value "+word+" is not present in the List...Added that Value to the List");
+							System.out.println();
+							
+							//Adding the Word into the Linked List
+							lu.addWordsIntoListInAscendingOrder(word);
+							
+							//Printing the Elements of Linked List
+							lu.displayLinkedList();
+						}
+						else
+						{
+							System.out.println("Value "+word+" is present in the List...Removed that Value from the list");
+							System.out.println();
+							
+							//Deleting the word from the Linked List
+							lu.removeWordFromList(rs-1);
+							
+							//Printing the Elements of Linked List
+							lu.displayLinkedList();
+						}
+						
+						break;
+			 	case 2 :
+			 			//calling saveToFile method to save the data into the file
+			 			lu.saveToFile();
+			 			System.out.println("Data's are saved to WordList file..");
+			 			break;
+			}
 		}
 }
