@@ -102,17 +102,19 @@ public class HashingFunction
 							
 						break;
 			 	case 2 :
+			 			String str="";
 				 		for (int i = 0; i < ht.length; i++)
 						{
 							System.out.print(i+" => ");
 							
 							//calling displayValueOfHashTable method is to Print the Value and Save the data into the file
-							lu.printHashTableValue(ht[i]);
+							str=str+lu.printHashTableValue(ht[i]);
 							
 							System.out.println();
 							System.out.println();
 						}
-				 		System.out.println("Data's are saved to WordList file..");
+				 		lu.writeToFile(str);
+				 		System.out.println("Data's are saved to File..");
 						break;
 				 			
 			 	default :

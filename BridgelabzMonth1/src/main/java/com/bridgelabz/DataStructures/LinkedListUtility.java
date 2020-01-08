@@ -179,12 +179,8 @@ BufferedReader br;
 	public void saveToFile()
 	{
 		String data=getData();
-		//File file=new File("wordList.txt");
 		try 
 		{
-			//FileOutputStream fs=new FileOutputStream("wordList1.txt");
-			//ObjectOutputStream oos=new ObjectOutputStream(fs);
-			//oos.writeObject(data);
 			File f=new File("wordList1.txt");
 			if(!f.exists())
 				f.createNewFile();
@@ -312,15 +308,35 @@ BufferedReader br;
 	}
 	
 	//MEthod is used to Print the Node present inside HashTable
-	public void printHashTableValue(Node<T> head)
+	public String printHashTableValue(Node<T> head)
 	{
+		String str="";
 		Node<T> temp=head;
 		if(temp==null)
 			System.out.print("None");
 		while(temp!=null)
 		{
 			System.out.print(temp.data+" ");
+			str=str+temp.data+" ";
 			temp=temp.next;
+		}
+		return str;
+	}
+	
+	//Method is used to write to File
+	public void writeToFile(String str)
+	{
+		try 
+		{
+			File f=new File("wordList1.txt");
+			if(!f.exists())
+				f.createNewFile();
+			FileWriter fw=new FileWriter(f);
+			fw.write(str);
+			fw.close();
+			
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 	 
