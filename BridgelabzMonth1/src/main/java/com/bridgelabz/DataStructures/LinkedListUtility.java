@@ -281,7 +281,7 @@ BufferedReader br;
 	}
 	
 	//Delete the Value from the HashTable
-	/*public Node<T> deleteValueFromHashTable(Node<T> head,int data)
+	public Node<T> deleteValueFromHashTable(Node<T> head,int data)
 	{
 		Comparable c=(Comparable)data;
 		if(c.compareTo(head.data)==0)
@@ -289,8 +289,27 @@ BufferedReader br;
 			head=head.next;
 			return head;
 		}
+		else 
+		{
+			Node<T> temp=head;
+			Node<T> t1=head;
+			while(temp.next!=null)
+			{
+				if(c.compareTo(temp.data)==0)
+				{
+					t1.next=t1.next.next;
+				}
+				t1=temp;
+				temp=temp.next;
+			}
+			if(temp.next==null)
+			{
+				if(c.compareTo(temp.data)==0)
+					t1.next=null;
+			}
+		}
 		return head;
-	}*/
+	}
 	
 	//MEthod is used to Print the Node present inside HashTable
 	public void printHashTableValue(Node<T> head)

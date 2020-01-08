@@ -44,6 +44,16 @@ public class HashingFunction
 		//DoLoop is used to selecting the choice
 		do
 		{
+			for (int i = 0; i < ht.length; i++)
+			{
+				System.out.print(i+"->");
+				
+				//calling displayValueOfHashTable method is to Print the Value and Save the data into the file
+				lu.printHashTableValue(ht[i]);
+				
+				System.out.println();
+				System.out.println();
+			}
 			System.out.println();
 			System.out.println("\nEnter Your Choice...");
 			System.out.println("1. Enter the Value to Search from the List...");
@@ -94,7 +104,7 @@ public class HashingFunction
 			 	case 2 :
 				 		for (int i = 0; i < ht.length; i++)
 						{
-							System.out.print(i+"->");
+							System.out.print(i+" => ");
 							
 							//calling displayValueOfHashTable method is to Print the Value and Save the data into the file
 							lu.printHashTableValue(ht[i]);
