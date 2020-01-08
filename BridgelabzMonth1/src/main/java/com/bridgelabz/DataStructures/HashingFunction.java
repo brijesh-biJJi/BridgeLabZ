@@ -87,7 +87,7 @@ public class HashingFunction
 							System.out.println();
 							
 							//Deleting the Value from the HashTable
-							lu.deleteValueFromHashTable(ht[in],value);
+							ht[in]=lu.deleteValueFromHashTable(ht[in],value);
 						}
 							
 						break;

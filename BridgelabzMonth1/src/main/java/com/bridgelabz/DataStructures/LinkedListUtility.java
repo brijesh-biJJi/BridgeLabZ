@@ -281,10 +281,16 @@ BufferedReader br;
 	}
 	
 	//Delete the Value from the HashTable
-	public void deleteValueFromHashTable(Node<T> head,int data)
+	/*public Node<T> deleteValueFromHashTable(Node<T> head,int data)
 	{
-		
-	}
+		Comparable c=(Comparable)data;
+		if(c.compareTo(head.data)==0)
+		{
+			head=head.next;
+			return head;
+		}
+		return head;
+	}*/
 	
 	//MEthod is used to Print the Node present inside HashTable
 	public void printHashTableValue(Node<T> head)
