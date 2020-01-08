@@ -12,9 +12,10 @@ public class OrderedList<T>
 		{
 			//Creating the Object of OrderedList
 			OrderedList ol=new OrderedList();
+			
 			String fileData;
 			
-			//get the data frm the File
+			//get the data from the File
 			fileData=lu.getWordFromTheList();
 			String wordList[] = null;
 				

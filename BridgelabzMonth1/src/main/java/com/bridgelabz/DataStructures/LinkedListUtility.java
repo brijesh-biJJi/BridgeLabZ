@@ -211,4 +211,86 @@ BufferedReader br;
 		}
 		return str;
 	}
+	
+	
+	/**
+	 * Hashing Function Utilities
+	 */
+	//Returns the Index to store the value in HashTable
+	public int getIndex(int num)
+	{
+		return num%11;
+	}
+	
+	//findValue method is used to check value is present or not
+	//As it returns the Boolean True Or False
+	public boolean findValue(Node<T> head,int num)
+	{
+		Comparable c=(Comparable)num;
+		if(head==null)
+			return false;
+		Node<T> temp=head;
+		while(temp!=null)
+		{
+			if(c.compareTo(temp.data)==0)
+				return true;
+			temp=temp.next;
+		}
+		return false;
+	}
+	
+	//Adding the Value InOrder into the HAshTable
+	public Node<T> addValueInOrder(Node<T> head,int data)
+	{
+		Comparable c=(Comparable)data;
+		Node<T> n=new Node<T>((T) c);
+		
+		Node<T> temp = head;
+		if(head == null)
+        {
+            head = n;
+            return head;
+        }
+        else
+        {
+       
+            if(c.compareTo(head.data)<0)
+            {
+                n.next = head;
+                head = n;
+            }
+            else
+            {
+                temp = head;
+                while(temp.next != null)
+                {
+                    if(c.compareTo(temp.next.data)<0)
+                    {
+                        n.next = temp.next;
+                        temp.next = n;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                temp.next = n;
+            }
+            
+       }
+		return head;
+		
+	}
+	
+	//MEthod is used to Print the Node present inside HashTable
+	public void printHashTableValue(Node<T> head)
+	{
+		Node<T> temp=head;
+		if(temp==null)
+			System.out.print("None");
+		while(temp!=null)
+		{
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+	 
 }
