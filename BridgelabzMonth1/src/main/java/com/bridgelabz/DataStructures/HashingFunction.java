@@ -46,8 +46,8 @@ public class HashingFunction
 		{
 			System.out.println();
 			System.out.println("\nEnter Your Choice...");
-			System.out.println("1. Enter the Value from the List to Search...");
-			System.out.println("2. Write the list into the File..");
+			System.out.println("1. Enter the Value to Search from the List...");
+			System.out.println("2. Display the list and Save it into the File..");
 			int choice=InputScanner.inputInteger();
 			hf.menu(choice);
 				
@@ -56,27 +56,59 @@ public class HashingFunction
 			e=InputScanner.inputWord();
 		}while(!e.equals("e"));
 		System.out.println("Thank You...");
-		
-		System.out.println("Enter the number to Search..");
-		int num=InputScanner.inputInteger();
-		
-		//To find the index of the Number
-	//int in=lu.getIndex(num);
-	/*		boolean rs=lu.findValue(ht[in],num);
-		System.out.println(rs);
-		if(!rs)
-		{
-			ht[in]=lu.addValueInOrder(ht[in],num);
-		}*/
-		
-		
-		for (int i = 0; i < ht.length; i++)
-		{
-			System.out.print(i+"->");
-			lu.printHashTableValue(ht[i]);
-			System.out.println();
-			System.out.println();
-		}
 	}
+	
+		//Menu method
+		public void menu(int choice)
+		{
+			switch(choice)
+			{
+			 	case 1: int value;
+						System.out.println("Enter the Value to search..");
+						value=InputScanner.inputInteger();
+						
+						//To find the index of the Number
+						int in=lu.getIndex(value);
+						
+						//Calling findWord Method to find the value in the List
+						boolean rs=lu.findValue(ht[in],value);
+						if(!rs)
+						{
+							System.out.println("Value "+value+" is not present in the HashTable...Added that Value to the List");
+							System.out.println();
+							
+							//Adding the Value into the Linked List
+							ht[in]=lu.addValueInOrder(ht[in],value);
+						}
+
+						else
+						{
+							System.out.println("Value "+value+" is present in the HashTable...Removed that Value from the list");
+							System.out.println();
+							
+							//Deleting the Value from the HashTable
+							lu.deleteValueFromHashTable(ht[in],value);
+						}
+							
+						break;
+			 	case 2 :
+				 		for (int i = 0; i < ht.length; i++)
+						{
+							System.out.print(i+"->");
+							
+							//calling displayValueOfHashTable method is to Print the Value and Save the data into the file
+							lu.printHashTableValue(ht[i]);
+							
+							System.out.println();
+							System.out.println();
+						}
+				 		System.out.println("Data's are saved to WordList file..");
+						break;
+				 			
+			 	default :
+			 			System.out.println("Invalid Choice...!");
+				 		break;
+				}
+			}
 
 }
