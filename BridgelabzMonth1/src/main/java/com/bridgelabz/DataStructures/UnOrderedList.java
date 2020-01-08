@@ -33,7 +33,7 @@ public class UnOrderedList
 			lu.addWordsInLinkedList(wordList[i]);
 		}
 		
-		
+		//DoLoop is used to selecting the choice
 		String e=new String();
 		do
 		{
@@ -53,6 +53,8 @@ public class UnOrderedList
 		System.out.println("Thank You...");
 		
 	}
+	
+	//Menu Method
 	public void menu(int choice)
 	{
 		switch(choice)
@@ -62,7 +64,7 @@ public class UnOrderedList
 					word=InputScanner.inputWord();
 					
 					//Calling findWord Method to find the word in the List
-					int rs=lu.findWord(word);
+					int rs=lu.findWord1(word);
 					if(rs==-1)
 					{
 						System.out.println("Value "+word+" is not present in the List...Added that Value to the end of the List");
@@ -92,6 +94,9 @@ public class UnOrderedList
 		 			lu.saveToFile();
 		 			System.out.println("Data's are saved to WordList file..");
 		 			break;
+		 	default :
+		 		System.out.println("Invalid Choice...!");
+		 		break;
 		}
 	}
 	

@@ -2,7 +2,7 @@ package com.bridgelabz.DataStructures;
 
 import com.bridgelabz.inputscanner.InputScanner;
 
-public class OrderedList
+public class OrderedList<T>
 {
 		//Creating Object of Linked List Utility Class
 		static LinkedListUtility lu=new LinkedListUtility();
@@ -14,9 +14,11 @@ public class OrderedList
 			OrderedList ol=new OrderedList();
 			String fileData;
 			
+			//get the data frm the File
 			fileData=lu.getWordFromTheList();
 			String wordList[] = null;
-					
+				
+			//Storing the data to the wordList by using split function
 			if(fileData!=null)
 			{
 				wordList=fileData.split(" ");
@@ -26,7 +28,7 @@ public class OrderedList
 			
 			
 			
-			
+			//Adding all the data into the Linked List as Node
 			for (int i = 0; i < wordList.length; i++) 
 			{
 				//Adding the all Words into the Linked List
@@ -36,6 +38,8 @@ public class OrderedList
 			
 				
 			String e=new String();
+			
+			//DoLoop is used to selecting the choice
 			do
 			{
 				//Printing the Elements of Linked List
@@ -55,30 +59,31 @@ public class OrderedList
 			
 		}
 		
+		//Menu method
 		public void menu(int choice)
 		{
 			switch(choice)
 			{
-			 	case 1: int word;
+			 	case 1: int value;
 						System.out.println("Enter the Value to search..");
-						word=InputScanner.inputInteger();
+						value=InputScanner.inputInteger();
 						
 						//Calling findWord Method to find the word in the List
-						int rs=lu.findWord(word);
+						int rs=lu.findWord1(value);
 						if(rs==-1)
 						{
-							System.out.println("Value "+word+" is not present in the List...Added that Value to the List");
+							System.out.println("Value "+value+" is not present in the List...Added that Value to the List");
 							System.out.println();
 							
 							//Adding the Word into the Linked List
-							lu.addWordsIntoListInAscendingOrder(word);
+							lu.addWordsIntoListInAscendingOrder(value);
 							
 							//Printing the Elements of Linked List
 							lu.displayLinkedList();
 						}
 						else
 						{
-							System.out.println("Value "+word+" is present in the List...Removed that Value from the list");
+							System.out.println("Value "+value+" is present in the List...Removed that Value from the list");
 							System.out.println();
 							
 							//Deleting the word from the Linked List
@@ -94,6 +99,10 @@ public class OrderedList
 			 			lu.saveToFile();
 			 			System.out.println("Data's are saved to WordList file..");
 			 			break;
+			 			
+			 	default :
+			 		System.out.println("Invalid Choice...!");
+			 		break;
 			}
 		}
 }

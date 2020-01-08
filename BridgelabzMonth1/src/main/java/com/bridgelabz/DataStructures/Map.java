@@ -27,7 +27,7 @@ public class Map <K,V>
 		int hashCode=key.hashCode();
 		return hashCode%slot;
 	}
-	/*public V get(K key)
+	public V get(K key)
 	{
 		int index=getIndex(key);
 		HashNode<K, V> head=arrList.get(index);
@@ -75,13 +75,14 @@ public class Map <K,V>
 			size--;
 			return null;
 		}
-	}*/
+	}
 	public void add(K key,V value)
 	{
 		
 		int index=getIndex(key);
 		//System.out.println(index);
 		HashNode<K, V>head=arrList.get(index);
+		
 		HashNode<K, V>toAdd=new HashNode<>();
 		toAdd.key=key;
 		toAdd.value=value;
@@ -137,15 +138,13 @@ public class Map <K,V>
 	public static void main(String[] args)
 	{
 		Map<String,Integer>map=new Map<>();
-		map.add("A",1 );
-		map.add("B",2 );
-		map.add("C",3 );
+		map.add("77",2 );
+		map.add("44",3 );
+		map.add("26",3 );
 		System.out.println(map.getSize());
-		//System.out.println(map.remove("A"));
-		System.out.println(map.getSize());
-		//System.out.println(map.remove("C"));
-		System.out.println(map.getSize());
-		System.out.println(map.isEmpty());
+		System.out.println(map.getIndex("77"));
+		System.out.println(map.getIndex("44"));
+		System.out.println(map.getIndex("44"));
 		
 	}
 }

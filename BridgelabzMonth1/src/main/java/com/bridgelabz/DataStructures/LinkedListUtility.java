@@ -1,6 +1,7 @@
 package com.bridgelabz.DataStructures;
 
 import java.io.BufferedReader;
+import java.io.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -128,7 +129,7 @@ BufferedReader br;
 
 
 	//findWord method is used to find the word present in the List
-	public int findWord(T word)
+	/*public int findWord(T word)
 	{
 		int c=0;
 		Node<T> temp=head;
@@ -136,6 +137,21 @@ BufferedReader br;
 		{
 			c++;
 			if(temp.data.equals(word))
+				return c;
+			temp=temp.next;
+		}
+		return -1;
+	}	*/
+	
+	public int findWord1(T word)
+	{
+		int c=0;
+		Comparable comp=(Comparable)word;
+		Node<T> temp=head;
+		while(temp!=null)
+		{
+			c++;
+			if(comp.compareTo(temp.data)==0 )
 				return c;
 			temp=temp.next;
 		}
@@ -166,11 +182,17 @@ BufferedReader br;
 		//File file=new File("wordList.txt");
 		try 
 		{
-			FileOutputStream fs=new FileOutputStream("wordList.txt");
-			ObjectOutputStream oos=new ObjectOutputStream(fs);
-			oos.writeObject(data);
+			//FileOutputStream fs=new FileOutputStream("wordList1.txt");
+			//ObjectOutputStream oos=new ObjectOutputStream(fs);
+			//oos.writeObject(data);
+			File f=new File("wordList1.txt");
+			if(!f.exists())
+				f.createNewFile();
+			FileWriter fw=new FileWriter(f);
+			fw.write(data);
+			fw.close();
 			
-		} catch (IOException e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 		
