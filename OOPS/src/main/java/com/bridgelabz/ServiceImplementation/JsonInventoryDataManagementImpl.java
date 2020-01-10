@@ -1,6 +1,8 @@
 package com.bridgelabz.ServiceImplementation;
 
-import org.codehaus.jackson.map.ObjectMapper;
+
+
+import org.json.simple.parser.JSONParser;
 
 import com.bridgelabz.Model.JsonInventoryDataManagementModel;
 import com.bridgelabz.Services.IJsonInventoryDataManagement;
@@ -9,11 +11,12 @@ import com.bridgelabz.inputscanner.InputScanner;
 public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManagement
 {
 	JsonInventoryDataManagementModel inventoryModel=new JsonInventoryDataManagementModel();
-	ObjectMapper mapper=new ObjectMapper();
+
 	
 	@Override
 	public void addInventoryItems() 
 	{
+		JSONParser parser=new JSONParser();
 		double total=0;
 		System.out.println("Enter the Item name to add..");
 		String itemName=InputScanner.inputWord();
