@@ -31,20 +31,20 @@ BufferedReader br;
 				str=br.readLine();
 			}
 		} 
-		catch (IOException e) 
+		catch (Exception e) 
 		{
-			System.out.println("Error in reading the file...");;
+			System.out.println("Error in reading the file..."+e.getMessage());
 		}
 		finally{
-			try {
-				br.close();
-			} catch (IOException e) 
-			{
-				System.out.println(e);;
-			}
+		try {
+			br.close();
+		} catch (Exception e) 
+		{
+			System.out.println("hello"+e.getMessage());;
 		}
+	}
+		
 		return sb.toString();
-	
 	}
 	
 	

@@ -28,7 +28,7 @@ public class BinarySearchTree
 	public static void main(String[] args)
 	{
 		long count=0;
-		System.out.println("Enter the range between 1 to 1000");
+		System.out.println("Enter the range between 1 to 10");
 		int n=InputScanner.inputInteger();
 		
 		int[] arr=Utility.getIntegerArray(n);

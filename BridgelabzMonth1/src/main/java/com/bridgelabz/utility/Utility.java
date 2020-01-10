@@ -14,11 +14,11 @@ public class Utility
 		
 		try 
 		{
-			br=new BufferedReader(new FileReader("D:\\GitBridgelabz\\bridgelabzLocal\\data2.txt"));
+			br=new BufferedReader(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList"));
 		} catch (FileNotFoundException e) 
-		{
+		{ 
 			// TODO Auto-generated catch block
-			System.out.println("File Not Found");
+			System.out.println("hello"+e.getMessage());
 		}
 		return br;
 	}
