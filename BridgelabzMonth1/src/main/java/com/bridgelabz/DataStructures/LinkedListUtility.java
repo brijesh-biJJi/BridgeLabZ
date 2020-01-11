@@ -1,12 +1,6 @@
 package com.bridgelabz.DataStructures;
 
-import java.io.BufferedReader;
 import java.io.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 import com.bridgelabz.DataStructures.Node;
 import com.bridgelabz.utility.Utility;
@@ -19,13 +13,20 @@ BufferedReader br;
 	//Collecting the data from the file data1.txt
 	public String getWordFromTheList()
 	{
-		BufferedReader br=Utility.getBufferReaderObject();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList1.txt"));
+		} catch (FileNotFoundException e1) {
+			
+			//e1.printStackTrace();
+		}
 		StringBuilder sb=new  StringBuilder();
 		try 
 		{
 			String str=br.readLine();
 			while(str!=null)
 			{
+				System.out.println(str);
 				//Appending the data
 				sb.append(str);
 				str=br.readLine();
@@ -35,14 +36,7 @@ BufferedReader br;
 		{
 			System.out.println("Error in reading the file..."+e.getMessage());
 		}
-		finally{
-		try {
-			br.close();
-		} catch (Exception e) 
-		{
-			System.out.println("hello"+e.getMessage());;
-		}
-	}
+
 		
 		return sb.toString();
 	}
@@ -181,7 +175,7 @@ BufferedReader br;
 		String data=getData();
 		try 
 		{
-			File f=new File("wordList1.txt");
+			File f=new File("wordList.txt");
 			if(!f.exists())
 				f.createNewFile();
 			FileWriter fw=new FileWriter(f);

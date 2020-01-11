@@ -14,7 +14,9 @@ public class Utility
 		
 		try 
 		{
-			br=new BufferedReader(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList"));
+			
+			br=new BufferedReader(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList1.txt"));
+			
 		} catch (FileNotFoundException e) 
 		{ 
 			// TODO Auto-generated catch block
