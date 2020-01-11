@@ -3,9 +3,9 @@ package com.bridgelabz.Model;
 public class JsonInventoryDataManagementModel 
 {
 	private String name;
-	private double weight;
-	private double price_per_kg;
-	private double total;
+	private long weight;
+	private long price_per_kg;
+	private long total;
 	public String getName() 
 	{
 		return name;
@@ -14,26 +14,26 @@ public class JsonInventoryDataManagementModel
 	{
 		this.name = name;
 	}
-	public double getWeight() 
+	public long getWeight() 
 	{
 		return weight;
 	}
-	public void setWeight(double weight)
+	public void setWeight(long weight)
 	{
 		this.weight = weight;
 	}
-	public double getPrice_per_kg()
+	public long getPrice_per_kg()
 	{
 		return price_per_kg;
 	}
-	public void setPrice_per_kg(double price_per_kg) 
+	public void setPrice_per_kg(long price_per_kg) 
 	{
 		this.price_per_kg = price_per_kg;
 	}
-	public double getTotal() {
+	public long getTotal() {
 		return total;
 	}
-	public void setTotal(double total) {
+	public void setTotal(long total) {
 		this.total = total;
 	}
 	

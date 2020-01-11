@@ -29,10 +29,10 @@ JsonInventoryDataManagementImpl inventoryImpl=new JsonInventoryDataManagementImp
 	{
 		switch(ch)
 		{
-			case 1: inventoryImpl.addInventoryItems();
+			case 1: inventoryImpl.readInventoryItems();
 			break;
 			
-			case 2: inventoryImpl.saveInventoryItems();
+			case 2: inventoryImpl.writeInventoryItems();
 			break;
 			
 			default: System.out.println("Invalid Choice..");
