@@ -1,7 +1,7 @@
 {
 	
 	
-			"rice": 	[
+			"Rice": 	[
 							{
 								"name": "basmati",
 								"weight": 2,
@@ -13,7 +13,7 @@
 								"price_per_kg" : 60
 							}
 						],
-			"wheat":	[
+			"Wheat":	[
 							{
 								"name": "Common bread",
 								"weight": 4,

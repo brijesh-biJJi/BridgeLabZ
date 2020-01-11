@@ -3,6 +3,7 @@ package com.bridgelabz.ServiceImplementation;
 
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.json.simple.JSONArray;
@@ -48,22 +49,54 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		{
 			//Object inventoryObj=parser.parse(new FileReader("inventoryData.json"));
 			//JSONObject jsonObject=(JSONObject)inventoryObj;
-			JSONObject jsonObject=(JSONObject) parser.parse(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
+			JSONObject jsonObject=(JSONObject) parser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
 			
-			JSONArray rice=(JSONArray)jsonObject.get("rice");
+			/*JSONArray rice=(JSONArray)jsonObject.get("rice");
 			JSONArray wheat=(JSONArray)jsonObject.get("wheat");
 						
 			Iterator<Object> iter=rice.iterator();
 			while(iter.hasNext())
 			{
-				System.out.print("Rice : ");
-				System.out.println(iter.next());
+				JSONObject obj=(JSONObject) iter.next();
+				System.out.print("Rice Name: ");
+				System.out.println(obj.get("name"));
+				System.out.print("Rice Weight: ");
+				System.out.println(obj.get("weight"));
+				System.out.print("Rice Price_Per_Kg: ");
+				System.out.println(obj.get("price_per_kg"));
+				System.out.println("******************************************************");
 			}
 			Iterator<Object> iter1=wheat.iterator();
 			while(iter1.hasNext())
 			{
-				System.out.print("Wheat : ");
-				System.out.println(iter1.next());
+				JSONObject obj=(JSONObject) iter1.next();
+				System.out.print("Wheat Name: ");
+				System.out.println(obj.get("name"));
+				System.out.print("Wheat Weight: ");
+				System.out.println(obj.get("weight"));
+				System.out.print("Wheat Price_Per_Kg: ");
+				System.out.println(obj.get("price_per_kg"));
+				System.out.println("******************************************************");
+			}*/
+			
+		String[] names={"Rice","Wheat"};
+			for(int i=0; i<names.length;i++)
+			{
+				JSONArray name1=(JSONArray)jsonObject.get(names[i]);
+				Iterator<Object> iter=name1.iterator();
+				System.out.println("******************************************************");
+				System.out.println(names[i]+" Items ");
+				while(iter.hasNext())
+				{
+					JSONObject inventoryNames=(JSONObject) iter.next();
+					System.out.print(names[i]+" Name: ");
+					System.out.println(inventoryNames.get("name"));
+					System.out.print(names[i]+" Weight: ");
+					System.out.println(inventoryNames.get("weight"));
+					System.out.print(names[i]+" Price_Per_Kg: ");
+					System.out.println(inventoryNames.get("price_per_kg"));
+					System.out.println();
+				}
 			}
 			
 		} 
@@ -71,10 +104,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		catch (IOException e) { e.printStackTrace();}
 		catch (ParseException e) { e.printStackTrace();}
 		catch (Exception e) { e.printStackTrace();}
-		/*System.out.println("Inventory Item Name : "+inventoryModel.getName());
-		System.out.println("Inventory Item weight : "+inventoryModel.getWeight());
-		System.out.println("Inventory Item price_per_kg : "+inventoryModel.getPrice_per_kg());
-		System.out.println("Inventory Total Amount : "+inventoryModel.getTotal());*/
+		
 	}
 	
 }
