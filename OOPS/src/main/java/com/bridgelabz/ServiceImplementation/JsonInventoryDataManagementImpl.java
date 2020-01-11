@@ -23,12 +23,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 	@Override
 	public void addInventoryItems() 
 	{
-		
-		
-		
-		
-		
-		
+		System.out.println("hello");
 		double total=0;
 		System.out.println("Enter the Item name to add..");
 		String itemName=InputScanner.inputWord();
