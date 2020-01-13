@@ -1,0 +1,21 @@
+{
+	"TCS" :
+			{
+				"stock_name": "TCS_Company",
+				"number_of_shares": 100,
+				"share_price": 300
+			},
+	"Mphasis":	
+			{
+				"stock_name": "Mphasis_Company",
+				"number_of_shares": 200,
+				"share_price": 100
+			},
+	"Google":
+			{
+				"stock_name": "Google_Company",
+				"number_of_shares": 500,
+				"share_price": 1000
+			}
+
+}
