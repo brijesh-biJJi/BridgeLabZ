@@ -1,7 +1,9 @@
 package com.bridgelabz.Services;
 
+import org.json.simple.JSONObject;
+
 public interface IStockAccountManagement 
 {
-	void readStockData();
+	JSONObject readStockData();
 	void writeStockData();
 }

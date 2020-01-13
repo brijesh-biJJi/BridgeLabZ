@@ -2,41 +2,35 @@ package com.bridgelabz.Model;
 
 public class StockAccountManagementModel 
 {
-	private String name;
-	private long share;
-	private long  price;
-	private long value;
+	private String stock_name;
+	private long number_of_shares;
+	private long  share_price;
+	private long totalValue;
 	
-	public String getName() 
-	{
-		return name;
+	public String getStock_name() {
+		return stock_name;
 	}
-	public void setName(String name) 
-	{
-		this.name = name;
+	public void setStock_name(String stock_name) {
+		this.stock_name = stock_name;
 	}
-	public long getShare() 
-	{
-		return share;
+	public long getNumber_of_shares() {
+		return number_of_shares;
 	}
-	public void setShare(long share) 
-	{
-		this.share = share;
+	public void setNumber_of_shares(long number_of_shares) {
+		this.number_of_shares = number_of_shares;
 	}
-	public long getPrice() 
-	{
-		return price;
+	public long getShare_price() {
+		return share_price;
 	}
-	public void setPrice(long price) 
-	{
-		this.price = price;
+	public void setShare_price(long share_price) {
+		this.share_price = share_price;
 	}
-	public long getValue() 
-	{
-		return value;
+	public long getTotalValue() {
+		return totalValue;
 	}
-	public void setValue(long value) 
-	{
-		this.value = value;
+	public void setTotalValue(long totalValue) {
+		this.totalValue = totalValue;
 	}
+	
+	
 }
