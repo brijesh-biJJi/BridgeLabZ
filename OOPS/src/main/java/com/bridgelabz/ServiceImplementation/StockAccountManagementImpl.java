@@ -30,7 +30,7 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 			
 			
 			String[] stockNames= {"Google","TCS","Mphasis"};
-			System.out.println("***...Stock Account Management Details...***\n");
+			System.out.println("*****Stock Account Management Details*****\n");
 			for (int i = 0; i < stockNames.length; i++) 
 			{
 				System.out.println(stockNames[i]+" Stock Details : \n");
@@ -81,7 +81,7 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 	@Override
 	public void writeStockData() 
 	{
-		JSONObject root=readStockData();
+		/*JSONObject root=readStockData();
 		PrintWriter printWrite=null;
 		try
 		{
@@ -94,7 +94,7 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 		
 		printWrite.write(root.toJSONString());
 		printWrite.close();
-		System.out.println("\nStock Account Management Data's Stored into the File...");
+		System.out.println("\nStock Account Management Data's Stored into the File...");*/
 	}
 
 }
