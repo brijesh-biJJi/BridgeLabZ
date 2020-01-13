@@ -81,7 +81,7 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 	@Override
 	public void writeStockData() 
 	{
-		/*JSONObject root=readStockData();
+		JSONObject root=readStockData();
 		PrintWriter printWrite=null;
 		try
 		{
@@ -94,7 +94,7 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 		
 		printWrite.write(root.toJSONString());
 		printWrite.close();
-		System.out.println("\nStock Account Management Data's Stored into the File...");*/
+		System.out.println("\nStock Account Management Data's Stored into the File...");
 	}
 
 }
