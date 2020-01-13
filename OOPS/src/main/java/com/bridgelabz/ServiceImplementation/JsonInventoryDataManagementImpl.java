@@ -132,7 +132,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		try 
 		{
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
-			//long grandTotal=0;
+			long grandTotal=0;
 			String[] names={"Rice","Wheat"};
 			for(int i=0; i<names.length;i++)
 			{
@@ -177,7 +177,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 					System.out.println(names[i]+" Total : "+inventoryModel.getTotal());
 					System.out.println();
 					inventoryItems.put("Total", inventoryModel.getTotal());
-					//grandTotal += total;
+					grandTotal += total;
 					total=0;
 					
 					inventoryArray.add(inventoryItems);
@@ -186,8 +186,8 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 				
 			}
 			
-			//rootObject.put("Grand Total : ", grandTotal);
-			//System.out.println("Grand Total : "+ grandTotal);
+			rootObject.put("Grand Total : ", grandTotal);
+			System.out.println("Grand Total : "+ grandTotal);
 			
 		} 
 		catch (FileNotFoundException e) { e.printStackTrace();}
