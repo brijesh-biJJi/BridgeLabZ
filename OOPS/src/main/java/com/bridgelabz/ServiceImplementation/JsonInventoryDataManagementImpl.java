@@ -28,7 +28,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		try 
 		{
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
-			
+			long grandTotal=0;
 			String[] names={"Rice","Wheat"};
 			for(int i=0; i<names.length;i++)
 			{
@@ -70,43 +70,13 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		catch (ParseException e) { e.printStackTrace();}
 		catch (Exception e) { e.printStackTrace();}
 		
-		
-
-		/*JSONArray rice=(JSONArray)jsonObject.get("rice");
-		JSONArray wheat=(JSONArray)jsonObject.get("wheat");
-					
-		Iterator<Object> iter=rice.iterator();
-		while(iter.hasNext())
-		{
-			JSONObject obj=(JSONObject) iter.next();
-			System.out.print("Rice Name: ");
-			System.out.println(obj.get("name"));
-			System.out.print("Rice Weight: ");
-			System.out.println(obj.get("weight"));
-			System.out.print("Rice Price_Per_Kg: ");
-			System.out.println(obj.get("price_per_kg"));
-			System.out.println("******************************************************");
-		}
-		Iterator<Object> iter1=wheat.iterator();
-		while(iter1.hasNext())
-		{
-			JSONObject obj=(JSONObject) iter1.next();
-			System.out.print("Wheat Name: ");
-			System.out.println(obj.get("name"));
-			System.out.print("Wheat Weight: ");
-			System.out.println(obj.get("weight"));
-			System.out.print("Wheat Price_Per_Kg: ");
-			System.out.println(obj.get("price_per_kg"));
-			System.out.println("******************************************************");
-		}*/
-		
 	}
 
 	@Override
 	public void writeInventoryItems() 
 	{
 		JSONObject rootObject=new JSONObject();
-		
+		long grandTotal=0;
 		String[] arrayNames= {"Rice","Wheat"};
 		for(int i=0;i<arrayNames.length;i++)
 		{
@@ -131,11 +101,15 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 				
 				total += price_per_kg * weight;
 				inventoryItems.put("Total", total);
+				grandTotal +=total;
+				total=0;
 				
 				inventoryArray.add(inventoryItems);
 			}
+			
 			rootObject.put(arrayNames[i], inventoryArray);
 		}
+		rootObject.put("Grand Total : ", grandTotal);
 		
 		PrintWriter printWrite=null;
 		try
@@ -149,6 +123,78 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		
 		printWrite.write(rootObject.toJSONString());
 		printWrite.close();
+	}
+
+	@Override
+	public JSONObject readInventoryObject() 
+	{
+		JSONObject rootObject=new JSONObject();
+		try 
+		{
+			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
+			//long grandTotal=0;
+			String[] names={"Rice","Wheat"};
+			for(int i=0; i<names.length;i++)
+			{
+				JSONArray inventoryArray=new JSONArray();
+				long total = 0;
+				JSONArray arrayName=(JSONArray)jsonObject.get(names[i]);
+				Iterator<Object> iter=arrayName.iterator();
+				
+				System.out.println("******************************************************");
+				System.out.println(names[i]+" Items ");
+				while(iter.hasNext())
+				{
+					JSONObject inventoryItems=new JSONObject();
+					
+					JSONObject inventoryDetails=(JSONObject) iter.next();
+					System.out.print(names[i]+" Name: ");
+					String name=(String)inventoryDetails.get("name");
+					inventoryModel.setName(name);
+					System.out.println(inventoryModel.getName());
+					
+					inventoryItems.put("Name", inventoryModel.getName());
+					
+					System.out.print(names[i]+" Weight: ");
+					long weight=(long)inventoryDetails.get("weight");
+					inventoryModel.setWeight(weight);
+					System.out.println(inventoryModel.getWeight());
+					
+					
+					inventoryItems.put("Weight",inventoryModel.getWeight());
+					
+					System.out.print(names[i]+" Price_Per_Kg: ");
+					long price_per_kg=(long)inventoryDetails.get("price_per_kg");
+					inventoryModel.setPrice_per_kg(price_per_kg);
+					System.out.println(inventoryModel.getPrice_per_kg());
+					
+					inventoryItems.put("Price_Per_Kg", inventoryModel.getPrice_per_kg());
+					
+				
+					total += inventoryModel.getWeight() * inventoryModel.getPrice_per_kg();
+					
+					inventoryModel.setTotal(total);
+					System.out.println(names[i]+" Total : "+inventoryModel.getTotal());
+					System.out.println();
+					inventoryItems.put("Total", inventoryModel.getTotal());
+					//grandTotal += total;
+					total=0;
+					
+					inventoryArray.add(inventoryItems);
+				}
+				rootObject.put(names[i], inventoryArray);
+				
+			}
+			
+			//rootObject.put("Grand Total : ", grandTotal);
+			//System.out.println("Grand Total : "+ grandTotal);
+			
+		} 
+		catch (FileNotFoundException e) { e.printStackTrace();}
+		catch (IOException e) { e.printStackTrace();}
+		catch (ParseException e) { e.printStackTrace();}
+		catch (Exception e) { e.printStackTrace();}
+		return rootObject;
 	}
 	
 }
