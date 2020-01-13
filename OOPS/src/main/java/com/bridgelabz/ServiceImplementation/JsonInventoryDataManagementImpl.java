@@ -29,7 +29,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		{
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
 			long grandTotal=0;
-			String[] names={"Rice","Wheat"};
+			String[] names={"Rice","Wheat","Pulse"};
 			for(int i=0; i<names.length;i++)
 			{
 				long total = 0;
@@ -77,7 +77,7 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 	{
 		JSONObject rootObject=new JSONObject();
 		long grandTotal=0;
-		String[] arrayNames= {"Rice","Wheat"};
+		String[] arrayNames= {"Rice","Wheat","Pulse"};
 		for(int i=0;i<arrayNames.length;i++)
 		{
 			JSONArray inventoryArray=new JSONArray();
@@ -127,13 +127,13 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 	@Override
 	public JSONObject readInventoryObject() 
 	{
-		System.out.println("hello");
+		System.out.println("***...Json Inventory Data Management...***");
 		JSONObject rootObject=new JSONObject();
 		try 
 		{
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
 			
-			String[] names={"Rice","Wheat"};
+			String[] names={"Rice","Wheat","Pulse"};
 			for(int i=0; i<names.length;i++)
 			{
 				JSONArray inventoryArray=new JSONArray();

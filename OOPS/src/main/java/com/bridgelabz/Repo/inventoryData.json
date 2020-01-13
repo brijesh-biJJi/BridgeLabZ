@@ -24,6 +24,18 @@
 								"weight": 5,
 								"price_per_kg" : 40
 							}
+						],
+			"Pulse": 	[
+							{
+								"name": "mung bean",
+								"weight": 6,
+								"price_per_kg" : 10
+							},
+							{
+								"name": "kidney bean",
+								"weight": 7,
+								"price_per_kg" : 20
+							}
 						]
 				
 }

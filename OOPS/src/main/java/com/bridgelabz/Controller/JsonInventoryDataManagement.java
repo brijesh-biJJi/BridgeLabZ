@@ -17,7 +17,7 @@ public class JsonInventoryDataManagement extends JsonInventoryDataManagementImpl
 		long grandTotal=0;
 		JSONObject rootObject=inventoryFactory.readInventoryObject();
 		
-		String[] arrayName= {"Rice","Wheat"};
+		String[] arrayName= {"Rice","Wheat","Pulse"};
 		for (int i = 0; i < arrayName.length; i++) 
 		{
 			JSONArray invenArray=(JSONArray)rootObject.get(arrayName[i]);
