@@ -14,7 +14,7 @@ JsonInventoryDataManagementImpl inventoryImpl=new JsonInventoryDataManagementImp
 		{
 			System.out.println();
 			System.out.println("Enter your choice..");
-			System.out.println("1. Read Inventory Items\n2. Write the Inventory Data into File..\n3.Read Inventory Object ");
+			System.out.println("1. Read Inventory Items\n2. Write the Inventory Data into File..");
 			
 			int ch=InputScanner.inputInteger();
 			Inventory.menu(ch);
@@ -33,9 +33,6 @@ JsonInventoryDataManagementImpl inventoryImpl=new JsonInventoryDataManagementImp
 			break;
 			
 			case 2: inventoryImpl.writeInventoryItems();
-			break;
-			
-			case 3: inventoryImpl.readInventoryObject();
 			break;
 			
 			default: System.out.println("Invalid Choice..");
