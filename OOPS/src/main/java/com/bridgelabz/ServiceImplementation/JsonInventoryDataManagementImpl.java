@@ -15,6 +15,11 @@ import com.bridgelabz.Model.JsonInventoryDataManagementModel;
 import com.bridgelabz.Services.IJsonInventoryDataManagement;
 import com.bridgelabz.inputscanner.InputScanner;
 
+/**
+ * Implementation class 
+ * @author user
+ *
+ */
 public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManagement
 {
 	JsonInventoryDataManagementModel inventoryModel=new JsonInventoryDataManagementModel();
@@ -22,11 +27,17 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 	JSONParser jsonParser=new JSONParser();
 
 
+	/**
+	 * method to read Inventory items
+	 */
 	@Override
 	public void readInventoryItems() 
 	{
 		try 
 		{
+			/**
+			 * Reading the Json File
+			 */
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
 			long grandTotal=0;
 			String[] names={"Rice","Wheat","Pulse"};
@@ -72,6 +83,10 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		
 	}
 
+	
+	/**
+	 * Method to write Inventory Items
+	 */
 	@Override
 	public void writeInventoryItems() 
 	{
@@ -124,6 +139,9 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		printWrite.close();
 	}
 
+	/**
+	 * Method to read Inventory Object
+	 */
 	@Override
 	public JSONObject readInventoryObject() 
 	{
@@ -131,6 +149,9 @@ public class JsonInventoryDataManagementImpl implements IJsonInventoryDataManage
 		JSONObject rootObject=new JSONObject();
 		try 
 		{
+			/**
+			 * Reading the Json File
+			 */
 			JSONObject jsonObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryData.json"));
 			
 			String[] names={"Rice","Wheat","Pulse"};

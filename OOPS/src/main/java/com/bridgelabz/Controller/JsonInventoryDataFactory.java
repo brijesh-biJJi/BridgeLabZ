@@ -5,8 +5,14 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class JsonInventoryDataFactory
 {
-static JsonInventoryDataFactory Inventory=new JsonInventoryDataFactory();
-JsonInventoryDataManagementImpl inventoryImpl=new JsonInventoryDataManagementImpl();
+	
+	static JsonInventoryDataFactory Inventory=new JsonInventoryDataFactory();
+	JsonInventoryDataManagementImpl inventoryImpl=new JsonInventoryDataManagementImpl();
+	
+	/**
+	 * Main method of JsonInventoryDataFactory
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		String e=new String();

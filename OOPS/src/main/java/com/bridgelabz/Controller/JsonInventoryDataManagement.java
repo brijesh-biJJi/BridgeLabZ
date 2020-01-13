@@ -12,6 +12,11 @@ import com.bridgelabz.ServiceImplementation.JsonInventoryDataManagementImpl;
 public class JsonInventoryDataManagement extends JsonInventoryDataManagementImpl
 {
 	static JsonInventoryDataManagementImpl inventoryFactory=new JsonInventoryDataManagementImpl();
+	
+	/**
+	 * Main method of JsonInventoryDataManagement
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		long grandTotal=0;
@@ -31,8 +36,13 @@ public class JsonInventoryDataManagement extends JsonInventoryDataManagementImpl
 		}
 		rootObject.put("Grand Total", grandTotal);
 		PrintWriter printWrite=null;
+		
+		
 		try
 		{
+			/**
+			 * Reading the file path
+			 */
 			printWrite=new PrintWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/inventoryDataOutput.json");
 			System.out.println("JSON Inventory Data Management Details are stored Into Inventory Data Output File...");
 		}
@@ -41,6 +51,9 @@ public class JsonInventoryDataManagement extends JsonInventoryDataManagementImpl
 			e.printStackTrace();
 		}
 		
+		/**
+		 * Writing the JSONObject into File
+		 */
 		printWrite.write(rootObject.toJSONString());
 		printWrite.close();
 	}

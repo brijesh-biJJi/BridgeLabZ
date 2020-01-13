@@ -2,9 +2,9 @@ package com.bridgelabz.ServiceImplementation;
 
 import com.bridgelabz.Services.IStockAccount;
 
-public class StockAccountImplementation implements IStockAccount
+public class StockAccountImpl implements IStockAccount
 {
-
+	
 	@Override
 	public double valueOF() 
 	{
@@ -12,6 +12,9 @@ public class StockAccountImplementation implements IStockAccount
 		return 0;
 	}
 
+	/**
+	 * Add Shares of Stock to Account
+	 */
 	@Override
 	public void buy(int amount, String symbol) 
 	{
@@ -19,6 +22,9 @@ public class StockAccountImplementation implements IStockAccount
 		
 	}
 
+	/**
+	 * Subtract Shares of Stock from Account
+	 */
 	@Override
 	public void sell(int amount, String symbol)
 	{
@@ -26,6 +32,9 @@ public class StockAccountImplementation implements IStockAccount
 		
 	}
 
+	/**
+	 * Save Account to File
+	 */
 	@Override
 	public void save(String fileName) 
 	{
@@ -33,6 +42,9 @@ public class StockAccountImplementation implements IStockAccount
 		
 	}
 
+	/**
+	 * Print a detailed report of Stocks and Values
+	 */
 	@Override
 	public void printReport() 
 	{

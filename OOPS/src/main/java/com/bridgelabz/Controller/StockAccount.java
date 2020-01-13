@@ -3,7 +3,8 @@ package com.bridgelabz.Controller;
 import com.bridgelabz.ServiceImplementation.StockAccountImplementation;
 import com.bridgelabz.inputscanner.InputScanner;
 
-public class StockAccount {
+public class StockAccount 
+{
 
 	static StockAccountImplementation stockImpl=new StockAccountImplementation();
 	static StockAccount stockAcc=new StockAccount();
