@@ -2,6 +2,11 @@ package com.bridgelabz.ServiceImplementation;
 
 import com.bridgelabz.Services.IStockAccount;
 
+/**
+ * implementation class
+ * @author user
+ *
+ */
 public class StockAccountImpl implements IStockAccount
 {
 	

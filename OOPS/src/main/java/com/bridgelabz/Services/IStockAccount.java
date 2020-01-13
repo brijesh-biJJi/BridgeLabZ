@@ -1,5 +1,11 @@
 package com.bridgelabz.Services;
 
+
+/**
+ * Interface of StockAccount
+ * @author user
+ *
+ */
 public interface IStockAccount 
 {
 	double valueOF();

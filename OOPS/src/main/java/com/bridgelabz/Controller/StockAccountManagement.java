@@ -3,10 +3,20 @@ package com.bridgelabz.Controller;
 import com.bridgelabz.ServiceImplementation.StockAccountManagementImpl;
 import com.bridgelabz.inputscanner.InputScanner;
 
+/**
+ * StockAccountManagement class
+ * @author user
+ *
+ */
 public class StockAccountManagement
 {
 	StockAccountManagementImpl stockImpl=new StockAccountManagementImpl();
 	static StockAccountManagement stockObj=new StockAccountManagement();
+	
+	/**
+	 * main method of StockAccountManagement
+	 * @param args
+	 */
 	public static void main(String[] args) 
 	{
 		String e=new String();
@@ -22,6 +32,11 @@ public class StockAccountManagement
 		}while(!e.equals("e"));
 		System.out.println("Thank You...");
 	}
+	
+	/**
+	 * Menu method to choose the option
+	 * @param ch
+	 */
 	private void menu(int ch)
 	{
 		switch(ch)

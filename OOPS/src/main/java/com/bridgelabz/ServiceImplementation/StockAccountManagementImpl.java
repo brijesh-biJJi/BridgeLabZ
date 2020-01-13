@@ -13,11 +13,20 @@ import org.json.simple.parser.ParseException;
 import com.bridgelabz.Model.StockAccountManagementModel;
 import com.bridgelabz.Services.IStockAccountManagement;
 
+/**
+ * Implementation class of StockAccountManagement
+ * @author user
+ *
+ */
 public class StockAccountManagementImpl implements IStockAccountManagement
 {
 	StockAccountManagementModel stockmodel=new StockAccountManagementModel();
 
 	JSONParser jsonParser=new JSONParser();
+	
+	/**
+	 * Method to read Stock Data from file
+	 */
 	@Override
 	public JSONObject readStockData()
 	{
@@ -26,6 +35,9 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 		JSONObject root=new JSONObject();
 		try 
 		{
+			/**
+			 * Reading the data from Json File
+			 */
 			JSONObject rootObject=(JSONObject) jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/stock.json"));
 			
 			
@@ -77,7 +89,10 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 		catch (ParseException e) {e.printStackTrace();}
 		return root;
 	}
-
+	
+	/**
+	 * Method to write the Stock Data into File
+	 */
 	@Override
 	public void writeStockData() 
 	{

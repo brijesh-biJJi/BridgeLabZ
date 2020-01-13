@@ -1,12 +1,17 @@
 package com.bridgelabz.Controller;
 
-import com.bridgelabz.ServiceImplementation.StockAccountImplementation;
+import com.bridgelabz.ServiceImplementation.StockAccountImpl;
 import com.bridgelabz.inputscanner.InputScanner;
 
+/**
+ * Stock Account 
+ * @author user
+ *
+ */
 public class StockAccount 
 {
 
-	static StockAccountImplementation stockImpl=new StockAccountImplementation();
+	static StockAccountImpl stockImpl=new StockAccountImpl();
 	static StockAccount stockAcc=new StockAccount();
 	
 	public static void main(String[] args) 
