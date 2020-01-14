@@ -21,7 +21,7 @@ public class StockAccount
 		{
 			System.out.println();
 			System.out.println("Enter your choice..");
-			System.out.println("1. Add Shares of Stock to Account\n2. Subtract Shares of Stock from Account\n3. Save Account to File\n4. Print a detailed report of Stocks and Values");
+			System.out.println("1. Create a new Account from File\n2. Add Shares of Stock to Account\n3. Subtract Shares of Stock from Account\n4. Save Account to File\n5. Print a detailed report of Stocks and Values");
 			
 			int ch=InputScanner.inputInteger();
 			stockAcc.menu(ch);
@@ -36,20 +36,26 @@ public class StockAccount
 	{
 		switch(ch)
 		{
-			/*case 1: stockImpl.buy(amount, symbol);
+			case 1:stockImpl.stockAccountImpl();
 			break;
 			
-			case 2: stockImpl.sell(amount, symbol);
+			case 2:
+					System.out.println("Enter the number of share to Buy");
+					long share=InputScanner.inputlong();
+					System.out.println("Enter the Stock name");
+					String stockName=InputScanner.inputWord();
+					stockImpl.buy(share, stockName);
 			break;
 			
-			case 3: stockImpl.save(fileName);
+			/*case 3: stockImpl.sell(amount, symbol);
 			break;
 			
-			case 4: stockImpl.printReport();
+			case 4: stockImpl.save(fileName);
+			break;
+			
+			case 5: stockImpl.printReport();
 			break;*/
 			
-			case 5:stockImpl.stockAccountImpl();
-			break;
 			
 			default: System.out.println("Invalid Choice..");
 			break;
