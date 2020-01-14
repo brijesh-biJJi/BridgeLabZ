@@ -1,1 +1,3 @@
 {"Google":{"Share Prices":1000,"Number Of Shares":500,"Total ShareValue":500000,"Stock Name":"Google_Company"},"Grand total":550000,"Mphasis":{"Share Prices":100,"Number Of Shares":200,"Total ShareValue":20000,"Stock Name":"Mphasis_Company"},"TCS":{"Share Prices":300,"Number Of Shares":100,"Total ShareValue":30000,"Stock Name":"TCS_Company"}}
+{"Google":{"Share Prices":1000,"Number Of Shares":500,"Total ShareValue":500000,"Stock Name":"Google_Company"},"Grand total":550000,"Mphasis":{"Share Prices":100,"Number Of Shares":200,"Total ShareValue":20000,"Stock Name":"Mphasis_Company"},"TCS":{"Share Prices":300,"Number Of Shares":100,"Total ShareValue":30000,"Stock Name":"TCS_Company"}}
+{"Wipro":{"stock_name":"wipro_company","number_of_shares":10,"share_price":100}}

@@ -1,7 +1,9 @@
 package com.bridgelabz.ServiceImplementation;
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
@@ -96,8 +98,9 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 	@Override
 	public void writeStockData() 
 	{
+		
 		JSONObject root=readStockData();
-		PrintWriter printWrite=null;
+		/*PrintWriter printWrite=null;
 		try
 		{
 			printWrite=new PrintWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/stockOutput.json");
@@ -108,7 +111,20 @@ public class StockAccountManagementImpl implements IStockAccountManagement
 		}
 		
 		printWrite.write(root.toJSONString());
-		printWrite.close();
+		printWrite.close();*/
+		
+		
+		 try{
+			  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/stockOutput.json",true);
+			  BufferedWriter out = new BufferedWriter(fstream);
+			  out.write(root.toJSONString()+"\n");
+			  out.close();
+		  }catch (Exception e){
+			 System.err.println("Error while writing to file: " +
+		          e.getMessage());
+		  }
+		
+		
 		System.out.println("\nStock Account Management Data's Stored into the File...");
 	}
 

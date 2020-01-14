@@ -37,17 +37,32 @@ public class InputScanner
 		
 	}
 	
+	//Returns Long value
+		public static long inputlong()
+		{
+			try
+			{
+				return sc.nextLong();	
+			}
+			catch (InputMismatchException e) 
+			{
+				System.out.println("Input Mismatch...\nEnter the proper input");
+				return 0;
+			}
+			
+		}
+	
 	//Returns String value
 	public static String inputWord()
 	{
 		return sc.next();
 	}
 	
-	//Returns Sentence
+	/*//Returns Sentence
 	public static String inputSentence()
 	{
 		return sc.nextLine();
-	}
+	}*/
 	
 	//Returns Character value
 	public static Character inputCharacter()

@@ -36,7 +36,7 @@ public class StockAccount
 	{
 		switch(ch)
 		{
-			case 1: stockImpl.buy(amount, symbol);
+			/*case 1: stockImpl.buy(amount, symbol);
 			break;
 			
 			case 2: stockImpl.sell(amount, symbol);
@@ -46,6 +46,9 @@ public class StockAccount
 			break;
 			
 			case 4: stockImpl.printReport();
+			break;*/
+			
+			case 5:stockImpl.stockAccountImpl();
 			break;
 			
 			default: System.out.println("Invalid Choice..");

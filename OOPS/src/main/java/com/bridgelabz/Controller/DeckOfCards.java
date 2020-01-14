@@ -1,9 +1,12 @@
 package com.bridgelabz.Controller;
 
+import com.bridgelabz.ServiceImplementation.DeckOfCardsImpl;
+
 public class DeckOfCards {
 
 	public static void main(String[] args)
 	{
+		DeckOfCardsImpl deckImpl=new DeckOfCardsImpl();
 		String[] cardType = { "Clubs", "Diamonds", "Hearts", "Spades" };
 		String[] cardNumbers = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 		String[] deck = new String[52];
@@ -25,6 +28,23 @@ public class DeckOfCards {
 		{
 			System.out.println(deck[i] + " ");
 		}
+		
+		// code for shuffle all the cards
+		deckImpl.shuffleCardsDeck(deck);
+				System.out.println("**************************************");
+
+				// printing cards for 4 players
+
+				int j2 = 0;
+				for (int i = 0; i < 4; i++) {
+					System.out.print("For Player " + i + ": \n");
+					for (int j = 0; j < 9; j++) {
+
+						System.out.print(deck[j2] + "-->");
+						j2++;
+					}
+					System.out.println();
+				}
 		
 	}
 
