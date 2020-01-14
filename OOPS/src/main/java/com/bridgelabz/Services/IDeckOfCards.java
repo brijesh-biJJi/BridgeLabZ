@@ -1,5 +1,6 @@
 package com.bridgelabz.Services;
 
-public interface IDeckOfCards {
-
+public interface IDeckOfCards
+{
+	String[] shuffleCardsDeck(String[] arr);
 }
