@@ -27,10 +27,14 @@ public class AddressBookImpl implements IAddressBook
 	{
 		String fname,lname,city,state,zip,address=null,phone;
 		
-		//JSONObject rootObject=new JSONObject();
+		JSONObject root = null;
+		try 
+		{
+			root = (JSONObject)jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json"));
+			
 		
 		
-		JSONObject personObject=new JSONObject();
+		//JSONObject personObject=new JSONObject();
 		//JSONObject addressObject=new JSONObject();
 		JSONObject personDetails=new JSONObject();
 		
@@ -73,30 +77,63 @@ public class AddressBookImpl implements IAddressBook
 		phone=InputScanner.inputWord();
 		addBookModel.setPhone(phone);
 		
-		personObject.put(addBookModel.getPhone(), personDetails);
+		root.put(addBookModel.getPhone(), personDetails);
 		
 		try{
-			  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json",true);
+			  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json");
 			  BufferedWriter out = new BufferedWriter(fstream);
-			  out.write(personObject.toJSONString()+"\n");
+			  out.write(root.toJSONString()+"\n");
 			  out.close();
 		  }catch (Exception e){
 			 System.err.println("Error while writing to file: " +
 		          e.getMessage());
 		  }
-		
+		} 
+		catch (FileNotFoundException e) {e.printStackTrace();} 
+		catch (IOException e) {e.printStackTrace();} 
+		catch (ParseException e) {	e.printStackTrace();}
 		
 		System.out.println("\nPerson Added into Address Book and Stored into File...");
 		
 	}
 
-	/*@Override
+	@Override
 	public JSONObject editAddressBook(String personObj) 
 	{
 		JSONObject root = null;
 		try 
 		{
 			root = (JSONObject)jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json"));
+			
+			JSONObject personDetails=(JSONObject)root.get(personObj);
+			
+			System.out.println("Enter the Key To Update in AddressBook...\n last_name\n city\n state \nzip \nAddress");
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			String edit = null,update=null;
+			try {
+				edit=br.readLine();
+				System.out.println("Enter the new "+edit+ "to Update..");
+				update=br.readLine();
+				
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			personDetails.remove(edit);
+			personDetails.put(edit, update);
+			root.put(personObj, personDetails);
+			System.out.println("Edited Information Successfully");
+			
+			try{
+				  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json");
+				  BufferedWriter out = new BufferedWriter(fstream);
+				  out.write(root.toJSONString()+"\n");
+				  out.close();
+			  }catch (Exception e){
+				 System.err.println("Error while writing to file: " +
+			          e.getMessage());
+			  }
 		} 
 		catch (FileNotFoundException e) {e.printStackTrace();} 
 		catch (IOException e) {e.printStackTrace();} 
@@ -114,6 +151,6 @@ public class AddressBookImpl implements IAddressBook
 	public void selectAddressBook(JSONObject personObj)
 	{
 		
-	}*/
+	}
 	
 }
