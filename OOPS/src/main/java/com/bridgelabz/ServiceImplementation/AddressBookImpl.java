@@ -1,11 +1,18 @@
 package com.bridgelabz.ServiceImplementation;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.bridgelabz.Model.AddressBookModel;
 import com.bridgelabz.Services.IAddressBook;
@@ -13,12 +20,12 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class AddressBookImpl implements IAddressBook
 {
-/*	AddressBookModel addBookModel=new AddressBookModel();
+	AddressBookModel addBookModel=new AddressBookModel();
 	JSONParser jsonParser=new JSONParser();
 	@Override
 	public void addAddressBook() 
 	{
-		String fname,lname,city,state,zip,address,phone;
+		String fname,lname,city,state,zip,address=null,phone;
 		
 		//JSONObject rootObject=new JSONObject();
 		
@@ -53,7 +60,13 @@ public class AddressBookImpl implements IAddressBook
 		personDetails.put("zip", addBookModel.getZip());
 		
 		System.out.println("Enter the Person Adress..");
-		address=InputScanner.inputWord();
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		try {
+			address=br.readLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		personDetails.put("Address", address);
 		
 		System.out.println("Enter the Phone..");
@@ -77,10 +90,18 @@ public class AddressBookImpl implements IAddressBook
 		
 	}
 
-	@Override
+	/*@Override
 	public JSONObject editAddressBook(String personObj) 
 	{
-		return null;
+		JSONObject root = null;
+		try 
+		{
+			root = (JSONObject)jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json"));
+		} 
+		catch (FileNotFoundException e) {e.printStackTrace();} 
+		catch (IOException e) {e.printStackTrace();} 
+		catch (ParseException e) {	e.printStackTrace();}
+		return root;
 	}
 
 	@Override
@@ -93,6 +114,6 @@ public class AddressBookImpl implements IAddressBook
 	public void selectAddressBook(JSONObject personObj)
 	{
 		
-	}
-	*/
+	}*/
+	
 }
