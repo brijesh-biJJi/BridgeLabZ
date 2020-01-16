@@ -4,8 +4,8 @@ import org.json.simple.JSONObject;
 
 public interface IAddressBook 
 {
-	/*void addAddressBook();
+	void addAddressBook();
 	JSONObject editAddressBook(String personObj);
 	JSONObject deleteAddressBook(JSONObject personObj);
-	void selectAddressBook(JSONObject personObj);*/
+	void selectAddressBook(JSONObject personObj);
 }
