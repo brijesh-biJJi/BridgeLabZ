@@ -98,7 +98,7 @@ public class AddressBookImpl implements IAddressBook
 	}
 
 	@Override
-	public JSONObject editAddressBook(String personObj) 
+	public void editAddressBook(String personObj) 
 	{
 		JSONObject root = null;
 		try 
@@ -123,7 +123,7 @@ public class AddressBookImpl implements IAddressBook
 			personDetails.remove(edit);
 			personDetails.put(edit, update);
 			root.put(personObj, personDetails);
-			System.out.println("Edited Information Successfully");
+			System.out.println("Information Edited Successfully");
 			
 			try{
 				  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json");
@@ -138,17 +138,41 @@ public class AddressBookImpl implements IAddressBook
 		catch (FileNotFoundException e) {e.printStackTrace();} 
 		catch (IOException e) {e.printStackTrace();} 
 		catch (ParseException e) {	e.printStackTrace();}
-		return root;
 	}
 
 	@Override
-	public JSONObject deleteAddressBook(JSONObject personObj)
+	public void deleteAddressBook(String personObj1)
 	{
-		return null;
+		JSONObject root = null;
+		try 
+		{
+			root = (JSONObject)jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json"));
+			
+			//JSONObject personDetails=(JSONObject)root.get(personObj1);
+			
+			
+			root.remove(personObj1);
+			System.out.println("Information Deleted Successfully");
+			
+			try{
+				  FileWriter fstream = new FileWriter("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json");
+				  BufferedWriter out = new BufferedWriter(fstream);
+				  out.write(root.toJSONString()+"\n");
+				  out.close();
+			  }catch (Exception e){
+				 System.err.println("Error while writing to file: " +
+			          e.getMessage());
+			  }
+		} 
+		catch (FileNotFoundException e) {e.printStackTrace();} 
+		catch (IOException e) {e.printStackTrace();} 
+		catch (ParseException e) {	e.printStackTrace();}
 	}
 
+	
+
 	@Override
-	public void selectAddressBook(JSONObject personObj)
+	public void selectAddressBook(String personObj)
 	{
 		
 	}
