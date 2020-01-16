@@ -156,7 +156,7 @@ public class StockAccountImpl implements IStockAccount
 	/**
 	 * Save Account to File
 	 */
-/*	@Override
+	@Override
 	public void save(JSONObject rootObject) 
 	{
 		 try{
@@ -174,7 +174,7 @@ public class StockAccountImpl implements IStockAccount
 	 * Print a detailed report of Stocks and Values
 	 */
 	@Override
-/*	public void printReport() 
+	public void printReport() 
 	{
 		try
 		{
@@ -204,6 +204,6 @@ public class StockAccountImpl implements IStockAccount
 		catch (FileNotFoundException e) {e.printStackTrace();}
 		catch (IOException e) {e.printStackTrace();}
 		catch (ParseException e) {e.printStackTrace();}
-	}*/
+	}
 
 }

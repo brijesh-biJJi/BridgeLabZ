@@ -55,8 +55,8 @@ public class StockAccount
 			break;
 			
 		
-		/*	case 4: stockImpl.printReport();
-			break;*/
+			case 4: stockImpl.printReport();
+			break;
 			
 			
 			default: System.out.println("Invalid Choice..");
