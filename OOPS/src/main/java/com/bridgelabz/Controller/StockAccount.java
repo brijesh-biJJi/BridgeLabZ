@@ -21,11 +21,11 @@ public class StockAccount
 		{
 			System.out.println();
 			System.out.println("Enter your choice..");
-			System.out.println("1. Create a new Account from File\n2. Add Shares of Stock to Account\n3. Subtract Shares of Stock from Account\n4. Save Account to File\n5. Print a detailed report of Stocks and Values");
+			System.out.println("1. Create a new Account from File\n2. Add Shares of Stock to Account\n3. Subtract Shares of Stock from Account\n4. Print a detailed report of Stocks and Values");
 			
 			int ch=InputScanner.inputInteger();
 			stockAcc.menu(ch);
-			System.out.println("Press e to Exit or Press any key to Continue..");
+			System.out.println("\nPress e to Exit or Press any key to Continue..");
 			e=InputScanner.inputWord();
 		}while(!e.equals("e"));
 		System.out.println("Thank You..");
@@ -41,19 +41,21 @@ public class StockAccount
 			
 			case 2:
 					System.out.println("Enter the number of share to Buy");
-					long share=InputScanner.inputlong();
+					long buyShare=InputScanner.inputlong();
 					System.out.println("Enter the Stock name");
-					String stockName=InputScanner.inputWord();
-					stockImpl.buy(share, stockName);
+					String bstockName=InputScanner.inputWord();
+					stockImpl.buy(buyShare, bstockName);
 			break;
 			
-			/*case 3: stockImpl.sell(amount, symbol);
+			case 3: System.out.println("Enter the number of share to Sell");
+					long selShare=InputScanner.inputlong();
+					System.out.println("Enter the Stock name");
+					String sstockName=InputScanner.inputWord();
+					stockImpl.sell(selShare, sstockName);
 			break;
 			
-			case 4: stockImpl.save(fileName);
-			break;
-			
-			case 5: stockImpl.printReport();
+		
+		/*	case 4: stockImpl.printReport();
 			break;*/
 			
 			

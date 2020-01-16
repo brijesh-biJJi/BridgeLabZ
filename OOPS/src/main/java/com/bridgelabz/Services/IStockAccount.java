@@ -1,5 +1,6 @@
 package com.bridgelabz.Services;
 
+import org.json.simple.JSONObject;
 
 /**
  * Interface of StockAccount
@@ -11,6 +12,6 @@ public interface IStockAccount
 	double valueOF();
 	void buy(long amount,String symbol);
 	void sell(long amount,String symbol);
-	void save(String fileName);
+	void save(JSONObject jsonObj);
 	void printReport();
 }
