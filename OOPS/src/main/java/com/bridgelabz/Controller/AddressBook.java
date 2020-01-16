@@ -16,7 +16,7 @@ public class AddressBook
 		{
 			System.out.println();
 			System.out.println("Enter your choice..");
-			System.out.println("1. Add Person details to Address Book\n2. Edit Person details in Address Book\n3. Delete the Person From Address Book");
+			System.out.println("1. Add Person details to Address Book\n2. Edit Person details in Address Book\n3. Delete the Person From Address Book\n4. Display AddressBook");
 			
 			int ch=InputScanner.inputInteger();
 			addBook.menu(ch);
@@ -39,10 +39,14 @@ public class AddressBook
 			break;
 			
 			case 3: 
-				System.out.println("Enter the Person Object to Delete..");
-				String personObj1=InputScanner.inputWord();
-				addBookImpl.deleteAddressBook(personObj1);
+					System.out.println("Enter the Person Object to Delete..");
+					String personObj1=InputScanner.inputWord();
+					addBookImpl.deleteAddressBook(personObj1);
 			break;
+			
+			case 4:
+					addBookImpl.displayAddressBook();
+					break;
 			
 			default: System.out.println("Invalid Choice..");
 			break;

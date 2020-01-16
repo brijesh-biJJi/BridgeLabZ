@@ -172,9 +172,42 @@ public class AddressBookImpl implements IAddressBook
 	
 
 	@Override
-	public void selectAddressBook(String personObj)
+	public void displayAddressBook()
 	{
+		JSONObject root = null;
+		try 
+		{
+			root = (JSONObject)jsonParser.parse(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/OOPS/src/main/java/com/bridgelabz/Repo/addressBook.json"));
+			String[] phone= {"8970498816","7975097260"};
+			
+			for (int i = 0; i < phone.length; i++) 
+			{
+				JSONObject personDetails=(JSONObject)root.get(phone[i]);
+				
+				String fname=(String)personDetails.get("first_name");
+				System.out.println("First Name : "+fname);
+				
+				String lname=(String)personDetails.get("last_name");
+				System.out.println("Last Name : "+lname);
+					
+				String city=(String)personDetails.get("city");
+				System.out.println("City : "+city);
+				
+				String state=(String)personDetails.get("state");
+				System.out.println("State : "+state);
+				
+				String zip=(String)personDetails.get("zip");
+				System.out.println("Zip : "+zip);
+				
+				System.out.println("Phone Number : "+phone[i]);
+				System.out.println("****************************************************");
+			}
+			
 		
+		} 
+		catch (FileNotFoundException e) {e.printStackTrace();} 
+		catch (IOException e) {e.printStackTrace();} 
+		catch (ParseException e) {	e.printStackTrace();}
 	}
 	
 }
