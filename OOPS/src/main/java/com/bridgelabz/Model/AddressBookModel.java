@@ -1,7 +1,7 @@
 package com.bridgelabz.Model;
 
 public class AddressBookModel 
-{/*
+{
 	private String fname;
 	private String lname;
 	private String city;
@@ -64,6 +64,6 @@ public class AddressBookModel
 	
 	public void setZip(String zip) {
 		this.zip = zip;
-	}*/
+	}
 
 }
