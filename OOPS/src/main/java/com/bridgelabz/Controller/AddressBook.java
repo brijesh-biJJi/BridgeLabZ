@@ -5,7 +5,7 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class AddressBook 
 {
-	/*static AddressBook addBook=new AddressBook();
+	static AddressBook addBook=new AddressBook();
 	
 	AddressBookImpl addBookImpl=new AddressBookImpl();
 	public static void main(String[] args) 
@@ -42,5 +42,5 @@ public class AddressBook
 			break;
 		}
 	}
-*/
+
 }
