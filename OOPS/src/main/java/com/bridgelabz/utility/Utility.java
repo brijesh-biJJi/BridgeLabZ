@@ -21,11 +21,11 @@ public class Utility
 		}
 	}
 	
-/*	
+	
 	/**
 	 * Generates the Random Number
 	 */
-/*	public static int GenerateRandom(int max)
+	public static int GenerateRandom(int max)
     {
         Random random = new Random();
         return random.nextInt(max);
@@ -36,28 +36,33 @@ public class Utility
 	 * Shuffles the specified array.
 	 * @param deck
 	 */
-/*	public static void Shuffle(String[][] deck) 
+	public static void shuffle(String[][] deck) 
 	{
-		 int rowIndex1 = 0;
-         int ColumnIndex1 = 0;
-         int rowIndex2 = 0;
-         int ColumnIndex2 = 0;
+		 int r1 = 0;
+         int c1 = 0;
+         int r2 = 0;
+         int c2 = 0;
 
          for(int i=0;i<52;i++)
          {
-             rowIndex1 = GenerateRandom(4);
-             ColumnIndex1 = GenerateRandom(13);
-             rowIndex2 = GenerateRandom(4);
-             ColumnIndex2 = GenerateRandom(13);
+             r1 = GenerateRandom(4);
+             c1 = GenerateRandom(13);
+             r2 = GenerateRandom(4);
+             c2 = GenerateRandom(13);
              ////call the swap method to swap the elements of array
-             Swap(deck,rowIndex1, ColumnIndex1, rowIndex2, ColumnIndex2);
+             swap(deck,r1, c1, r2, c2);
          }
 	}
 
 
-	public static void Swap(String[][] deck, int rowIndex1, int columnIndex1, int rowIndex2, int columnIndex2) 
+	public static void swap(String[][] deck, int r1, int c1, int r2, int c2) 
 	{
-		
-	}*/
+		String temp=deck[r1][c1];
+		deck[r1][c1]=deck[r2][c2];
+		deck[r2][c2]=temp;
+	}
+
+
+	
 
 }

@@ -21,7 +21,7 @@ public class DeckOfCardExtendedQueue
 		/**
 		 * Shuffle the deck of cards
 		 */
-		Utility.Shuffle(deck);
+		Utility.shuffle(deck);
 		
 		
 	}
