@@ -1,6 +1,16 @@
 package com.bridgelabz.DeckOfCardsExtendedQueue;
 
+import com.bridgelabz.utility.Utility;
+
+/**
+ * Player class
+ * @author user
+ *
+ */
 public class Player 
 {
-	Queuecard queuecard=Utility.createQueuecard();
+	/**
+	 * The card queue for each player
+	 */
+	QueueCard queuecard=Utility.createQueuecard();
 }

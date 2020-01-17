@@ -3,6 +3,11 @@ package com.bridgelabz.Controller;
 import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
 import com.bridgelabz.utility.Utility;
 
+/**
+ * Deck Of Card extended using DeckOfCardExtendedQueue Class.
+ * @author user
+ *
+ */
 public class DeckOfCardExtendedQueue 
 {
 

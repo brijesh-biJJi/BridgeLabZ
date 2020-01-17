@@ -1,5 +1,10 @@
 package com.bridgelabz.DeckOfCardsExtendedQueue;
 
+/**
+ * List node to store card.
+ * @author user
+ *
+ */
 public class ListNodeCard 
 {
 	public String suit=null;

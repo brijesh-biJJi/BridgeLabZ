@@ -2,6 +2,7 @@ package com.bridgelabz.utility;
 
 import java.util.Random;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.QueueCard;
 import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
 
 public class Utility 
@@ -82,6 +83,18 @@ public class Utility
 		queuePlayer.front=null;
 		queuePlayer.rear=null;
 		return queuePlayer;
+	}
+
+	/**
+	 * Creates the Queue for cards
+	 * @return
+	 */
+	public static QueueCard createQueuecard() 
+	{
+		QueueCard queueCard=new QueueCard();
+		queueCard.front=null;
+		queueCard.rear=null;
+		return queueCard;
 	}
 
 
