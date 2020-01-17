@@ -6,25 +6,17 @@ import com.bridgelabz.Services.IDeckOfCards;
 
 public class DeckOfCardsImpl implements IDeckOfCards
 {
-
+	/**
+	 * Method is to Shuffle the Card inside the Deck
+	 */
 	@Override
-	public String[] shuffleCardsDeck(String[] arr) 
+	public String[][] shuffleCardsDeck(String[][] deck,int r1,int c1,int r2,int c2) 
 	{
-		Random random = new Random();
-		int f1, f2;
-		String temp;
-		for (int i = 0; i < 52; i++)
-		{
-			f1 = random.nextInt(51);
-			f2 = random.nextInt(51);
-			if (f1 != f2) 
-			{
-				temp = arr[f1];
-				arr[f1] = arr[f2];
-				arr[f2] = temp;
-			}
-		}
-		return arr;
+		String temp=deck[r1][c1];
+		deck[r1][c1]=deck[r2][c2];
+		deck[r2][c2]=temp;
+		return deck;
+		
 	}
 	
 }

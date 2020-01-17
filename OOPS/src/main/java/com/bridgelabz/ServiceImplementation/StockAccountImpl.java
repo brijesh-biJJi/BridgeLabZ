@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,11 +26,15 @@ public class StockAccountImpl implements IStockAccount
 	
 	StockAccountManagementModel  stockModel;
 	JSONParser jsonParser;
-	
+	LocalDateTime now;
+	DateTimeFormatter dateTimeFormatter;
 	public StockAccountImpl()
 	{
 		stockModel=new StockAccountManagementModel();
 		jsonParser=new JSONParser();
+		dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
+		now = LocalDateTime.now();
+		
 	}
 	
 	
@@ -82,7 +88,7 @@ public class StockAccountImpl implements IStockAccount
 	@Override
 	public double valueOF() 
 	{
-		// TODO Auto-generated method stub
+		System.out.println("Date : "+dateTimeFormatter.format(now));
 		return 0;
 	}
 

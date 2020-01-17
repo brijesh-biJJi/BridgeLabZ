@@ -11,7 +11,18 @@ public class StockAccountManagementModel
 	private long number_of_shares;
 	private long  share_price;
 	private long totalValue;
+	private String date;
 	
+	public String getDate() 
+	{
+		return date;
+	}
+
+	public void setDate(String date) 
+	{
+		this.date = date;
+	}
+
 	/**
 	 * method to get Stock_name
 	 * @return
