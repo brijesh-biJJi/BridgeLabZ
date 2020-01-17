@@ -159,10 +159,16 @@ public class Utility
 				 */
 				cardNode=inputCardData(cardNode,deck[i][j]);
 				
+				/**
+				 * Insert the cardNode to the specified player's queue
+				 */
+				if(cardNode!=null)
+					addCardNodeToQueueCard(tempPlayer.data.queueCard,cardNode);
 			}
 		}
 	}
 
+	
 	/**
 	 * Inputs the card data.
 	 * @param cardNode
@@ -202,7 +208,24 @@ public class Utility
 		return cardNode;
 	}
 	
-	
+	/**
+	 * Adds the cardNode to players'queue
+	 * @param queueCard
+	 * @param cardNode
+	 */
+	public static void addCardNodeToQueueCard(QueueCard queueCard, ListNodeCard cardNode)
+	{
+		if(queueCard.rear==null)
+		{
+			queueCard.rear=cardNode;
+			queueCard.front=cardNode;
+		}
+		else
+		{
+			queueCard.rear.next=cardNode;
+			queueCard.rear=cardNode;
+		}
+	}
 	
 
 	

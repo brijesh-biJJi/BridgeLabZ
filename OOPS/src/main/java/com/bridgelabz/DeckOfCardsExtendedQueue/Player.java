@@ -12,5 +12,5 @@ public class Player
 	/**
 	 * The card queue for each player
 	 */
-	QueueCard queuecard=Utility.createQueuecard();
+	public QueueCard queueCard=Utility.createQueuecard();
 }
