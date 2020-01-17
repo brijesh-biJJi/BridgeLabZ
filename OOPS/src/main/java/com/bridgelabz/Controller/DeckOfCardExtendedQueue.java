@@ -34,7 +34,12 @@ public class DeckOfCardExtendedQueue
 		 */
 		QueuePlayer queuePlayer = Utility.CreateQueuePlayer();
 		
+		/**
+		 * Add 4 player into Queue
+		 */
+		Utility.addPlayersInQueue(queuePlayer);
 		
+
 	}
 
 }
