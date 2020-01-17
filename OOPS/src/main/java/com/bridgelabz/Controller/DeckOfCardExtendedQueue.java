@@ -28,6 +28,8 @@ public class DeckOfCardExtendedQueue
 		 * Create the Queue to hold all the players
 		 */
 		QueuePlayer queuePlayer = Utility.CreateQueuePlayer();
+		
+		
 	}
 
 }
