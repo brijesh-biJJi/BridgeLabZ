@@ -2,6 +2,7 @@ package com.bridgelabz.utility;
 
 import java.util.Random;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.ListNodeCard;
 import com.bridgelabz.DeckOfCardsExtendedQueue.ListNodePlayer;
 import com.bridgelabz.DeckOfCardsExtendedQueue.Player;
 import com.bridgelabz.DeckOfCardsExtendedQueue.QueueCard;
@@ -123,14 +124,47 @@ public class Utility
 		playerNode.data=playerObj;
 		
 		if(queuePlayer.rear==null)
+		{
 			queuePlayer.rear=playerNode;
+			queuePlayer.front=playerNode;
+		}
 		else
 		{
 			queuePlayer.rear.next=playerNode;
+			queuePlayer.rear=playerNode;
 		}
 		
 	}
 
+	/**
+	 *  Distributes the cards to each player one by one
+	 * @param queuePlayer
+	 * @param deck
+	 */
+	public static void distributeCards(QueuePlayer queuePlayer, String[][] deck)
+	{ 
+		ListNodePlayer tempPlayer=queuePlayer.front;
+		
+		for (int i = 0; i < deck.length; i++) 
+		{
+			for (int j = 0; j < deck[i].length; j++) 
+			{
+				/**
+				 * Create a new card to insert into the queue card of player
+				 */
+				ListNodeCard cardNode=new ListNodeCard();
+				
+				/**
+				 * Assign the values (suit and rank) from array to card
+				 */
+				cardNode=inputCardData(cardNode,deck[i][j]);
+				
+			}
+		}
+	}
+	
+	
+	
 
 	
 

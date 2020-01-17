@@ -1,5 +1,6 @@
 package com.bridgelabz.Controller;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.ListNodePlayer;
 import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
 import com.bridgelabz.utility.Utility;
 
@@ -39,7 +40,11 @@ public class DeckOfCardExtendedQueue
 		 */
 		Utility.addPlayersInQueue(queuePlayer);
 		
-
+		/**
+		 * Distribute the cards in the DecksOfCard array to all the players in the queue.
+		 */
+		Utility.distributeCards(queuePlayer,deck);
+		
 	}
 
 }
