@@ -162,6 +162,45 @@ public class Utility
 			}
 		}
 	}
+
+	/**
+	 * Inputs the card data.
+	 * @param cardNode
+	 * @param string
+	 * @return
+	 */
+	public static ListNodeCard inputCardData(ListNodeCard cardNode, String str) 
+	{
+		String[] cardArray=null;
+		
+		if(str!=null)
+			cardArray=str.split("-");
+		else
+			return null;
+		
+		cardNode.suit=cardArray[0];
+		
+		int rank=0;
+		
+		if(cardArray[1]=="Jack")
+			cardNode.rank=11;
+		
+		else if(cardArray[1]=="Queen")
+			cardNode.rank=12;
+		
+		else if(cardArray[1]=="King")
+			cardNode.rank=13;
+		
+		else if(cardArray[1]=="Ace")
+			cardNode.rank=14;
+		
+		else
+		{
+			rank=Integer.parseInt(cardArray[1]);
+			cardNode.rank=rank;
+		}
+		return cardNode;
+	}
 	
 	
 	
