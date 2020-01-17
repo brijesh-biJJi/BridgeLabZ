@@ -45,6 +45,11 @@ public class DeckOfCardExtendedQueue
 		 */
 		Utility.distributeCards(queuePlayer,deck);
 		
+		/**
+		 * Print the entire queue.
+		 */
+		Utility.printPlayerQueue(queuePlayer);
+		
 	}
 
 }

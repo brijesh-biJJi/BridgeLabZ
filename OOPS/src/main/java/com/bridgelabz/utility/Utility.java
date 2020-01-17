@@ -165,6 +165,10 @@ public class Utility
 				if(cardNode!=null)
 					addCardNodeToQueueCard(tempPlayer.data.queueCard,cardNode);
 			}
+			/**
+			 * Go to next Player
+			 */
+			tempPlayer=tempPlayer.next;
 		}
 	}
 
@@ -225,6 +229,42 @@ public class Utility
 			queueCard.rear.next=cardNode;
 			queueCard.rear=cardNode;
 		}
+	}
+
+	/**
+	 * Prints the queue player.
+	 * @param queuePlayer
+	 */
+	public static void printPlayerQueue(QueuePlayer queuePlayer) 
+	{
+		int count=0;
+		ListNodePlayer tempPlayer=queuePlayer.front;
+		ListNodeCard tempPlayerCard=null;
+		
+		while(tempPlayer!=null)
+		{
+			System.out.println("Player : "+(++count));
+			tempPlayerCard=tempPlayer.data.queueCard.front;
+			while(tempPlayerCard!=null)
+			{
+				if(tempPlayerCard.rank >10)
+				{
+					if(tempPlayerCard.rank==11)
+						System.out.println(tempPlayerCard.suit+"-Jack ");
+					else if(tempPlayerCard.rank==12)
+						System.out.println(tempPlayerCard.suit+"-Queen ");
+					else if(tempPlayerCard.rank==13)
+						System.out.println(tempPlayerCard.suit+"-King ");
+					else if(tempPlayerCard.rank==14)
+						System.out.println(tempPlayerCard.suit+"-Ace ");
+				}
+				else
+					System.out.println(tempPlayerCard.suit+"-"+tempPlayerCard.rank+" ");
+			}
+			tempPlayerCard=tempPlayerCard.next;
+		}
+		System.out.println();
+		tempPlayer=tempPlayer.next;
 	}
 	
 
