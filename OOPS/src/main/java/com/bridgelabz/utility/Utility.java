@@ -2,6 +2,8 @@ package com.bridgelabz.utility;
 
 import java.util.Random;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
+
 public class Utility 
 {
 	/**
@@ -54,12 +56,32 @@ public class Utility
          }
 	}
 
-
+	/**
+	 * Swaps the specified elements of array.
+	 * @param deck
+	 * @param r1
+	 * @param c1
+	 * @param r2
+	 * @param c2
+	 */
 	public static void swap(String[][] deck, int r1, int c1, int r2, int c2) 
 	{
 		String temp=deck[r1][c1];
 		deck[r1][c1]=deck[r2][c2];
 		deck[r2][c2]=temp;
+	}
+
+
+	/**
+	 * Creates the queue for players.
+	 * @return
+	 */
+	public static QueuePlayer CreateQueuePlayer() 
+	{
+		QueuePlayer queuePlayer=new QueuePlayer();
+		queuePlayer.front=null;
+		queuePlayer.rear=null;
+		return queuePlayer;
 	}
 
 

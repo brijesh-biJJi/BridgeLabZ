@@ -1,5 +1,6 @@
 package com.bridgelabz.Controller;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
 import com.bridgelabz.utility.Utility;
 
 public class DeckOfCardExtendedQueue 
@@ -23,7 +24,10 @@ public class DeckOfCardExtendedQueue
 		 */
 		Utility.shuffle(deck);
 		
-		
+		/**
+		 * Create the Queue to hold all the players
+		 */
+		QueuePlayer queuePlayer = Utility.CreateQueuePlayer();
 	}
 
 }
