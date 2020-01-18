@@ -1,5 +1,6 @@
 package com.bridgelabz.Controller;
 
+import com.bridgelabz.DeckOfCardsExtendedQueue.ListNodeCard;
 import com.bridgelabz.DeckOfCardsExtendedQueue.ListNodePlayer;
 import com.bridgelabz.DeckOfCardsExtendedQueue.QueuePlayer;
 import com.bridgelabz.utility.Utility;
@@ -18,7 +19,7 @@ public class DeckOfCardExtendedQueue
 		String[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 	
 		String[][] deck=new String[4][13];
-		String[][] player=new String[4][9];
+		//String[][] player=new String[4][9];
 		
 		/**
 		 * Initialise the array to store all the cards 
@@ -29,6 +30,7 @@ public class DeckOfCardExtendedQueue
 		 * Shuffle the deck of cards
 		 */
 		Utility.shuffle(deck);
+		
 		
 		/**
 		 * Create the Queue to hold all the players
@@ -45,10 +47,16 @@ public class DeckOfCardExtendedQueue
 		 */
 		Utility.distributeCards(queuePlayer,deck);
 		
+		
+		/**
+		 * Sort the cards of each off the player in the queue
+		 */
+		Utility.sort(queuePlayer);
+		
 		/**
 		 * Print the entire queue.
 		 */
-		Utility.printPlayerQueue(queuePlayer);
+		//Utility.printPlayerQueue(queuePlayer);
 		
 	}
 

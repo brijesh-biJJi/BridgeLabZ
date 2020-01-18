@@ -145,9 +145,10 @@ public class Utility
 	{ 
 		ListNodePlayer tempPlayer=queuePlayer.front;
 		
-		for (int i = 0; i < deck.length; i++) 
+		for (int i = 0; i < 13; i++) 
 		{
-			for (int j = 0; j < deck[i].length; j++) 
+			tempPlayer=queuePlayer.front;
+			for (int j = 0; j < 4; j++) 
 			{
 				/**
 				 * Create a new card to insert into the queue card of player
@@ -157,18 +158,19 @@ public class Utility
 				/**
 				 * Assign the values (suit and rank) from array to card
 				 */
-				cardNode=inputCardData(cardNode,deck[i][j]);
+				cardNode=inputCardData(cardNode,deck[j][i]);
 				
 				/**
 				 * Insert the cardNode to the specified player's queue
 				 */
 				if(cardNode!=null)
 					addCardNodeToQueueCard(tempPlayer.data.queueCard,cardNode);
+				tempPlayer=tempPlayer.next;
 			}
 			/**
 			 * Go to next Player
 			 */
-			tempPlayer=tempPlayer.next;
+			
 		}
 	}
 
@@ -188,20 +190,21 @@ public class Utility
 		else
 			return null;
 		
+		
 		cardNode.suit=cardArray[0];
 		
 		int rank=0;
 		
-		if(cardArray[1]=="Jack")
+		if(cardArray[1].equalsIgnoreCase("Jack"))
 			cardNode.rank=11;
 		
-		else if(cardArray[1]=="Queen")
+		else if(cardArray[1].equalsIgnoreCase("Queen"))
 			cardNode.rank=12;
 		
-		else if(cardArray[1]=="King")
+		else if(cardArray[1].equalsIgnoreCase("King"))
 			cardNode.rank=13;
 		
-		else if(cardArray[1]=="Ace")
+		else if(cardArray[1].equalsIgnoreCase("Ace"))
 			cardNode.rank=14;
 		
 		else
@@ -244,8 +247,9 @@ public class Utility
 		while(tempPlayer!=null)
 		{
 			System.out.println("Player : "+(++count));
+			System.out.println("**********");
 			tempPlayerCard=tempPlayer.data.queueCard.front;
-			while(tempPlayerCard!=null)
+			while(tempPlayerCard != null)
 			{
 				if(tempPlayerCard.rank >10)
 				{
@@ -260,11 +264,23 @@ public class Utility
 				}
 				else
 					System.out.println(tempPlayerCard.suit+"-"+tempPlayerCard.rank+" ");
+				
+				   tempPlayerCard=tempPlayerCard.next;
 			}
-			tempPlayerCard=tempPlayerCard.next;
+			System.out.println();
+			tempPlayer=tempPlayer.next;
 		}
-		System.out.println();
-		tempPlayer=tempPlayer.next;
+		
+	}
+
+	/**
+	 * Sort the card of all the player
+	 * @param queuePlayer
+	 */
+	public static void sort(QueuePlayer queuePlayer)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 	
 
