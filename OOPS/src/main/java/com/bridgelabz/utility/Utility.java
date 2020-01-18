@@ -285,7 +285,7 @@ public class Utility
 	 * Prints the queue player.
 	 * @param queuePlayer
 	 */
-	/*public static void printPlayerQueue(QueuePlayer queuePlayer) 
+	public static void printPlayerQueue(QueuePlayer queuePlayer) 
 	{
 		int count=0;
 		ListNodePlayer tempPlayer=queuePlayer.front;
@@ -318,5 +318,5 @@ public class Utility
 			tempPlayer=tempPlayer.next;
 		}
 		
-	}*/
+	}
 }

@@ -55,7 +55,7 @@ public class DeckOfCardExtendedQueue
 		/**
 		 * Print the entire queue.
 		 */
-		//Utility.printPlayerQueue(queuePlayer);
+		Utility.printPlayerQueue(queuePlayer);
 		
 	}
 
