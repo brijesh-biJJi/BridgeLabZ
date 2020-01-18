@@ -1,5 +1,6 @@
 package com.bridgelabz.CreationalDesignPatterns.FactoryPattern;
 
+
 public class Laptop extends Computer
 {
 	String Ram,HDD,CPU;
