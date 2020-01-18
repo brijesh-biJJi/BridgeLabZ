@@ -1,23 +1,22 @@
 package com.bridgelabz.CreationalDesignPatterns.FactoryPattern;
 
-public class PC extends Computer
+public class Server extends Computer
 {
 
 	String Ram,HDD,CPU;
 	
 	/**
-	 * Parameterized Constructor of PC Class
+	 * Parameterized Constructor of Server Class
 	 * @param ram
 	 * @param hdd
 	 * @param cpu
 	 */
-	PC(String ram,String hdd,String cpu)
+	Server(String ram,String hdd,String cpu)
 	{
 		this.Ram=ram;
 		this.HDD=hdd;
 		this.CPU=cpu;
 	}
-	
 	
 	@Override
 	public String getRam() 
@@ -26,7 +25,7 @@ public class PC extends Computer
 	}
 
 	@Override
-	public String getHDD()
+	public String getHDD() 
 	{
 		return this.HDD;
 	}
@@ -36,5 +35,5 @@ public class PC extends Computer
 	{
 		return this.CPU;
 	}
-
+	
 }
