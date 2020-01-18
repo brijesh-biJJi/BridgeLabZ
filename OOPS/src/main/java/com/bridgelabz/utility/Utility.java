@@ -165,11 +165,12 @@ public class Utility
 				 */
 				if(cardNode!=null)
 					addCardNodeToQueueCard(tempPlayer.data.queueCard,cardNode);
+				/**
+				 * Go to next Player
+				 */
 				tempPlayer=tempPlayer.next;
 			}
-			/**
-			 * Go to next Player
-			 */
+			
 			
 		}
 	}
@@ -234,11 +235,57 @@ public class Utility
 		}
 	}
 
+
+	/**
+	 * Sort the card of all the player
+	 * @param queuePlayer
+	 */
+	public static void sort(QueuePlayer queuePlayer) 
+	{
+		ListNodePlayer tempPlayer=queuePlayer.front;
+		while(tempPlayer!=null)
+		{
+			sortCardQueue(tempPlayer.data.queueCard);
+			tempPlayer=tempPlayer.next;
+		}
+	}
+
+	/**
+	 * 
+	 * @param queueCard
+	 */
+	public static void sortCardQueue(QueueCard queueCard)
+	{
+		ListNodeCard firstNode=queueCard.front;
+		ListNodeCard secondNode=null;
+		String tempSuit = null;
+		int tempRank = 0;
+		
+		while(firstNode !=null)
+		{
+			secondNode=firstNode.next;
+			while(secondNode !=null )
+			{
+				if(firstNode.rank > secondNode.rank)
+				{
+					tempSuit=firstNode.suit;
+					tempRank=firstNode.rank;
+					firstNode.suit=secondNode.suit;
+					firstNode.rank=secondNode.rank;
+					secondNode.suit=tempSuit;
+					secondNode.rank=tempRank;
+				}
+				secondNode=secondNode.next;
+			}
+			firstNode=firstNode.next;
+		}
+	}
+
 	/**
 	 * Prints the queue player.
 	 * @param queuePlayer
 	 */
-	public static void printPlayerQueue(QueuePlayer queuePlayer) 
+	/*public static void printPlayerQueue(QueuePlayer queuePlayer) 
 	{
 		int count=0;
 		ListNodePlayer tempPlayer=queuePlayer.front;
@@ -271,19 +318,5 @@ public class Utility
 			tempPlayer=tempPlayer.next;
 		}
 		
-	}
-
-	/**
-	 * Sort the card of all the player
-	 * @param queuePlayer
-	 */
-	public static void sort(QueuePlayer queuePlayer)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-	
-
+	}*/
 }

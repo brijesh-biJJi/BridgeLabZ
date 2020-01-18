@@ -19,7 +19,6 @@ public class DeckOfCardExtendedQueue
 		String[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 	
 		String[][] deck=new String[4][13];
-		//String[][] player=new String[4][9];
 		
 		/**
 		 * Initialise the array to store all the cards 
