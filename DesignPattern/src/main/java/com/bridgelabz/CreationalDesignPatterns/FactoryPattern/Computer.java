@@ -1,5 +1,6 @@
 package com.bridgelabz.CreationalDesignPatterns.FactoryPattern;
 
+
 public abstract class Computer
 {
 	public abstract String getRam();
