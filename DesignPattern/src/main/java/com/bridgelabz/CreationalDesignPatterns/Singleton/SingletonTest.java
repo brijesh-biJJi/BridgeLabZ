@@ -4,7 +4,8 @@ public class SingletonTest
 {
 	public static void main(String[] args) 
 	{
-		EagerInitializedSingleton obj=EagerInitializedSingleton.getInstance();
+		//EagerInitializedSingleton eagerObj=EagerInitializedSingleton.getInstance();
+		StaticBlockSingleton saticObj=StaticBlockSingleton.getInstance();
 	}
 
 }
