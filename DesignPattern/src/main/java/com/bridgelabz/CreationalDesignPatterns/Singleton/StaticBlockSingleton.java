@@ -9,7 +9,7 @@ public class StaticBlockSingleton
 	 */
 	private StaticBlockSingleton()
 	{ 
-		System.out.println("Instance Created.");
+		System.out.println("StaticBlockSingleton Instance Created.");
 	}
 	
 	/**

@@ -9,7 +9,7 @@ public class EagerInitializedSingleton
 	 */
 	private EagerInitializedSingleton()
 	{
-		System.out.println("Instance Created..");
+		System.out.println("EagerInitializedSingleton Instance Created..");
 	}
 	
 	public static EagerInitializedSingleton getInstance()

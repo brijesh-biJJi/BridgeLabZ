@@ -8,6 +8,7 @@ public class SingletonTest
 		//StaticBlockSingleton saticObj=StaticBlockSingleton.getInstance();
 		//LazyInitializedSingleton lazyobj=LazyInitializedSingleton.getInstance();
 		//ThreadSafeSingleton threadObj=ThreadSafeSingleton.getInstance();
-		ThreadSafeSingleton threadObj=ThreadSafeSingleton.getInstanceUsingDoubleLocking();
+		//ThreadSafeSingleton threadObj1=ThreadSafeSingleton.getInstanceUsingDoubleLocking();
+		BillPughSingleton billPughobj=BillPughSingleton.getInstance();
 	}
 }

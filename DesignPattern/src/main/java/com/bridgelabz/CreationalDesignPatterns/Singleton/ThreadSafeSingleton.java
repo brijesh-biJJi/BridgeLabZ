@@ -9,15 +9,15 @@ private static ThreadSafeSingleton instance;
 	 */
 	private ThreadSafeSingleton()
 	{
-		System.out.println("Instance Created..");
+		System.out.println("ThreadSafeSingleton Instance Created..");
 	}
 	
-	public static synchronized ThreadSafeSingleton getInstance()
+	/*public static synchronized ThreadSafeSingleton getInstance()
 	{
 		if(instance==null)
 			instance=new ThreadSafeSingleton();
 		return instance;
-	}
+	}*/
 	
 	/**
 	 * Double-checked locking implementation.

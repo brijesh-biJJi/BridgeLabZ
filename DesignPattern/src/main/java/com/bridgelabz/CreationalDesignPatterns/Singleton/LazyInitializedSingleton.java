@@ -9,7 +9,7 @@ public class LazyInitializedSingleton
 	 */
 	private LazyInitializedSingleton()
 	{
-		System.out.println("Instance Created..");
+		System.out.println("LazyInitializedSingleton Instance Created..");
 	}
 	
 	public static LazyInitializedSingleton getInstance()
