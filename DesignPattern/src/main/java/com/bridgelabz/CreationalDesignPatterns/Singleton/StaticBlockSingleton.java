@@ -27,6 +27,10 @@ public class StaticBlockSingleton
 		}
 	}
 	
+	/**
+	 * Returns the instance
+	 * @return
+	 */
 	public static StaticBlockSingleton getInstance()
 	{
 		return instance;

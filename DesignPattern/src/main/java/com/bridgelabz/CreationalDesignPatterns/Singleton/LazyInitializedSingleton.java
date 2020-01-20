@@ -12,6 +12,10 @@ public class LazyInitializedSingleton
 		System.out.println("LazyInitializedSingleton Instance Created..");
 	}
 	
+	/**
+	 * Returns the instance
+	 * @return
+	 */
 	public static LazyInitializedSingleton getInstance()
 	{
 		if(instance==null)

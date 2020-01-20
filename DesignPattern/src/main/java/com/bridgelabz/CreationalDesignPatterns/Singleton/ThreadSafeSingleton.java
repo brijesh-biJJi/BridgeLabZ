@@ -12,6 +12,10 @@ private static ThreadSafeSingleton instance;
 		System.out.println("ThreadSafeSingleton Instance Created..");
 	}
 	
+	/**
+	 * Returns the instance
+	 * @return
+	 */
 	/*public static synchronized ThreadSafeSingleton getInstance()
 	{
 		if(instance==null)

@@ -12,6 +12,10 @@ public class EagerInitializedSingleton
 		System.out.println("EagerInitializedSingleton Instance Created..");
 	}
 	
+	/**
+	 * Returns the instance
+	 * @return
+	 */
 	public static EagerInitializedSingleton getInstance()
 	{
 		return instance;
