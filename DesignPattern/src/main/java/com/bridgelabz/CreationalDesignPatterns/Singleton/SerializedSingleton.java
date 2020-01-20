@@ -32,4 +32,8 @@ public class SerializedSingleton implements Serializable
 	{
 		return SingletonHelper.instance;
 	}
+	
+	protected Object readResolve() {
+	    return getInstance();
+	}
 }
