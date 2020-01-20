@@ -11,7 +11,7 @@ public class TestEmployee {
 		Employee emp1=emp.clone();
 		Employee emp2=emp.clone();
 		
-		emp.getEmpList().remove("a");
+		emp.getEmpList().add("c");
 		emp1.getEmpList().remove("b");
 		
 		System.out.println("Employee List : "+emp.getEmpList());
