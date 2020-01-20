@@ -29,10 +29,14 @@ public class Employee implements Cloneable
 	}
 	
 	@Override
-	protected Object clone() throws CloneNotSupportedException 
+	protected Employee clone() throws CloneNotSupportedException 
 	{
-		// TODO Auto-generated method stub
-		return super.clone();
+		Employee e=new Employee();
+		for (String n : this.getEmpList()) {
+			e.getEmpList().add(n);	
+		}
+		
+		return e;
 	}
 	
 }

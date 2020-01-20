@@ -8,11 +8,15 @@ public class TestEmployee {
 		emp.loadData();
 		
 		
-		Employee emp1=(Employee)emp.clone();
-		emp.getEmpList().re
+		Employee emp1=emp.clone();
+		Employee emp2=emp.clone();
+		
+		emp.getEmpList().remove("a");
+		emp1.getEmpList().remove("b");
 		
 		System.out.println("Employee List : "+emp.getEmpList());
-		System.out.println("Employee List1 : "+emp1.getEmpList());
+		System.out.println("Employee List 1 : "+emp1.getEmpList());
+		System.out.println("Employee List 2 : "+emp2.getEmpList());
 	}
 
 }
