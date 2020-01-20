@@ -33,6 +33,10 @@ public class SerializedSingleton implements Serializable
 		return SingletonHelper.instance;
 	}
 	
+	/**
+	 * returns the old original instance
+	 * @return
+	 */
 	protected Object readResolve() {
 	    return getInstance();
 	}
