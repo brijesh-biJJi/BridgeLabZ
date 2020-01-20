@@ -9,7 +9,7 @@ public class Volt
 		this.volt=v;
 	}
 	
-	public int getVolt()
+	public int getVolts()
 	{
 		return this.volt;
 	}
