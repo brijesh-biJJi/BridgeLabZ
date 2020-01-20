@@ -2,7 +2,7 @@ package com.bridgelabz.StructuralDesignPatterns.AdapterPattern;
 
 public class Volt 
 {
-	public int volt;
+	private int volt;
 	
 	public Volt(int v)
 	{
