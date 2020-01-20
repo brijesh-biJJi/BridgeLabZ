@@ -11,5 +11,12 @@ public class SingletonTest
 		//ThreadSafeSingleton threadObj=ThreadSafeSingleton.getInstance();
 		//ThreadSafeSingleton threadObj1=ThreadSafeSingleton.getInstanceUsingDoubleLocking();
 		//BillPughSingleton billPughobj=BillPughSingleton.getInstance();
+		EnumSingleton enumObj=EnumSingleton.INSTANCE;
+		enumObj.i=5;
+		enumObj.show();
+		
+		EnumSingleton enumObj1=EnumSingleton.INSTANCE;
+		enumObj1.i=6;
+		enumObj.show();
 	}
 }
