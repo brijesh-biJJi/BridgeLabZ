@@ -2,7 +2,7 @@ package com.bridgelabz.CreationalDesignPatterns.Singleton;
 
 public class LazyInitializedSingleton 
 {
-	private static LazyInitializedSingleton instance;
+	public static LazyInitializedSingleton instance;
 	
 	/**
 	 * Private Constructor to avoid client applications to use constructor
