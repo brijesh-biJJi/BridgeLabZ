@@ -2,13 +2,13 @@ package com.bridgelabz.StructuralDesignPatterns.FacadePattern;
 
 import java.sql.Connection;
 
-public class MySqlHelper 
+public class OracleHelper
 {
 	/**
-	 * Get MySql DB connection using connection parameters
+	 * Get Oracle DB connection using connection parameters
 	 * @return
 	 */
-	public static Connection getMySqlDBConnection()
+	public static Connection getOracleDBConnection()
 	{
 		System.out.println("Connection Successfull");
 		return null;
@@ -19,9 +19,9 @@ public class MySqlHelper
 	 * @param tableName
 	 * @param con
 	 */
-	public void generateMySqlPDFReport(String tableName, Connection con)
+	public void generateOraclePDFReport(String tableName, Connection con)
 	{
-		System.out.println("MySql PDF Report ");
+		System.out.println("Oracle PDF Report ");
 	}
 	
 	/**
@@ -29,10 +29,8 @@ public class MySqlHelper
 	 * @param tableName
 	 * @param con
 	 */
-	public void generateMySqlHTMLReport(String tableName, Connection con)
+	public void generateOracleHTMLReport(String tableName, Connection con)
 	{
-		System.out.println("MySql HTML Report ");
+		System.out.println("Oracle HTML Report ");
 	} 
-	
-	
 }
