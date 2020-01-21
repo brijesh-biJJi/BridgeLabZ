@@ -21,7 +21,7 @@ public class OracleHelper
 	 */
 	public void generateOraclePDFReport(String tableName, Connection con)
 	{
-		System.out.println("Oracle PDF Report ");
+		System.out.println("Oracle PDF Report is Generated");
 	}
 	
 	/**
@@ -31,6 +31,6 @@ public class OracleHelper
 	 */
 	public void generateOracleHTMLReport(String tableName, Connection con)
 	{
-		System.out.println("Oracle HTML Report ");
+		System.out.println("Oracle HTML Report is Generated");
 	} 
 }

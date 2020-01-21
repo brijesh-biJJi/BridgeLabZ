@@ -21,7 +21,7 @@ public class MySqlHelper
 	 */
 	public void generateMySqlPDFReport(String tableName, Connection con)
 	{
-		System.out.println("MySql PDF Report ");
+		System.out.println("MySql PDF Report Generated....");
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class MySqlHelper
 	 */
 	public void generateMySqlHTMLReport(String tableName, Connection con)
 	{
-		System.out.println("MySql HTML Report ");
+		System.out.println("MySql HTML Report Generated...");
 	} 
 	
 	
