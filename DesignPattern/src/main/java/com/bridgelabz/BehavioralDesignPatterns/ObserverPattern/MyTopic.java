@@ -65,7 +65,7 @@ public class MyTopic implements Subject
 	 */
 	public void postMessage(String msg)
 	{
-		//System.out.println("Message Posted to "+name+" :: "+msg);
+		System.out.println("Message Posted Topic :: "+msg);
 		this.message=msg;
 		this.changed=true;
 		notifyObservers();
