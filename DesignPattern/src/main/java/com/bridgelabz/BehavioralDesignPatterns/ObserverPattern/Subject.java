@@ -12,7 +12,7 @@ public interface Subject
 	/**
 	 * method to notify observers of change
 	 */
-		public void notifyObservers();
+	public void notifyObservers();
 		
 	/**
 	 * method to get updates from subject
