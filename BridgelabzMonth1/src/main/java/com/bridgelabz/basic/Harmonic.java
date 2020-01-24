@@ -18,7 +18,6 @@ public class Harmonic
 		for(int i=1;i<=n;i++)
 		{
 			h=1.0/i;
-			//System.out.println(h);
 		}
 		return h;
 	}

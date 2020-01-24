@@ -15,7 +15,7 @@ BufferedReader br;
 	{
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader("/home/user/Desktop/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList1.txt"));
+			br = new BufferedReader(new FileReader("/home/user/GitBridgelabz/BridgeLabZ/BridgelabzMonth1/wordList1.txt"));
 		} catch (FileNotFoundException e1) {
 			
 			//e1.printStackTrace();

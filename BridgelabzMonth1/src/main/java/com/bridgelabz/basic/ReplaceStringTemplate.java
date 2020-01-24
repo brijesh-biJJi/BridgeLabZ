@@ -17,11 +17,9 @@ public class ReplaceStringTemplate
 		if(name.length()<3)
 		{
 			System.out.println("Username should contain minimum 3 characters");
-			return null;
+			return "";
 		}
-		String res=str.replace("<<username>>", name);
-		
-		return res;
+		return str.replace("<<username>>", name);
 	}
 
 }
