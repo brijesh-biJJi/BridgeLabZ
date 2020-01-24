@@ -4,8 +4,11 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class Gambler 
 {
-	double stake,goal,betprice;
-	int noOfPlay,win;
+	double stake;
+	double goal;
+	double betprice;
+	int noOfPlay;
+	int win;
 	public Gambler()
 	{
 		System.out.println("Enter the stake");
@@ -27,10 +30,7 @@ public class Gambler
 
 	private boolean winOrLoss() 
 	{
-		if(Math.random()<0.5)
-			return true;
-		else
-			return false;
+		return (Math.random()<0.5);
 	}
 
 	private void playGame() 

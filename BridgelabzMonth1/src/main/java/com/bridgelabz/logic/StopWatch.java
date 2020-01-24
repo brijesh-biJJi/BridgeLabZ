@@ -6,8 +6,9 @@ public class StopWatch
 {
 	public static void main(String[] args) 
 	{
-		long time,start;
-		char finish=' ';
+		long time;
+		long start;
+		char finish;
 		boolean started=true;
 		start=System.currentTimeMillis();
 		do

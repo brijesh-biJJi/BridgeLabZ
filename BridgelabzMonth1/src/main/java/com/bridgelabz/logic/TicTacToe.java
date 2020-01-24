@@ -38,7 +38,7 @@ public class TicTacToe
 	{
 		for(int i=0; i<3 ;i++)
 		{
-			if(check(board[i][0],board[i][1],board[i][2])==true)
+			if (check(board[i][0],board[i][1],board[i][2]));
 				return true;
 		}
 		return false;
@@ -49,7 +49,7 @@ public class TicTacToe
 	{
 		for(int i=0; i<3 ;i++)
 		{
-			if(check(board[0][i],board[1][i],board[2][i])==true)
+			if(check(board[0][i],board[1][i],board[2][i]))
 				return true;
 		}
 		return false;
@@ -58,7 +58,7 @@ public class TicTacToe
 	//Check for Diagonal Function
 	private static boolean checkForDiagonal() 
 	{
-		return ((check(board[0][0],board[1][1],board[2][2])==true) || (check(board[0][2],board[1][1],board[2][0]))==true);
+		return ((check(board[0][0],board[1][1],board[2][2])) || (check(board[0][2],board[1][1],board[2][0])));
 	}
 	
 	//Check Function
@@ -73,9 +73,11 @@ public class TicTacToe
 	{
 		ArrayList<Character> al=new ArrayList<>();
 		int counter=0;
-		String player1="",player2="";
-		char player1mark,player2mark;
-		char choice=' ';
+		String player1="";
+		String player2="";
+		char player1mark;
+		char player2mark;
+		char choice;
 		
 		//Initialize Board
 		for(int i=0;i<3;i++)
