@@ -6,7 +6,9 @@ public class WindChill
 {
 	public static void main(String[] args) 
 	{
-		double t,v,wc;
+		double t;
+		double v;
+		double wc;
 		System.out.println("Enter the Temperature in Farenheit and Wind Speed");
 		t=InputScanner.inputDouble();
 		v=InputScanner.inputDouble();

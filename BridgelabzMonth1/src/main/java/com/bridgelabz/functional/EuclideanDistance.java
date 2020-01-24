@@ -16,8 +16,7 @@ public class EuclideanDistance
 
 	private static double findDistance(double x, double y)
 	{
-		double d=sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-		return d;
+		return sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 
 	private static double sqrt(double d) 

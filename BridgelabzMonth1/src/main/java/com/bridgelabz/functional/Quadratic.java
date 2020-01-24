@@ -7,7 +7,11 @@ public class Quadratic
 	public static void main(String[] args)
 	{
 		System.out.println("Enter the value for A, B & C ");
-		double a,b,c,root1,root2;
+		double a;
+		double b;
+		double c;
+		double root1;
+		double root2;
 		a=InputScanner.inputDouble();
 		b=InputScanner.inputDouble();
 		c=InputScanner.inputDouble();
@@ -30,7 +34,8 @@ public class Quadratic
 
 	private static double sqrt(double d) 
 	{
-		double temp,sq;
+		double temp;
+		double sq;
 		sq=d/2.0;
 		do
 		{
