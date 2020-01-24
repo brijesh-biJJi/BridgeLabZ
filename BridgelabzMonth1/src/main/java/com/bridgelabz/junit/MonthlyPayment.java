@@ -4,7 +4,12 @@ import com.bridgelabz.inputscanner.InputScanner;
 
 public class MonthlyPayment 
 {
-static double P,Y,R,n,r,payment;
+static double P;
+static double Y;
+static double R;
+static double n;
+static double r;
+static double payment;
 	public static void main(String[] args) 
 	{
 		

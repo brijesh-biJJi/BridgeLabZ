@@ -7,7 +7,8 @@ public class TemperatureConversion {
 
 	public static void main(String[] args) 
 	{
-		double tf,tc;
+		double tf;
+		double tc;
 		System.out.println("Enter the Temperature in Fahrenheit: ");
 		tf=InputScanner.inputDouble();
 		System.out.println("Celsius : "+Utility.fahrenToCelsius(tf));
