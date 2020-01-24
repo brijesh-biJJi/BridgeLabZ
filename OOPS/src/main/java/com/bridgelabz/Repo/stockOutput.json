@@ -1,2 +1,17 @@
-{"Google":{"stock_name":"Google_Company","number_of_shares":510,"share_price":1000},"Mphasis":{"stock_name":"Mphasis_Company","number_of_shares":200,"share_price":100},"TCS":{"stock_name":"TCS_Company","number_of_shares":100,"share_price":300}}
-{"Google":{"stock_name":"Google_Company","number_of_shares":490,"share_price":1000},"Mphasis":{"stock_name":"Mphasis_Company","number_of_shares":200,"share_price":100},"TCS":{"stock_name":"TCS_Company","number_of_shares":100,"share_price":300}}
+{
+	"Google": {
+		"stock_name": "Google_Company",
+		"number_of_shares": 555,
+		"share_price": 1000
+	},
+	"Mphasis": {
+		"stock_name": "Mphasis_Company",
+		"number_of_shares": 200,
+		"share_price": 100
+	},
+	"TCS": {
+		"stock_name": "TCS_Company",
+		"number_of_shares": 100,
+		"share_price": 300
+	}
+}
